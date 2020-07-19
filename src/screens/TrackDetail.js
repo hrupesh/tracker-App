@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native'
 export default function TrackDetail() {
     return (
         <View>
-            <Text></Text>
+            <Text>TrackDetail Screen</Text>
         </View>
     )
 }

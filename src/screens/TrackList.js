@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native'
 export default function TrackList() {
     return (
         <View>
-            <Text></Text>
+            <Text>TrackList Screen</Text>
         </View>
     )
 }
