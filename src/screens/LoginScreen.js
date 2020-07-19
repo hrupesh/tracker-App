@@ -1,12 +1,18 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React from "react";
+import { StyleSheet, Text, View, Button } from "react-native";
 
-export default function LoginScreen() {
-    return (
-        <View>
-            <Text>Login Screen</Text>
-        </View>
-    )
+export default function LoginScreen({ navigation }) {
+  return (
+    <View>
+      <Text>Login Screen</Text>
+      <Button
+        title="Signup"
+        color="#512DF8"
+        onPress={() => navigation.navigate("Signup")}
+      />
+      
+    </View>
+  );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
