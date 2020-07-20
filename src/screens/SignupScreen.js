@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   StyleSheet,
   Text,
@@ -9,28 +9,47 @@ import {
   TextInput,
   KeyboardAvoidingView,
   Alert,
+  Animated,
 } from "react-native";
 import { Input } from "react-native-elements";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function SignupScreen({ navigation }) {
-  //   useEffect(() => {
-  //     Alert.alert(
-  //       "Welcome to tracker 🚀",
-  //       "Kindly register if you are a new user!",
-  //       [
-  //         {
-  //           text: "Login Instead",
-  //           onPress: () => navigation.navigate("Login"),
-  //           style: "default",
-  //           align:'left'
-  //         },
-  //         { text: "Proceed", onPress: () => null , style:"destructive"}
-  //       ],
-  //       { cancelable: false }
+  useEffect(() => {
+    //   Alert.alert(
+    //     "Welcome to tracker 🚀",
+    //     "Kindly register if you are a new user!",
+    //     [
+    //       {
+    //         text: "Login Instead",
+    //         onPress: () => navigation.navigate("Login"),
+    //         style: "default",
+    //         align:'left'
+    //       },
+    //       { text: "Proceed", onPress: () => null , style:"destructive"}
+    //     ],
+    //     { cancelable: false }
 
-  //     );
-  //   }, []);
+    //   );
+    fadeIn;
+  }, []);
+
+  const fadeAnim = useRef(new Animated.Value(1000)).current;
+
+  const fadeIn = () => {
+    Animated.timing(fadeAnim, {
+      toValue: 0,
+      duration: 1000,
+    }).start();
+  };
+
+  const fadeOut = () => {
+    Animated.timing(fadeAnim, {
+      toValue: 1000,
+      duration: 4000,
+      easing: fadeIn,
+    }).start();
+  };
 
   return (
     <ImageBackground
@@ -41,7 +60,7 @@ export default function SignupScreen({ navigation }) {
       source={{ uri: "https://picsum.photos/2000/3000" }}
     >
       <StatusBar backgroundColor="#512D88" barStyle="light-content" />
-      <KeyboardAvoidingView style={styles.formContainer}>
+      <Animated.View style={[styles.formContainer, { left: fadeAnim }]}>
         <Text style={styles.heading}>Welcome</Text>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Email</Text>
@@ -89,7 +108,7 @@ export default function SignupScreen({ navigation }) {
             <Text style={styles.loginhref}>Login </Text>
           </TouchableOpacity>
         </View>
-      </KeyboardAvoidingView>
+      </Animated.View>
     </ImageBackground>
   );
 }
