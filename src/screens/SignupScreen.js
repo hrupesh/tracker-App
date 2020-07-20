@@ -46,9 +46,12 @@ export default function SignupScreen({ navigation }) {
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Email</Text>
           <TextInput
-            autoCapitalize="words"
+            autoCapitalize="none"
             autoCorrect={false}
             autoCompleteType="off"
+            keyboardAppearance="dark"
+            textContentType="emailAddress"
+            keyboardType="email-address"
             style={styles.input}
             // onChangeText={(text) => setTitle(text)}
           />
@@ -60,6 +63,9 @@ export default function SignupScreen({ navigation }) {
             style={styles.input}
             autoCorrect={false}
             autoCompleteType="off"
+            keyboardAppearance="dark"
+            textContentType="password"
+            secureTextEntry={true}
             // onChangeText={(text) => setBody(text)}
           />
           {/* {bodyError ? <Text style={styles.error}> {bodyError} </Text> : null} */}
