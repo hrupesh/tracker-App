@@ -7,6 +7,7 @@ import {
   StatusBar,
   ImageBackground,
   TextInput,
+  KeyboardAvoidingView,
 } from "react-native";
 import { Input } from "react-native-elements";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -21,7 +22,7 @@ export default function SignupScreen({ navigation }) {
       source={{ uri: "https://picsum.photos/2000/3000" }}
     >
       <StatusBar backgroundColor="#512D88" barStyle="light-content" />
-      <View style={styles.formContainer}>
+      <KeyboardAvoidingView style={styles.formContainer}>
         <Text style={styles.heading}>Signup</Text>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Email</Text>
@@ -51,7 +52,15 @@ export default function SignupScreen({ navigation }) {
             <Text style={styles.btnText}>Register</Text>
           </View>
         </TouchableOpacity>
-      </View>
+        <View>
+          <Text style={styles.loginLink}>
+            Already have an account?{" "}
+            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+              <Text style={styles.loginhref}>Login Here</Text>
+            </TouchableOpacity>
+          </Text>
+        </View>
+      </KeyboardAvoidingView>
     </ImageBackground>
   );
 }
@@ -82,9 +91,9 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 32,
     letterSpacing: 4,
-    fontWeight:'bold',
-    fontFamily:'monospace',
-    color: "#fff",
+    fontWeight: "bold",
+    fontFamily: "monospace",
+    color: "#512DF8",
     textAlign: "center",
     borderLeftColor: "#512DF8",
     borderLeftWidth: 5,
@@ -92,9 +101,9 @@ const styles = StyleSheet.create({
     borderRightWidth: 5,
     paddingHorizontal: 10,
     paddingVertical: 5,
-    justifyContent:'center',
-    alignItems:'center',
-    backgroundColor: "#512DF8AF",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#eee",
   },
   formContainer: {
     width: "100%",
@@ -157,5 +166,15 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
     fontWeight: "bold",
     fontFamily: "Roboto",
+  },
+  loginLink: {
+    paddingHorizontal: 30,
+    marginVertical: 10,
+    fontSize: 15,
+  },
+  loginhref: {
+    color: "#0288D1",
+    letterSpacing: 0,
+    textDecorationLine: "underline",
   },
 });
