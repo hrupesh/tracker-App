@@ -22,9 +22,9 @@ export default function SignupScreen({ navigation }) {
     >
       <StatusBar backgroundColor="#512D88" barStyle="light-content" />
       <View style={styles.formContainer}>
-        <Text style={styles.heading}>Add New Blog</Text>
+        <Text style={styles.heading}>Signup</Text>
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>Title</Text>
+          <Text style={styles.label}>Email</Text>
           <TextInput
             autoCapitalize="words"
             autoCorrect={false}
@@ -35,7 +35,7 @@ export default function SignupScreen({ navigation }) {
           {/* {titleError ? <Text style={styles.error}> {titleError} </Text> : null} */}
         </View>
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>Body</Text>
+          <Text style={styles.label}>Password</Text>
           <TextInput
             style={styles.input}
             // onChangeText={(text) => setBody(text)}
@@ -48,7 +48,7 @@ export default function SignupScreen({ navigation }) {
           style={styles.btnContainer}
         >
           <View style={styles.btn}>
-            <Text style={styles.btnText}>Submit</Text>
+            <Text style={styles.btnText}>Register</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -80,17 +80,21 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFCDD2",
   },
   heading: {
-    fontSize: 24,
-    letterSpacing: 2,
-    color: "#512DA8",
+    fontSize: 32,
+    letterSpacing: 4,
+    fontWeight:'bold',
+    fontFamily:'monospace',
+    color: "#fff",
     textAlign: "center",
-    borderLeftColor: "#512DA8",
+    borderLeftColor: "#512DF8",
     borderLeftWidth: 5,
-    borderRightColor: "#512DA8",
+    borderRightColor: "#512DF8",
     borderRightWidth: 5,
     paddingHorizontal: 10,
     paddingVertical: 5,
-    backgroundColor: "#ddd",
+    justifyContent:'center',
+    alignItems:'center',
+    backgroundColor: "#512DF8AF",
   },
   formContainer: {
     width: "100%",
