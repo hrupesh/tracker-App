@@ -34,14 +34,14 @@ export default function SignupScreen({ navigation }) {
     fadeIn();
   }, []);
 
-  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const fadeAnim = useRef(new Animated.Value(500)).current;
 
   const fadeIn = () => {
     // alert("Fading IN");
     Animated.timing(fadeAnim, {
-      toValue: 1,
-      duration: 2000,
-      useNativeDriver: true,
+      toValue: 0,
+      duration: 1500,
+      useNativeDriver: false,
     }).start();
   };
 
@@ -57,7 +57,13 @@ export default function SignupScreen({ navigation }) {
       <Animated.View
         style={[
           styles.formContainer,
-          { opacity: fadeAnim},
+          {
+            transform: [
+              {
+                translateX: fadeAnim,
+              },
+            ],
+          },
         ]}
       >
         <Text style={styles.heading}>Welcome</Text>
