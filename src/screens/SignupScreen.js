@@ -52,12 +52,13 @@ export default function SignupScreen({ navigation }) {
             <Text style={styles.btnText}>Register</Text>
           </View>
         </TouchableOpacity>
-        <View>
-          <Text style={styles.loginLink}>
-            Already have an account?{" "}
-            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-              <Text style={styles.loginhref}>Login Here</Text>
-            </TouchableOpacity>
+        <View style={{ flexDirection:'row' , justifyContent:'center'}}>
+          <Text style={styles.loginLink}>Already have an account?</Text>
+          <Text
+            style={styles.loginhref}
+            onPress={() => navigation.navigate("Login")}
+          >
+            Login Here
           </Text>
         </View>
       </KeyboardAvoidingView>
