@@ -31,23 +31,17 @@ export default function SignupScreen({ navigation }) {
     //     { cancelable: false }
 
     //   );
-    fadeIn;
+    fadeIn();
   }, []);
 
-  const fadeAnim = useRef(new Animated.Value(1000)).current;
+  const fadeAnim = useRef(new Animated.Value(0)).current;
 
   const fadeIn = () => {
+    // alert("Fading IN");
     Animated.timing(fadeAnim, {
-      toValue: 0,
-      duration: 1000,
-    }).start();
-  };
-
-  const fadeOut = () => {
-    Animated.timing(fadeAnim, {
-      toValue: 1000,
-      duration: 4000,
-      easing: fadeIn,
+      toValue: 1,
+      duration: 2000,
+      useNativeDriver: true,
     }).start();
   };
 
@@ -60,7 +54,12 @@ export default function SignupScreen({ navigation }) {
       source={{ uri: "https://picsum.photos/2000/3000" }}
     >
       <StatusBar backgroundColor="#512D88" barStyle="light-content" />
-      <Animated.View style={[styles.formContainer, { left: fadeAnim }]}>
+      <Animated.View
+        style={[
+          styles.formContainer,
+          { opacity: fadeAnim},
+        ]}
+      >
         <Text style={styles.heading}>Welcome</Text>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Email</Text>
