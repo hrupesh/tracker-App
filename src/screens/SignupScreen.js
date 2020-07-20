@@ -214,4 +214,3 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
-console.log("sad");
