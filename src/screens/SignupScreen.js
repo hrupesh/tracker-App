@@ -66,7 +66,7 @@ export default function SignupScreen({ navigation }) {
           },
         ]}
       >
-        <Text style={styles.heading}>Welcome</Text>
+        <Text style={styles.heading}> Tracker  🖲 </Text>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Email</Text>
           <TextInput
