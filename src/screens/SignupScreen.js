@@ -217,4 +217,3 @@ const styles = StyleSheet.create({
 console.log("sad");
 console.log("sad");
 console.log("sad");
-console.log("sad");
