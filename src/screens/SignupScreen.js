@@ -1,5 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
+import {
+  FormLabel,
+  FormInput,
+  FormValidationMessage,
+} from "react-native-elements";
 
 export default function SignupScreen({ navigation }) {
   return (
@@ -15,6 +20,9 @@ export default function SignupScreen({ navigation }) {
         color="dodgerblue"
         onPress={() => navigation.navigate("mainFlow")}
       />
+      <FormLabel>Name</FormLabel>
+      <FormInput onChangeText={() => alert("Signup")} />
+      <FormValidationMessage>Error message</FormValidationMessage>
     </View>
   );
 }
