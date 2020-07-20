@@ -14,23 +14,23 @@ import { Input } from "react-native-elements";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function SignupScreen({ navigation }) {
-//   useEffect(() => {
-//     Alert.alert(
-//       "Welcome to tracker 🚀",
-//       "Kindly register if you are a new user!",
-//       [
-//         {
-//           text: "Login Instead",
-//           onPress: () => navigation.navigate("Login"),
-//           style: "default",
-//           align:'left'
-//         },
-//         { text: "Proceed", onPress: () => null , style:"destructive"}
-//       ],
-//       { cancelable: false }
+  //   useEffect(() => {
+  //     Alert.alert(
+  //       "Welcome to tracker 🚀",
+  //       "Kindly register if you are a new user!",
+  //       [
+  //         {
+  //           text: "Login Instead",
+  //           onPress: () => navigation.navigate("Login"),
+  //           style: "default",
+  //           align:'left'
+  //         },
+  //         { text: "Proceed", onPress: () => null , style:"destructive"}
+  //       ],
+  //       { cancelable: false }
 
-//     );
-//   }, []);
+  //     );
+  //   }, []);
 
   return (
     <ImageBackground
@@ -208,9 +208,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "blue",
     letterSpacing: 0,
-    paddingBottom:1,
+    paddingBottom: 1,
     borderBottomWidth: 2,
     borderBottomColor: "blue",
-    fontWeight:"bold"
+    fontWeight: "bold",
   },
 });
+console.log("sad");
