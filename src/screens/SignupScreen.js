@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -8,11 +8,30 @@ import {
   ImageBackground,
   TextInput,
   KeyboardAvoidingView,
+  Alert,
 } from "react-native";
 import { Input } from "react-native-elements";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function SignupScreen({ navigation }) {
+//   useEffect(() => {
+//     Alert.alert(
+//       "Welcome to tracker 🚀",
+//       "Kindly register if you are a new user!",
+//       [
+//         {
+//           text: "Login Instead",
+//           onPress: () => navigation.navigate("Login"),
+//           style: "default",
+//           align:'left'
+//         },
+//         { text: "Proceed", onPress: () => null , style:"destructive"}
+//       ],
+//       { cancelable: false }
+
+//     );
+//   }, []);
+
   return (
     <ImageBackground
       style={styles.container}
@@ -23,7 +42,7 @@ export default function SignupScreen({ navigation }) {
     >
       <StatusBar backgroundColor="#512D88" barStyle="light-content" />
       <KeyboardAvoidingView style={styles.formContainer}>
-        <Text style={styles.heading}>Signup</Text>
+        <Text style={styles.heading}>Welcome</Text>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Email</Text>
           <TextInput
@@ -33,12 +52,14 @@ export default function SignupScreen({ navigation }) {
             style={styles.input}
             // onChangeText={(text) => setTitle(text)}
           />
-          {/* {titleError ? <Text style={styles.error}> {titleError} </Text> : null} */}
+          {/* <Text style={styles.error}> Error </Text> */}
         </View>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Password</Text>
           <TextInput
             style={styles.input}
+            autoCorrect={false}
+            autoCompleteType="off"
             // onChangeText={(text) => setBody(text)}
           />
           {/* {bodyError ? <Text style={styles.error}> {bodyError} </Text> : null} */}
@@ -52,14 +73,14 @@ export default function SignupScreen({ navigation }) {
             <Text style={styles.btnText}>Register</Text>
           </View>
         </TouchableOpacity>
-        <View style={{ flexDirection:'row' , justifyContent:'center'}}>
+        <View style={{ flexDirection: "row", justifyContent: "flex-start" }}>
           <Text style={styles.loginLink}>Already have an account?</Text>
-          <Text
-            style={styles.loginhref}
+          <TouchableOpacity
+            activeOpacity={0.15}
             onPress={() => navigation.navigate("Login")}
           >
-            Login Here
-          </Text>
+            <Text style={styles.loginhref}>Login </Text>
+          </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
     </ImageBackground>
@@ -93,7 +114,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     letterSpacing: 4,
     fontWeight: "bold",
-    fontFamily: "monospace",
+    fontFamily: "Roboto",
     color: "#512DF8",
     textAlign: "center",
     borderLeftColor: "#512DF8",
@@ -158,6 +179,8 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 25,
     elevation: 10,
+    width: "75%",
+    alignSelf: "center",
   },
   btnText: {
     textAlign: "center",
@@ -169,13 +192,19 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto",
   },
   loginLink: {
-    paddingHorizontal: 30,
+    paddingLeft: 35,
     marginVertical: 10,
     fontSize: 15,
   },
   loginhref: {
-    color: "#0288D1",
+    marginVertical: 8,
+    margin: 5,
+    fontSize: 16,
+    color: "blue",
     letterSpacing: 0,
-    textDecorationLine: "underline",
+    paddingBottom:1,
+    borderBottomWidth: 2,
+    borderBottomColor: "blue",
+    fontWeight:"bold"
   },
 });
