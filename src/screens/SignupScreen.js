@@ -46,6 +46,7 @@ export default function SignupScreen({ navigation }) {
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Email</Text>
           <TextInput
+            blurOnSubmit
             autoCapitalize="none"
             autoCorrect={false}
             autoCompleteType="off"
