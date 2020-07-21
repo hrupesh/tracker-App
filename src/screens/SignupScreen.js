@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import { Input } from "react-native-elements";
 import { MaterialIcons } from "@expo/vector-icons";
+import trackapi from "../api/trackapi";
 
 export default function SignupScreen({ navigation }) {
   useEffect(() => {
@@ -20,8 +21,9 @@ export default function SignupScreen({ navigation }) {
     fadeInBtn();
   }, []);
 
-  const [email,setEmail] = useState('');
-  const [password,setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
 
   const fadeAnim = useRef(new Animated.Value(-1000)).current;
 
@@ -82,7 +84,7 @@ export default function SignupScreen({ navigation }) {
           },
         ]}
       >
-        <Text style={styles.heading}> Tracker 🖲 </Text>
+        <Text style={styles.heading}> Signup 🖲 </Text>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Email</Text>
           <TextInput
