@@ -32,8 +32,6 @@ export default function SignupScreen({ navigation }) {
     }).start();
   };
 
-  
-
   const registerAnim = () => {
     // alert("Fading IN");
     Animated.timing(registerAnim, {
@@ -116,9 +114,9 @@ export default function SignupScreen({ navigation }) {
           //   onPress={() => submitHandler(title, body)}
           style={styles.btnContainer}
         >
-          <View style={styles.btn}>
+          <Animated.View style={styles.btn}>
             <Text style={styles.btnText}>Register</Text>
-          </View>
+          </Animated.View>
         </TouchableOpacity>
         <View style={{ flexDirection: "row", justifyContent: "flex-start" }}>
           <Text style={styles.loginLink}>Already have an account?</Text>
