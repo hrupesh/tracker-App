@@ -16,25 +16,10 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 export default function SignupScreen({ navigation }) {
   useEffect(() => {
-    //   Alert.alert(
-    //     "Welcome to tracker 🚀",
-    //     "Kindly register if you are a new user!",
-    //     [
-    //       {
-    //         text: "Login Instead",
-    //         onPress: () => navigation.navigate("Login"),
-    //         style: "default",
-    //         align:'left'
-    //       },
-    //       { text: "Proceed", onPress: () => null , style:"destructive"}
-    //     ],
-    //     { cancelable: false }
-
-    //   );
     fadeIn();
   }, []);
 
-  const fadeAnim = useRef(new Animated.Value(500)).current;
+  const fadeAnim = useRef(new Animated.Value(-1000)).current;
 
   const fadeIn = () => {
     // alert("Fading IN");
@@ -43,6 +28,22 @@ export default function SignupScreen({ navigation }) {
       duration: 1500,
       useNativeDriver: false,
     }).start();
+  };
+
+  if (navigation.getParam("show")) {
+    fadeIn();
+  }
+
+  const outAnimation = () => {
+    // alert("Fading IN");
+    Animated.timing(fadeAnim, {
+      toValue: -1000,
+      duration: 500,
+      useNativeDriver: false,
+    }).start(({ finished }) => {
+      //   alert("Animation Finished!");
+      navigation.navigate("Login");
+    });
   };
 
   return (
@@ -60,13 +61,13 @@ export default function SignupScreen({ navigation }) {
           {
             transform: [
               {
-                translateX: fadeAnim,
+                translateY: fadeAnim,
               },
             ],
           },
         ]}
       >
-        <Text style={styles.heading}> Tracker  🖲 </Text>
+        <Text style={styles.heading}> Tracker 🖲 </Text>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Email</Text>
           <TextInput
@@ -106,10 +107,7 @@ export default function SignupScreen({ navigation }) {
         </TouchableOpacity>
         <View style={{ flexDirection: "row", justifyContent: "flex-start" }}>
           <Text style={styles.loginLink}>Already have an account?</Text>
-          <TouchableOpacity
-            activeOpacity={0.15}
-            onPress={() => navigation.navigate("Login")}
-          >
+          <TouchableOpacity activeOpacity={0.15} onPress={outAnimation}>
             <Text style={styles.loginhref}>Login </Text>
           </TouchableOpacity>
         </View>

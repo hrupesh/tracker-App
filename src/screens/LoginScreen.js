@@ -8,7 +8,7 @@ export default function LoginScreen({ navigation }) {
       <Button
         title="Signup"
         color="#512DF8"
-        onPress={() => navigation.navigate("Signup")}
+        onPress={() => navigation.navigate("Signup",{ show: true })}
       />
       
     </View>
