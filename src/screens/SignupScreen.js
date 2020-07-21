@@ -17,11 +17,12 @@ import { MaterialIcons } from "@expo/vector-icons";
 export default function SignupScreen({ navigation }) {
   useEffect(() => {
     fadeIn();
+    fadeInBtn();
   }, []);
 
   const fadeAnim = useRef(new Animated.Value(-1000)).current;
 
-  const registerAnimation = useRef(new Animated.Value(0)).current;
+  const fadeAnimBtn = useRef(new Animated.Value(2000)).current;
 
   const fadeIn = () => {
     // alert("Fading IN");
@@ -32,15 +33,13 @@ export default function SignupScreen({ navigation }) {
     }).start();
   };
 
-  const registerAnim = () => {
+  const fadeInBtn = () => {
     // alert("Fading IN");
-    Animated.timing(registerAnim, {
-      toValue: 360,
-      duration: 2500,
+    Animated.timing(fadeAnimBtn, {
+      toValue: 0,
+      duration: 1500,
       useNativeDriver: false,
-    }).start(({ finished }) => {
-      alert("Registration Succesfull");
-    });
+    }).start();
   };
 
   if (navigation.getParam("show")) {
@@ -114,7 +113,18 @@ export default function SignupScreen({ navigation }) {
           //   onPress={() => submitHandler(title, body)}
           style={styles.btnContainer}
         >
-          <Animated.View style={styles.btn}>
+          <Animated.View
+            style={[
+              styles.btn,
+              {
+                transform: [
+                  {
+                    translateY: fadeAnimBtn,
+                  },
+                ],
+              },
+            ]}
+          >
             <Text style={styles.btnText}>Register</Text>
           </Animated.View>
         </TouchableOpacity>
