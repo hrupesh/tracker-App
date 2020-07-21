@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -19,6 +19,9 @@ export default function SignupScreen({ navigation }) {
     fadeIn();
     fadeInBtn();
   }, []);
+
+  const [email,setEmail] = useState('');
+  const [password,setPassword] = useState('');
 
   const fadeAnim = useRef(new Animated.Value(-1000)).current;
 
@@ -91,7 +94,7 @@ export default function SignupScreen({ navigation }) {
             textContentType="emailAddress"
             keyboardType="email-address"
             style={styles.input}
-            // onChangeText={(text) => setTitle(text)}
+            onChangeText={setEmail}
           />
           {/* <Text style={styles.error}> Error </Text> */}
         </View>
@@ -104,8 +107,9 @@ export default function SignupScreen({ navigation }) {
             keyboardAppearance="dark"
             textContentType="password"
             secureTextEntry={true}
-            // onChangeText={(text) => setBody(text)}
+            onChangeText={setPassword}
           />
+          {/* <Text>{email + password}</Text> */}
           {/* {bodyError ? <Text style={styles.error}> {bodyError} </Text> : null} */}
         </View>
         <TouchableOpacity

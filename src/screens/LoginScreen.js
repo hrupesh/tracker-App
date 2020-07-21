@@ -8,11 +8,20 @@ export default function LoginScreen({ navigation }) {
       <Button
         title="Signup"
         color="#512DF8"
-        onPress={() => navigation.navigate("Signup",{ show: true })}
+        onPress={() => navigation.navigate("Signup", { show: true })}
       />
-      
     </View>
   );
+
+ 
 }
+
+LoginScreen.navigationOptions = ({ navigation }) => {
+    return {
+      header: () => {
+        return null;
+      },
+    };
+  };
 
 const styles = StyleSheet.create({});
