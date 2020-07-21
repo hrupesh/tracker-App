@@ -21,6 +21,8 @@ export default function SignupScreen({ navigation }) {
 
   const fadeAnim = useRef(new Animated.Value(-1000)).current;
 
+  const registerAnimation = useRef(new Animated.Value(0)).current;
+
   const fadeIn = () => {
     // alert("Fading IN");
     Animated.timing(fadeAnim, {
@@ -28,6 +30,19 @@ export default function SignupScreen({ navigation }) {
       duration: 1500,
       useNativeDriver: false,
     }).start();
+  };
+
+  
+
+  const registerAnim = () => {
+    // alert("Fading IN");
+    Animated.timing(registerAnim, {
+      toValue: 360,
+      duration: 2500,
+      useNativeDriver: false,
+    }).start(({ finished }) => {
+      alert("Registration Succesfull");
+    });
   };
 
   if (navigation.getParam("show")) {
