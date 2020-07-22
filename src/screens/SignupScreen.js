@@ -22,6 +22,7 @@ export default function SignupScreen({ navigation }) {
     fadeInBtn();
   }, []);
 
+  const { state, signup } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -116,7 +117,7 @@ export default function SignupScreen({ navigation }) {
         </View>
         <TouchableOpacity
           activeOpacity={0.6}
-          //   onPress={() => submitHandler(title, body)}
+          onPress={() => signup({email, password})}
           style={styles.btnContainer}
         >
           <Animated.View
