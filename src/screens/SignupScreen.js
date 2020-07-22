@@ -63,6 +63,10 @@ export default function SignupScreen({ navigation }) {
       setPasswordErr("");
       valid = true;
     }
+
+    if (valid) {
+      setShowLoader(false);
+    }
   };
 
   const fadeInBtn = () => {
