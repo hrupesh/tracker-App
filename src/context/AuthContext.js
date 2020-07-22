@@ -8,12 +8,11 @@ const authReducer = (state, action) => {
         ...state,
         errorMessage: action.payload,
       };
+      console.log(state);
     default:
       return state;
   }
 };
-
-console.log(state);
 
 const signup = (dispatch) => {
   return async ({ email, password }) => {
@@ -22,10 +21,18 @@ const signup = (dispatch) => {
       console.log(response.data);
     } catch (err) {
       console.log(err.response.data);
-      dispatch({
-        type: "add_error",
-        payload: "An Error Occured in SignUp process!",
-      });
+      if (err.response.data.includes("duplicate key")) {
+        dispatch({
+          type: "add_error",
+          payload:
+            "This Email is already registered with us, try logging in.",
+        });
+      } else {
+        dispatch({
+          type: "add_error",
+          payload: "An Error Occured in SignUp!",
+        });
+      }
     }
   };
 };

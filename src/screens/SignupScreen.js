@@ -85,7 +85,10 @@ export default function SignupScreen({ navigation }) {
           },
         ]}
       >
-        <Text style={styles.heading}> Signup 🖲 </Text>
+        <Text style={styles.heading}> Signup </Text>
+        {state.errorMessage ? (
+          <Text style={styles.error2}>{state.errorMessage}</Text>
+        ) : null}
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Email</Text>
           <TextInput
@@ -115,9 +118,10 @@ export default function SignupScreen({ navigation }) {
           {/* <Text>{email + password}</Text> */}
           {/* {bodyError ? <Text style={styles.error}> {bodyError} </Text> : null} */}
         </View>
+
         <TouchableOpacity
           activeOpacity={0.6}
-          onPress={() => signup({email, password})}
+          onPress={() => signup({ email, password })}
           style={styles.btnContainer}
         >
           <Animated.View
@@ -168,6 +172,22 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     letterSpacing: 0.5,
     backgroundColor: "#FFCDD2",
+  },
+  error2: {
+    color: "#D32F2F",
+    margin: 15,
+    marginBottom:0,
+    padding:15,
+    letterSpacing: 0.5,
+    backgroundColor: "#FFCDD2",
+    fontSize:13,
+    fontWeight:'bold',
+    elevation:10,
+    borderRadius:10,
+    borderLeftColor:'#FF5252',
+    borderLeftWidth:4,
+    borderRightColor:'#FF5252',
+    borderRightWidth:4
   },
   heading: {
     fontSize: 32,
