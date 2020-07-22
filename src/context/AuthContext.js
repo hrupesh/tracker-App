@@ -1,6 +1,7 @@
 import createDataContext from "./createDataContext";
 import trackerApi from "../api/trackapi";
 import { AsyncStorage } from "react-native";
+import { navigate } from "../navigationRef";
 
 const authReducer = (state, action) => {
   switch (action.type) {
@@ -27,6 +28,7 @@ const signup = (dispatch) => {
       console.log(response.data);
       await AsyncStorage.setItem("token", response.data.token);
       dispatch({ type: "signup", payload: response.data.token });
+      navigate("TrackList");
     } catch (err) {
       console.log(err.response.data);
       if (err.response.data.includes("duplicate key")) {
