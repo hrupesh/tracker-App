@@ -4,6 +4,11 @@ import { AsyncStorage } from "react-native";
 
 const authReducer = (state, action) => {
   switch (action.type) {
+    case "signup":
+      return {
+        ...state,
+        token: action.payload,
+      };
     case "add_error":
       return {
         ...state,
@@ -20,7 +25,8 @@ const signup = (dispatch) => {
     try {
       const response = await trackerApi.post("/signup", { email, password });
       console.log(response.data);
-      await AsyncStorage.setItem("token", response.data);
+      await AsyncStorage.setItem("token", response.data.token);
+      dispatch({ type: "signup", payload: response.data.token });
     } catch (err) {
       console.log(err.response.data);
       if (err.response.data.includes("duplicate key")) {
