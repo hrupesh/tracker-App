@@ -25,6 +25,8 @@ export default function SignupScreen({ navigation }) {
   const { state, signup } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailErr, setEmailErr] = useState("");
+  const [passwordErr, setPasswordErr] = useState("");
 
   const fadeAnim = useRef(new Animated.Value(-1000)).current;
 
@@ -37,6 +39,15 @@ export default function SignupScreen({ navigation }) {
       duration: 1500,
       useNativeDriver: false,
     }).start();
+  };
+
+  const validateForm = (email, password) => {
+    if (!email) {
+      setEmailErr("Email is required *");
+    }
+    if (!password) {
+      setPasswordErr("Password is required *");
+    }
   };
 
   const fadeInBtn = () => {
@@ -176,18 +187,18 @@ const styles = StyleSheet.create({
   error2: {
     color: "#D32F2F",
     margin: 15,
-    marginBottom:0,
-    padding:15,
+    marginBottom: 0,
+    padding: 15,
     letterSpacing: 0.5,
     backgroundColor: "#FFCDD2",
-    fontSize:13,
-    fontWeight:'bold',
-    elevation:10,
-    borderRadius:10,
-    borderLeftColor:'#FF5252',
-    borderLeftWidth:4,
-    borderRightColor:'#FF5252',
-    borderRightWidth:4
+    fontSize: 13,
+    fontWeight: "bold",
+    elevation: 10,
+    borderRadius: 10,
+    borderLeftColor: "#FF5252",
+    borderLeftWidth: 4,
+    borderRightColor: "#FF5252",
+    borderRightWidth: 4,
   },
   heading: {
     fontSize: 32,
