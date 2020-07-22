@@ -15,6 +15,10 @@ const login = (dispatch) => {
   return ({ email, password }) => {};
 };
 
+const logout = (dispatch) => {
+  return ({ email, password }) => {};
+};
+
 export const { Provider, Context } = createDataContext(
   authReducer,
   {},
