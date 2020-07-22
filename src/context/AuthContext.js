@@ -3,10 +3,17 @@ import trackerApi from "../api/trackapi";
 
 const authReducer = (state, action) => {
   switch (action.type) {
+    case "add_error":
+      return {
+        ...state,
+        errorMessage: action.payload,
+      };
     default:
       return state;
   }
 };
+
+console.log(state);
 
 const signup = (dispatch) => {
   return async ({ email, password }) => {
@@ -15,6 +22,10 @@ const signup = (dispatch) => {
       console.log(response.data);
     } catch (err) {
       console.log(err.response.data);
+      dispatch({
+        type: "add_error",
+        payload: "An Error Occured in SignUp process!",
+      });
     }
   };
 };
@@ -30,5 +41,5 @@ const logout = (dispatch) => {
 export const { Provider, Context } = createDataContext(
   authReducer,
   { signup, login, logout },
-  { isSignedIn: false }
+  { isSignedIn: false, errorMessage: "" }
 );
