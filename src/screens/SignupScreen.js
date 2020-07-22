@@ -42,11 +42,16 @@ export default function SignupScreen({ navigation }) {
   };
 
   const validateForm = (email, password) => {
-    if (!email) {
-      setEmailErr("Email is required *");
+    if (!(email || password)) {
+      email ? setEmailErr("") : setEmailErr("Email is required *");
+      password ? setPasswordErr("") : setPasswordErr("Password is required *");
     }
-    if (!password) {
-      setPasswordErr("Password is required *");
+
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (!emailPattern.test(email)) {
+      setEmailErr("Please enter a valid email");
+    } else {
+      setEmailErr("");
     }
   };
 
@@ -113,7 +118,7 @@ export default function SignupScreen({ navigation }) {
             style={styles.input}
             onChangeText={setEmail}
           />
-          {/* <Text style={styles.error}> Error </Text> */}
+          {emailErr ? <Text style={styles.error}> {emailErr} </Text> : null}
         </View>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Password</Text>
@@ -127,12 +132,14 @@ export default function SignupScreen({ navigation }) {
             onChangeText={setPassword}
           />
           {/* <Text>{email + password}</Text> */}
-          {/* {bodyError ? <Text style={styles.error}> {bodyError} </Text> : null} */}
+          {passwordErr ? (
+            <Text style={styles.error}> {passwordErr} </Text>
+          ) : null}
         </View>
 
         <TouchableOpacity
           activeOpacity={0.6}
-          onPress={() => signup({ email, password })}
+          onPress={() => validateForm(email, password)}
           style={styles.btnContainer}
         >
           <Animated.View
