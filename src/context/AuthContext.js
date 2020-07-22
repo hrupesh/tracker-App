@@ -20,6 +20,7 @@ const signup = (dispatch) => {
     try {
       const response = await trackerApi.post("/signup", { email, password });
       console.log(response.data);
+      await AsyncStorage.setItem("token", response.data);
     } catch (err) {
       console.log(err.response.data);
       if (err.response.data.includes("duplicate key")) {
@@ -48,5 +49,5 @@ const logout = (dispatch) => {
 export const { Provider, Context } = createDataContext(
   authReducer,
   { signup, login, logout },
-  { isSignedIn: false, errorMessage: "" }
+  { token: null, errorMessage: "" }
 );
