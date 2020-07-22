@@ -8,7 +8,7 @@ const authReducer = (state, action) => {
   }
 };
 
-const signup = (dispatch) => {
+const signup = async (dispatch) => {
   return ({ email, password }) => {
     try {
         const response = await trackerApi.post('/signup',{ email, password });
