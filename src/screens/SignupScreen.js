@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import {
   StyleSheet,
   Text,
@@ -14,6 +14,7 @@ import {
 import { Input } from "react-native-elements";
 import { MaterialIcons } from "@expo/vector-icons";
 import trackapi from "../api/trackapi";
+import { Context as AuthContext } from "../context/AuthContext";
 
 export default function SignupScreen({ navigation }) {
   useEffect(() => {
@@ -23,7 +24,6 @@ export default function SignupScreen({ navigation }) {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
 
   const fadeAnim = useRef(new Animated.Value(-1000)).current;
 
