@@ -27,6 +27,7 @@ export default function SignupScreen({ navigation }) {
   const [password, setPassword] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [passwordErr, setPasswordErr] = useState("");
+  const [showLoader, setShowLoader] = useState(false);
 
   const fadeAnim = useRef(new Animated.Value(-1000)).current;
 
@@ -42,16 +43,25 @@ export default function SignupScreen({ navigation }) {
   };
 
   const validateForm = (email, password) => {
-    if (!(email || password)) {
-      email ? setEmailErr("") : setEmailErr("Email is required *");
-      password ? setPasswordErr("") : setPasswordErr("Password is required *");
-    }
+    setShowLoader(true);
+
+    var valid = false;
 
     var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!emailPattern.test(email)) {
       setEmailErr("Please enter a valid email");
+      valid = false;
     } else {
       setEmailErr("");
+      valid = true;
+    }
+
+    if (!password) {
+      setPasswordErr("Please enter a valid Password");
+      valid = false;
+    } else {
+      setPasswordErr("");
+      valid = true;
     }
   };
 
