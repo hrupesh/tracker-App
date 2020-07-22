@@ -1,5 +1,6 @@
 import createDataContext from "./createDataContext";
 import trackerApi from "../api/trackapi";
+import { AsyncStorage } from "react-native";
 
 const authReducer = (state, action) => {
   switch (action.type) {
@@ -24,8 +25,7 @@ const signup = (dispatch) => {
       if (err.response.data.includes("duplicate key")) {
         dispatch({
           type: "add_error",
-          payload:
-            "This Email is already registered with us, try logging in.",
+          payload: "This Email is already registered with us, try logging in.",
         });
       } else {
         dispatch({
