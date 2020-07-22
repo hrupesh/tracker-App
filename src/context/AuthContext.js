@@ -8,13 +8,13 @@ const authReducer = (state, action) => {
   }
 };
 
-const signup = async (dispatch) => {
-  return ({ email, password }) => {
+const signup = (dispatch) => {
+  return async ({ email, password }) => {
     try {
-        const response = await trackerApi.post('/signup',{ email, password });
-        console.log(response.data);
+      const response = await trackerApi.post("/signup", { email, password });
+      console.log(response.data);
     } catch (err) {
-        console.log(err.message);
+      console.log(err.message);
     }
   };
 };
