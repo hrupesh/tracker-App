@@ -183,7 +183,7 @@ export default function LoginScreen({ navigation }) {
               },
             ]}
           >
-            <Text style={styles.btnText}>Submit</Text>
+            <Text style={styles.btnText}>Login</Text>
           </Animated.View>
         </TouchableOpacity>
         <View style={{ flexDirection: "row", justifyContent: "flex-start" }}>
