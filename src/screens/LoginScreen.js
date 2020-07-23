@@ -190,12 +190,6 @@ export default function LoginScreen({ navigation }) {
           <TouchableOpacity activeOpacity={0.15} onPress={outAnimation}>
             <Text style={styles.loginhref}>Register </Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            activeOpacity={0.15}
-            onPress={() => navigation.navigate("TrackList")}
-          >
-            <Text style={styles.loginhref}>Main Flow? </Text>
-          </TouchableOpacity>
         </View>
       </Animated.View>
     </ImageBackground>
