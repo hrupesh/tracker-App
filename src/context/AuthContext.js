@@ -9,15 +9,11 @@ const authReducer = (state, action) => {
       return {
         errorMessage: "",
         token: action.payload,
-        showLoader: false,
-        navigate: true
       };
     case "add_error":
       return {
         ...state,
         errorMessage: action.payload,
-        showLoader: false,
-        navigate:false
       };
       console.log(state);
     default:
@@ -34,7 +30,7 @@ const signup = (dispatch) => {
       if (emailPattern.test(email)) {
         await AsyncStorage.setItem("token", response.data.token);
         dispatch({ type: "signup", payload: response.data.token });
-        // navigate("TrackList");
+        navigate("TrackList");
       } else {
         dispatch({
           type: "add_error",
