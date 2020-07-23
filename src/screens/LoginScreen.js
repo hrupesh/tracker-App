@@ -93,7 +93,9 @@ export default function LoginScreen({ navigation }) {
       useNativeDriver: false,
     }).start(({ finished }) => {
       //   alert("Animation Finished!");
-      navigation.navigate("Signup");
+      navigation.navigate("Signup",{
+          show: true
+      });
     });
   };
 

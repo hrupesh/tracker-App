@@ -65,8 +65,8 @@ export default function SignupScreen({ navigation }) {
 
     if (valid) {
       await signup({ email, password });
-    //   setShowLoader(false);
-      return null
+      //   setShowLoader(false);
+      return null;
     } else {
       setShowLoader(false);
     }
@@ -93,7 +93,9 @@ export default function SignupScreen({ navigation }) {
       useNativeDriver: false,
     }).start(({ finished }) => {
       //   alert("Animation Finished!");
-      navigation.navigate("Login");
+      navigation.navigate("Login", {
+        show: true,
+      });
     });
   };
 
