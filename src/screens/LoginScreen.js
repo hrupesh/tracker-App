@@ -21,7 +21,7 @@ export default function LoginScreen({ navigation }) {
     fadeInBtn();
   }, []);
 
-  const { state, signup } = useContext(AuthContext);
+  const { state, login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailErr, setEmailErr] = useState("");
@@ -62,8 +62,8 @@ export default function LoginScreen({ navigation }) {
     }
 
     if (valid) {
-      await signup({ email, password });
-    //   setShowLoader(false);
+      await login({ email, password });
+      setShowLoader(false);
       return null
     } else {
       setShowLoader(false);

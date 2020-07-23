@@ -72,7 +72,7 @@ const login = (dispatch) => {
 
       dispatch({
         type: "add_error",
-        payload: "An Error Occured while logging in!" + err,
+        payload:  err.response.error,
       });
     }
   };
