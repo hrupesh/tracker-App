@@ -72,7 +72,7 @@ const login = (dispatch) => {
 
       dispatch({
         type: "add_error",
-        payload:  err.response.error,
+        payload:  "Error: "+err.response.data.error,
       });
     }
   };
