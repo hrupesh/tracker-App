@@ -10,11 +10,10 @@ import {
   KeyboardAvoidingView,
   Alert,
   Animated,
+  Image,
 } from "react-native";
-import { Input } from "react-native-elements";
-import { MaterialIcons } from "@expo/vector-icons";
-import trackapi from "../api/trackapi";
 import { Context as AuthContext } from "../context/AuthContext";
+import AnimatedLoader from "react-native-animated-loader";
 
 export default function SignupScreen({ navigation }) {
   useEffect(() => {
@@ -102,6 +101,13 @@ export default function SignupScreen({ navigation }) {
       fadeDuration={0.5}
       source={{ uri: "https://picsum.photos/2000/3000" }}
     >
+        <AnimatedLoader
+        visible={visible}
+        overlayColor="rgba(255,255,255,0.75)"
+        source={require("./loader.json")}
+        animationStyle={styles.lottie}
+        speed={1}
+      />
       <StatusBar backgroundColor="#512D88" barStyle="light-content" />
       <Animated.View
         style={[
@@ -318,4 +324,8 @@ const styles = StyleSheet.create({
     borderBottomColor: "blue",
     fontWeight: "bold",
   },
+  lottie: {
+    width: 100,
+    height: 100
+  }
 });
