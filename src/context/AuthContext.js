@@ -78,6 +78,7 @@ const login = (dispatch) => {
   };
 };
 
+
 const logout = (dispatch) => {
   return ({ email, password }) => {};
 };
