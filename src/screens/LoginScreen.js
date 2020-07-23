@@ -64,7 +64,7 @@ export default function LoginScreen({ navigation }) {
     if (valid) {
       await login({ email, password });
       setShowLoader(false);
-      return null
+      return null;
     } else {
       setShowLoader(false);
     }
@@ -92,8 +92,8 @@ export default function LoginScreen({ navigation }) {
       useNativeDriver: false,
     }).start(({ finished }) => {
       //   alert("Animation Finished!");
-      navigation.navigate("Signup",{
-          show: true
+      navigation.navigate("Signup", {
+        show: true,
       });
     });
   };
@@ -189,6 +189,12 @@ export default function LoginScreen({ navigation }) {
           <Text style={styles.loginLink}>Not Registered yet?</Text>
           <TouchableOpacity activeOpacity={0.15} onPress={outAnimation}>
             <Text style={styles.loginhref}>Register </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.15}
+            onPress={() => navigation.navigate("TrackList")}
+          >
+            <Text style={styles.loginhref}>Main Flow? </Text>
           </TouchableOpacity>
         </View>
       </Animated.View>
@@ -294,10 +300,9 @@ const styles = StyleSheet.create({
     height: 50,
     fontSize: 18,
     // marginLeft: 5,
-    marginTop:10,
+    marginTop: 10,
     borderBottomColor: "#D32F2F",
     borderBottomWidth: 2,
-    
   },
   btn: {
     marginTop: 30,
