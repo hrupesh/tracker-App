@@ -71,7 +71,9 @@ export default function SignupScreen({ navigation }) {
       async function trytosignup() {
         setShowLoader(true);
         await signup({ email, password });
-        setShowLoader(false);
+        if (!state.token) {
+          setShowLoader(false);
+        }
       }
       trytosignup();
     }
