@@ -9,11 +9,15 @@ const authReducer = (state, action) => {
       return {
         errorMessage: "",
         token: action.payload,
+        showLoader: false,
+        navigate: true
       };
     case "add_error":
       return {
         ...state,
         errorMessage: action.payload,
+        showLoader: false,
+        navigate:false
       };
       console.log(state);
     default:
@@ -26,9 +30,17 @@ const signup = (dispatch) => {
     try {
       const response = await trackerApi.post("/signup", { email, password });
       console.log(response.data);
-      await AsyncStorage.setItem("token", response.data.token);
-      dispatch({ type: "signup", payload: response.data.token });
-      navigate("TrackList");
+      var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (emailPattern.test(email)) {
+        await AsyncStorage.setItem("token", response.data.token);
+        dispatch({ type: "signup", payload: response.data.token });
+        // navigate("TrackList");
+      } else {
+        dispatch({
+          type: "add_error",
+          payload: "Enter a valid email",
+        });
+      }
     } catch (err) {
       console.log(err.response.data);
       if (err.response.data.includes("duplicate key")) {

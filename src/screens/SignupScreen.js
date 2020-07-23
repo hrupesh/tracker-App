@@ -42,8 +42,6 @@ export default function SignupScreen({ navigation }) {
   };
 
   const validateForm = async (email, password) => {
-    setShowLoader(true);
-
     var valid = false;
 
     var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -55,13 +53,14 @@ export default function SignupScreen({ navigation }) {
       valid = true;
     }
 
-    var passpattern =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;
+    var passpattern = /^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;
     if (!password) {
       setPasswordErr("Password is required *");
       valid = false;
     } else if (!passpattern.test(password)) {
-      setPasswordErr("Password must contain Characters, Numbers and a must contain 8 characters");
+      setPasswordErr(
+        "Password must contain Characters, Numbers and should be of minimum 8 characters"
+      );
       valid = false;
     } else {
       setPasswordErr("");
@@ -69,11 +68,11 @@ export default function SignupScreen({ navigation }) {
     }
 
     if (valid) {
-      await signup({ email, password });
-      //   setShowLoader(false);
-      return null;
-    } else {
-      setShowLoader(false);
+      async function trytosignup() {
+        setShowLoader(true);
+        await signup({ email, password });
+      }
+      trytosignup();
     }
   };
 
@@ -153,7 +152,7 @@ export default function SignupScreen({ navigation }) {
             style={styles.input}
             onChangeText={setEmail}
           />
-          {emailErr ? <Text style={styles.error}> {emailErr} </Text> : null}
+          {emailErr ? <Text style={styles.error}>{emailErr}</Text> : null}
         </View>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Password</Text>
@@ -167,9 +166,7 @@ export default function SignupScreen({ navigation }) {
             onChangeText={setPassword}
           />
           {/* <Text>{email + password}</Text> */}
-          {passwordErr ? (
-            <Text numberOfLines={2} style={styles.error}> {passwordErr} </Text>
-          ) : null}
+          {passwordErr ? <Text style={styles.error}>{passwordErr}</Text> : null}
         </View>
 
         <TouchableOpacity
@@ -221,7 +218,7 @@ const styles = StyleSheet.create({
   },
   error: {
     color: "#D32F2F",
-    paddingVertical: 5,
+    padding: 5,
     marginLeft: 5,
     letterSpacing: 0.5,
     backgroundColor: "#FFCDD2",
