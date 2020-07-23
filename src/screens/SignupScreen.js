@@ -55,8 +55,13 @@ export default function SignupScreen({ navigation }) {
       valid = true;
     }
 
+    var passpattern =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;
     if (!password) {
-      setPasswordErr("Please enter a valid Password");
+      setPasswordErr("Password is required *");
+      valid = false;
+    } else if (!passpattern.test(password)) {
+      setPasswordErr("Password must contain Characters, Numbers and a must contain 8 characters");
       valid = false;
     } else {
       setPasswordErr("");
@@ -83,6 +88,7 @@ export default function SignupScreen({ navigation }) {
 
   if (navigation.getParam("show")) {
     fadeIn();
+    fadeInBtn();
   }
 
   const outAnimation = () => {
@@ -162,7 +168,7 @@ export default function SignupScreen({ navigation }) {
           />
           {/* <Text>{email + password}</Text> */}
           {passwordErr ? (
-            <Text style={styles.error}> {passwordErr} </Text>
+            <Text numberOfLines={2} style={styles.error}> {passwordErr} </Text>
           ) : null}
         </View>
 

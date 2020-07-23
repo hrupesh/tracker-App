@@ -83,6 +83,7 @@ export default function LoginScreen({ navigation }) {
 
   if (navigation.getParam("show")) {
     fadeIn();
+    fadeInBtn();
   }
 
   const outAnimation = () => {
@@ -167,7 +168,7 @@ export default function LoginScreen({ navigation }) {
         </View>
 
         <TouchableOpacity
-          activeOpacity={0.6}
+          activeOpacity={0.8}
           onPress={() => validateForm(email, password)}
           style={styles.btnContainer}
         >
@@ -187,7 +188,7 @@ export default function LoginScreen({ navigation }) {
           </Animated.View>
         </TouchableOpacity>
         <View style={{ flexDirection: "row", justifyContent: "flex-start" }}>
-          <Text style={styles.loginLink}>Don't have an account?</Text>
+          <Text style={styles.loginLink}>Not Registered yet?</Text>
           <TouchableOpacity activeOpacity={0.15} onPress={outAnimation}>
             <Text style={styles.loginhref}>Register </Text>
           </TouchableOpacity>
@@ -216,7 +217,7 @@ const styles = StyleSheet.create({
   error: {
     color: "#D32F2F",
     paddingVertical: 5,
-    marginLeft: 5,
+    // marginLeft: 5,
     letterSpacing: 0.5,
     backgroundColor: "#FFCDD2",
   },
@@ -241,12 +242,12 @@ const styles = StyleSheet.create({
     letterSpacing: 4,
     fontWeight: "bold",
     fontFamily: "Roboto",
-    color: "#512DF8",
+    color: "#F44336",
     textAlign: "center",
-    borderLeftColor: "#512DF8",
-    borderLeftWidth: 5,
-    borderRightColor: "#512DF8",
-    borderRightWidth: 5,
+    // borderLeftColor: "#F44336",
+    // borderLeftWidth: 5,
+    // borderRightColor: "#F44336",
+    // borderRightWidth: 5,
     paddingHorizontal: 10,
     paddingVertical: 5,
     justifyContent: "center",
@@ -274,38 +275,40 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 18,
-    color: "#512DA8",
+    color: "#F44336",
     letterSpacing: 2,
   },
   title: {
     fontSize: 22,
-    color: "#512DA8",
+    color: "#D32F2F",
     letterSpacing: 2,
     fontWeight: "bold",
     paddingBottom: 5,
   },
   body: {
     fontSize: 18,
-    color: "#512DA8",
+    color: "#D32F2F",
     letterSpacing: 1,
     paddingVertical: 25,
   },
   input: {
-    backgroundColor: "#eee",
+    backgroundColor: "#D32F2F04",
     height: 50,
     fontSize: 18,
-    marginLeft: 5,
-    borderBottomColor: "#512DA8",
+    // marginLeft: 5,
+    marginTop:10,
+    borderBottomColor: "#D32F2F",
     borderBottomWidth: 2,
+    
   },
   btn: {
     marginTop: 30,
     margin: 25,
-    backgroundColor: "#512DF8",
+    backgroundColor: "#F44336",
     padding: 10,
-    borderRadius: 25,
+    // borderRadius: 25,
     elevation: 10,
-    width: "75%",
+    width: "90%",
     alignSelf: "center",
   },
   btnText: {
@@ -326,11 +329,11 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     margin: 5,
     fontSize: 16,
-    color: "blue",
+    color: "dodgerblue",
     letterSpacing: 0,
     paddingBottom: 1,
     borderBottomWidth: 2,
-    borderBottomColor: "blue",
+    borderBottomColor: "dodgerblue",
     fontWeight: "bold",
   },
   lottie: {
