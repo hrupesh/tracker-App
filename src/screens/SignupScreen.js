@@ -41,7 +41,7 @@ export default function SignupScreen({ navigation }) {
     }).start();
   };
 
-  const validateForm = (email, password) => {
+  const validateForm = async (email, password) => {
     setShowLoader(true);
 
     var valid = false;
@@ -64,9 +64,12 @@ export default function SignupScreen({ navigation }) {
     }
 
     if (valid) {
-      signup({ email, password });
+      await signup({ email, password });
+    //   setShowLoader(false);
+      return null
+    } else {
+      setShowLoader(false);
     }
-    // setShowLoader(false);
   };
 
   const fadeInBtn = () => {
@@ -104,10 +107,13 @@ export default function SignupScreen({ navigation }) {
     >
       <AnimatedLoader
         visible={showLoader}
-        overlayColor="#0006"
-        source={require("../../assets/signup.json")}
+        overlayColor="#000a"
+        // source={{
+        //   uri:
+        //     "https://assets10.lottiefiles.com/datafiles/qm9uaAEoe13l3eQ/data.json",
+        // }}
         animationStyle={styles.lottie}
-        speed={1.1}
+        speed={1.5}
       />
       <StatusBar backgroundColor="#512D88" barStyle="light-content" />
       <Animated.View
