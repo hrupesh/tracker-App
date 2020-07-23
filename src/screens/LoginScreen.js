@@ -45,10 +45,8 @@ export default function LoginScreen({ navigation }) {
     setShowLoader(true);
 
     var valid = false;
-
-    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (!emailPattern.test(email)) {
-      setEmailErr("Please enter a valid email");
+    if (!email) {
+      setEmailErr("Please enter a valid Email");
       valid = false;
     } else {
       setEmailErr("");

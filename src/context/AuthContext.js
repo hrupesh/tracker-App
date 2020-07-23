@@ -10,6 +10,11 @@ const authReducer = (state, action) => {
         errorMessage: "",
         token: action.payload,
       };
+    case "login":
+      return {
+        errorMessage: "",
+        token: action.payload,
+      };
     case "add_error":
       return {
         ...state,
@@ -55,7 +60,22 @@ const signup = (dispatch) => {
 };
 
 const login = (dispatch) => {
-  return ({ email, password }) => {};
+  return async ({ email, password }) => {
+    try {
+      const response = await trackerApi.post("/login", { email, password });
+      console.log(response.data);
+      await AsyncStorage.setItem("token", response.data.token);
+      dispatch({ type: "login", payload: response.data.token });
+      navigate("TrackList");
+    } catch (err) {
+      console.log(err.response.data);
+
+      dispatch({
+        type: "add_error",
+        payload: "An Error Occured while logging in!" + err,
+      });
+    }
+  };
 };
 
 const logout = (dispatch) => {
