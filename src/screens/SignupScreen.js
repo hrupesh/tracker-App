@@ -64,8 +64,9 @@ export default function SignupScreen({ navigation }) {
     }
 
     if (valid) {
-      setShowLoader(false);
+      signup({ email, password });
     }
+    // setShowLoader(false);
   };
 
   const fadeInBtn = () => {
@@ -101,12 +102,12 @@ export default function SignupScreen({ navigation }) {
       fadeDuration={0.5}
       source={{ uri: "https://picsum.photos/2000/3000" }}
     >
-        <AnimatedLoader
-        visible={visible}
-        overlayColor="rgba(255,255,255,0.75)"
-        source={require("./loader.json")}
+      <AnimatedLoader
+        visible={showLoader}
+        overlayColor="#0006"
+        source={require("../../assets/signup.json")}
         animationStyle={styles.lottie}
-        speed={1}
+        speed={1.1}
       />
       <StatusBar backgroundColor="#512D88" barStyle="light-content" />
       <Animated.View
@@ -326,6 +327,6 @@ const styles = StyleSheet.create({
   },
   lottie: {
     width: 100,
-    height: 100
-  }
+    height: 100,
+  },
 });
