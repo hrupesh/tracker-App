@@ -14,6 +14,7 @@ import {
 } from "react-native";
 import { Context as AuthContext } from "../context/AuthContext";
 import AnimatedLoader from "react-native-animated-loader";
+import { NavigationEvents } from "react-navigation";
 
 export default function LoginScreen({ navigation }) {
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function LoginScreen({ navigation }) {
     fadeInBtn();
   }, []);
 
-  const { state, login } = useContext(AuthContext);
+  const { state, login, clearErr } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailErr, setEmailErr] = useState("");
@@ -79,11 +80,11 @@ export default function LoginScreen({ navigation }) {
     }).start();
   };
 
-  if (navigation.getParam("show")) {
+  const showAnim = () => {
     fadeIn();
     fadeInBtn();
     // state.errorMessage ? (state.errorMessage = "") : (state.errorMessage = "");
-  }
+  };
 
   const outAnimation = () => {
     // alert("Fading IN");
@@ -107,6 +108,14 @@ export default function LoginScreen({ navigation }) {
       fadeDuration={0.5}
       source={{ uri: "https://picsum.photos/3000/3000" }}
     >
+      <NavigationEvents
+        onWillBlur={() => {
+          clearErr();
+        }}
+        onWillFocus={() => {
+          showAnim();
+        }}
+      />
       <AnimatedLoader
         visible={showLoader}
         overlayColor="#000a"
