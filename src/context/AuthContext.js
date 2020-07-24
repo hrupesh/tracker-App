@@ -15,6 +15,11 @@ const authReducer = (state, action) => {
         errorMessage: "",
         token: action.payload,
       };
+    case "clearErr":
+      return {
+        ...state,
+        errorMessage: "",
+      };
     case "add_error":
       return {
         ...state,
@@ -72,12 +77,17 @@ const login = (dispatch) => {
 
       dispatch({
         type: "add_error",
-        payload:  "Error: "+err.response.data.error,
+        payload: "Error: " + err.response.data.error,
       });
     }
   };
 };
 
+const clearErr = (dispatch) => {
+  return () => {
+    dispatch({ type: "clearErr" });
+  };
+};
 
 const logout = (dispatch) => {
   return ({ email, password }) => {};
@@ -85,6 +95,6 @@ const logout = (dispatch) => {
 
 export const { Provider, Context } = createDataContext(
   authReducer,
-  { signup, login, logout },
+  { signup, login, logout, clearErr },
   { token: null, errorMessage: "" }
 );

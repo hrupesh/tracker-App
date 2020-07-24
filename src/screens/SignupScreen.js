@@ -22,7 +22,7 @@ export default function SignupScreen({ navigation }) {
     fadeInBtn();
   }, []);
 
-  const { state, signup } = useContext(AuthContext);
+  const { state, signup, clearErr } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailErr, setEmailErr] = useState("");
@@ -31,7 +31,7 @@ export default function SignupScreen({ navigation }) {
 
   const fadeAnim = useRef(new Animated.Value(-1000)).current;
 
-  const fadeAnimBtn = useRef(new Animated.Value(2000)).current;
+  const fadeAnimBtn = useRef(new Animated.Value(1000)).current;
 
   const fadeIn = () => {
     // alert("Fading IN");
@@ -87,11 +87,11 @@ export default function SignupScreen({ navigation }) {
     }).start();
   };
 
-  if (navigation.getParam("show")) {
+  const showAnim = () => {
     fadeIn();
     fadeInBtn();
     // state.errorMessage ? (state.errorMessage = "") : (state.errorMessage = "");
-  }
+  };
 
   const outAnimation = () => {
     // alert("Fading IN");
@@ -115,6 +115,14 @@ export default function SignupScreen({ navigation }) {
       fadeDuration={0.5}
       source={{ uri: "https://picsum.photos/2000/3000" }}
     >
+      <NavigationEvents
+        onWillBlur={() => {
+          clearErr();
+        }}
+        onWillFocus={() => {
+          showAnim();
+        }}
+      />
       <AnimatedLoader
         visible={showLoader}
         overlayColor="#000a"
@@ -183,7 +191,7 @@ export default function SignupScreen({ navigation }) {
               {
                 transform: [
                   {
-                    translateY: fadeAnimBtn,
+                    translateX: fadeAnimBtn,
                   },
                 ],
               },
