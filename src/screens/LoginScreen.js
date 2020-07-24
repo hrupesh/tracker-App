@@ -83,6 +83,7 @@ export default function LoginScreen({ navigation }) {
   const showAnim = () => {
     fadeIn();
     fadeInBtn();
+    clearErr();
     // state.errorMessage ? (state.errorMessage = "") : (state.errorMessage = "");
   };
 

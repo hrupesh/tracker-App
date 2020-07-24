@@ -90,6 +90,7 @@ export default function SignupScreen({ navigation }) {
   const showAnim = () => {
     fadeIn();
     fadeInBtn();
+    clearErr();
     // state.errorMessage ? (state.errorMessage = "") : (state.errorMessage = "");
   };
 
