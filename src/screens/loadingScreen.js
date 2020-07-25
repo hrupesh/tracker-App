@@ -6,7 +6,9 @@ export default function loadingScreen() {
   const { localLogin } = useContext(AuthContext);
 
   useEffect(() => {
-    // localLogin();
+    setTimeout(() => {
+      localLogin();
+    }, 1000);
   }, []);
 
   return (
@@ -33,8 +35,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#270073",
-    justifyContent:'center',
-    alignItems:'center'
+    justifyContent: "center",
+    alignItems: "center",
   },
   loader: {
     height: "100%",
