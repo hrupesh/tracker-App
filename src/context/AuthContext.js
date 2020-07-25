@@ -27,10 +27,7 @@ const authReducer = (state, action) => {
       };
       console.log(state);
     case "logout":
-      return {
-        ...state,
-        token: "",
-      };
+      return null;
     default:
       return state;
   }

@@ -6,6 +6,7 @@ import {
   ImageBackground,
   Animated,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import { Button, Text } from "react-native-elements";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -31,7 +32,7 @@ export default function AccountScreen() {
     <ImageBackground
       resizeMethod="resize"
       resizeMode="cover"
-      source={{ uri: "https://picsum.photos/3000/3500" }}
+      source={{ url: "https://picsum.photos/3000/3500" }}
       style={styles.container}
     >
       <StatusBar backgroundColor="#27008F" />
@@ -42,6 +43,14 @@ export default function AccountScreen() {
       >
         LOGOUT
       </Text>
+      <Image
+        source={{
+          uri:
+            "https://www.clipartkey.com/mpngs/m/36-364563_crying-sad-emoji-png-sad-face-emoji-transparent.png",
+        }}
+        style={{ height: 300, width: 300 }}
+        resizeMode="cover"
+      />
       <TouchableOpacity
         activeOpacity={0.8}
         onPress={() => AnimateBtn()}
@@ -59,7 +68,7 @@ export default function AccountScreen() {
             },
           ]}
         >
-          <Text style={styles.btnText}>Login</Text>
+          <Text style={styles.btnText}>Logout</Text>
         </Animated.View>
       </TouchableOpacity>
     </ImageBackground>
@@ -68,7 +77,7 @@ export default function AccountScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#27008F",
+    backgroundColor: "#f7f7f7",
     flex: 1,
     padding: 25,
     justifyContent: "space-between",
