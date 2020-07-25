@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, StatusBar, ImageBackground } from "react-native";
 import { Button, Text } from "react-native-elements";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function AccountScreen() {
   return (
@@ -13,11 +14,15 @@ export default function AccountScreen() {
       <StatusBar backgroundColor="#27008F" />
       <Text
         h1
-        h1Style={{ color: "#fff", letterSpacing: 5, fontWeight: "700" }}
+        h1Style={{ color: "#fff", letterSpacing: 5, fontWeight: "100" }}
         style={styles.text}
       >
         LOGOUT
       </Text>
+      <Button
+        icon={<MaterialCommunityIcons name="logout" size={24} color="black" />}
+        title="Button with icon component"
+      />
     </ImageBackground>
   );
 }
@@ -31,8 +36,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    backgroundColor: "#0002",
-    width: "100%",
+    backgroundColor: "#0004",
+    width: "120%",
     textAlign: "center",
     padding: 25,
     borderRadius: 4,
