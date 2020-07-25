@@ -89,12 +89,23 @@ const clearErr = (dispatch) => {
   };
 };
 
+const localLogin = (dispatch) => async () => {
+  const token = AsyncStorage.getItem("token");
+  if (token) {
+    dispatch({ type: "login", payload: token });
+    navigate("TrackList");
+  } else {
+    alert("You need to login again!");
+    navigate("Login");
+  }
+};
+
 const logout = (dispatch) => {
   return ({ email, password }) => {};
 };
 
 export const { Provider, Context } = createDataContext(
   authReducer,
-  { signup, login, logout, clearErr },
+  { signup, login, logout, clearErr, localLogin },
   { token: null, errorMessage: "" }
 );

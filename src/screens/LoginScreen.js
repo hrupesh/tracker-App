@@ -22,7 +22,7 @@ export default function LoginScreen({ navigation }) {
     fadeInBtn();
   }, []);
 
-  const { state, login, clearErr } = useContext(AuthContext);
+  const { state, login, clearErr, localLogin } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailErr, setEmailErr] = useState("");
