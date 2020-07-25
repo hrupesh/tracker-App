@@ -106,9 +106,10 @@ const localLogin = (dispatch) => async () => {
 };
 
 const logout = (dispatch) => async () => {
-  console.log(AsyncStorage.getItem("token"));
+  const token = AsyncStorage.getItem("token");
+  console.log(token);
   await AsyncStorage.removeItem("token");
-  console.log(AsyncStorage.getItem("token"));
+  console.log(token);
   dispatch({ type: "logout" });
   navigate("loginFlow");
 };
