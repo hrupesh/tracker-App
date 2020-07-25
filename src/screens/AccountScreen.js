@@ -9,18 +9,21 @@ import {
 } from "react-native";
 import { Button, Text } from "react-native-elements";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Context as AuthContext } from "../context/AuthContext";
 
 export default function AccountScreen() {
   const btnAnim = useRef(new Animated.Value(0)).current;
 
+  const { logout } = useContext(AuthContext);
+
   const AnimateBtn = () => {
     // alert("Fading IN");
     Animated.timing(btnAnim, {
-      toValue: 1000,
-      duration: 1500,
+      toValue: 500,
+      duration: 1000,
       useNativeDriver: false,
     }).start(({ finished }) => {
-      alert("Done!");
+      logout();
     });
   };
 
