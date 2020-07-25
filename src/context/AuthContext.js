@@ -27,7 +27,10 @@ const authReducer = (state, action) => {
       };
       console.log(state);
     case "logout":
-      return null;
+      return {
+        token: null,
+        errorMessage: "",
+      };
     default:
       return state;
   }
@@ -103,14 +106,10 @@ const localLogin = (dispatch) => async () => {
 };
 
 const logout = (dispatch) => async () => {
-  try {
-    AsyncStorage.removeItem("token");
-    alert("You are Logged Out!");
-    dispatch({ type: "logout" });
-    navigate("Login");
-  } catch (err) {
-    alert("Error" + err.message);
-  }
+  await AsyncStorage.removeItem("token");
+  alert("You are Logged Out!", AsyncStorage.getItem("token"));
+  dispatch({ type: "logout" });
+  navigate("Login");
 };
 
 export const { Provider, Context } = createDataContext(

@@ -41,7 +41,7 @@ export default function AccountScreen() {
         h1Style={{ color: "#fff", letterSpacing: 5, fontWeight: "100" }}
         style={styles.text}
       >
-        LOGOUT
+        Really! 👀
       </Text>
       <Image
         source={{
