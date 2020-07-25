@@ -100,8 +100,15 @@ const localLogin = (dispatch) => async () => {
   }
 };
 
-const logout = (dispatch) => {
-  return ({ email, password }) => {};
+const logout = (dispatch) => async () => {
+  try {
+    AsyncStorage.removeItem("token");
+    alert("You are Logged Out!");
+    dispatch({ type: "logout" });
+    navigate("Login");
+  } catch (err) {
+    alert("Error" + err.message);
+  }
 };
 
 export const { Provider, Context } = createDataContext(

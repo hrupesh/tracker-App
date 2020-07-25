@@ -81,11 +81,11 @@ const styles = StyleSheet.create({
   btn: {
     marginTop: 30,
     margin: 25,
-    backgroundColor: "#F44336",
-    padding: 10,
+    backgroundColor: "#512DF8",
+    padding: 15,
     // borderRadius: 25,
     elevation: 10,
-    width: "90%",
+    width: 300,
     alignSelf: "center",
   },
   btnText: {
