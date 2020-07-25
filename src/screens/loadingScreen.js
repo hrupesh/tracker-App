@@ -15,7 +15,7 @@ export default function loadingScreen() {
         style={styles.loader}
         source={{
           uri:
-            "https://i.pinimg.com/originals/2f/eb/fd/2febfd017af4653f41ca4785d1db99e4.gif",
+            "https://cdn.dribbble.com/users/1162077/screenshots/4382009/animated-pattern.gif",
         }}
         resizeMode="cover"
         resizeMethod="resize"
