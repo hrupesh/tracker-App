@@ -91,7 +91,7 @@ const clearErr = (dispatch) => {
 
 const localLogin = (dispatch) => async () => {
   const token = AsyncStorage.getItem("token");
-  if (token) {
+  if (!token) {
     dispatch({ type: "login", payload: token });
     navigate("TrackList");
   } else {
