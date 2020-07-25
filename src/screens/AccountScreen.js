@@ -1,9 +1,29 @@
-import React from "react";
-import { StyleSheet, View, StatusBar, ImageBackground } from "react-native";
+import React, { useEffect, useRef, useContext } from "react";
+import {
+  StyleSheet,
+  View,
+  StatusBar,
+  ImageBackground,
+  Animated,
+  TouchableOpacity,
+} from "react-native";
 import { Button, Text } from "react-native-elements";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function AccountScreen() {
+  const btnAnim = useRef(new Animated.Value(0)).current;
+
+  const AnimateBtn = () => {
+    // alert("Fading IN");
+    Animated.timing(btnAnim, {
+      toValue: 1000,
+      duration: 1500,
+      useNativeDriver: false,
+    }).start(({ finished }) => {
+      alert("Done!");
+    });
+  };
+
   return (
     <ImageBackground
       resizeMethod="resize"
@@ -19,10 +39,26 @@ export default function AccountScreen() {
       >
         LOGOUT
       </Text>
-      <Button
-        icon={<MaterialCommunityIcons name="logout" size={24} color="black" />}
-        title="Button with icon component"
-      />
+      <TouchableOpacity
+        activeOpacity={0.8}
+        onPress={() => AnimateBtn()}
+        style={styles.btnContainer}
+      >
+        <Animated.View
+          style={[
+            styles.btn,
+            {
+              transform: [
+                {
+                  translateX: btnAnim,
+                },
+              ],
+            },
+          ]}
+        >
+          <Text style={styles.btnText}>Login</Text>
+        </Animated.View>
+      </TouchableOpacity>
     </ImageBackground>
   );
 }
@@ -41,5 +77,24 @@ const styles = StyleSheet.create({
     textAlign: "center",
     padding: 25,
     borderRadius: 4,
+  },
+  btn: {
+    marginTop: 30,
+    margin: 25,
+    backgroundColor: "#F44336",
+    padding: 10,
+    // borderRadius: 25,
+    elevation: 10,
+    width: "90%",
+    alignSelf: "center",
+  },
+  btnText: {
+    textAlign: "center",
+    fontSize: 18,
+    color: "white",
+    letterSpacing: 4,
+    textTransform: "uppercase",
+    fontWeight: "bold",
+    fontFamily: "Roboto",
   },
 });
