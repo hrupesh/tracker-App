@@ -95,24 +95,24 @@ const clearErr = (dispatch) => {
 };
 
 const localLogin = (dispatch) => async () => {
-  const token = AsyncStorage.getItem("token");
+  const token = await AsyncStorage.getItem("token");
+//   console.log("Token in login is:" + JSON.stringify(token));
   if (token) {
     dispatch({ type: "login", payload: token });
     navigate("TrackList");
   } else {
-    alert("You need to login again!");
+    // alert("You need to login again!");
     navigate("Login");
   }
 };
 
 const logout = (dispatch) => async () => {
-    const token2 = await AsyncStorage.getItem('token');
-    console.log(token2);
-  await AsyncStorage.removeItem('token');
-  const token = await AsyncStorage.getItem('token');
-  console.log(token);
+  await AsyncStorage.removeItem("token");
+//   console.log(
+//     "Tokenafter remove item is:" + JSON.stringify(await AsyncStorage.getItem("token"))
+//   );
   dispatch({ type: "logout" });
-  navigate("loginFlow");
+  navigate("Login");
 };
 
 export const { Provider, Context } = createDataContext(
