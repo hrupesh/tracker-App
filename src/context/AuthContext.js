@@ -26,6 +26,11 @@ const authReducer = (state, action) => {
         errorMessage: action.payload,
       };
       console.log(state);
+    case "logout":
+      return {
+        ...state,
+        token: "",
+      };
     default:
       return state;
   }
