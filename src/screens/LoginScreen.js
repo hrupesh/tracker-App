@@ -84,6 +84,7 @@ export default function LoginScreen({ navigation }) {
     fadeIn();
     fadeInBtn();
     clearErr();
+    localLogin();
     // state.errorMessage ? (state.errorMessage = "") : (state.errorMessage = "");
   };
 

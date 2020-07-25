@@ -22,7 +22,7 @@ export default function SignupScreen({ navigation }) {
     fadeInBtn();
   }, []);
 
-  const { state, signup, clearErr } = useContext(AuthContext);
+  const { state, signup, clearErr, localLogin } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailErr, setEmailErr] = useState("");
@@ -91,6 +91,7 @@ export default function SignupScreen({ navigation }) {
     fadeIn();
     fadeInBtn();
     clearErr();
+    localLogin();
     // state.errorMessage ? (state.errorMessage = "") : (state.errorMessage = "");
   };
 
