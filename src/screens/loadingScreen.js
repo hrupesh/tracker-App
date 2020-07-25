@@ -11,11 +11,11 @@ export default function loadingScreen() {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="#270073" 
-       animated={true}
-       barStyle="dark-content"
-       translucent
-       
+      <StatusBar
+        backgroundColor="#2700730F"
+        animated={true}
+        barStyle="light-content"
+        translucent
       />
       <Image
         style={styles.loader}
@@ -32,7 +32,9 @@ export default function loadingScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ccc",
+    backgroundColor: "#270073",
+    justifyContent:'center',
+    alignItems:'center'
   },
   loader: {
     height: "100%",
