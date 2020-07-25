@@ -20,6 +20,7 @@ export default function SignupScreen({ navigation }) {
   useEffect(() => {
     fadeIn();
     fadeInBtn();
+    localLogin();
   }, []);
 
   const { state, signup, clearErr, localLogin } = useContext(AuthContext);
@@ -91,7 +92,6 @@ export default function SignupScreen({ navigation }) {
     fadeIn();
     fadeInBtn();
     clearErr();
-    localLogin();
     // state.errorMessage ? (state.errorMessage = "") : (state.errorMessage = "");
   };
 

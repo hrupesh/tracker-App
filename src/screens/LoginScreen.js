@@ -20,6 +20,7 @@ export default function LoginScreen({ navigation }) {
   useEffect(() => {
     fadeIn();
     fadeInBtn();
+    localLogin();
   }, []);
 
   const { state, login, clearErr, localLogin } = useContext(AuthContext);
@@ -84,7 +85,6 @@ export default function LoginScreen({ navigation }) {
     fadeIn();
     fadeInBtn();
     clearErr();
-    localLogin();
     // state.errorMessage ? (state.errorMessage = "") : (state.errorMessage = "");
   };
 
