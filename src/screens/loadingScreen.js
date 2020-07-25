@@ -11,7 +11,7 @@ export default function loadingScreen() {
 
   return (
     <View style={styles.container}>
-        <StatusBar  backgroundColor="#512DF8" />
+      <StatusBar backgroundColor="#270073" />
       <Image
         style={styles.loader}
         source={{
