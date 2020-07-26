@@ -1,12 +1,14 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React from "react";
+import { StyleSheet, Text, SafeAreaView } from "react-native";
+import Map from "../components/map";
 
 export default function TrackCreate() {
-    return (
-        <View>
-            <Text>TrackCreate Screen</Text>
-        </View>
-    )
+  return (
+    <SafeAreaView>
+      <Text>TrackCreate Screen</Text>
+      <Map />
+    </SafeAreaView>
+  );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
