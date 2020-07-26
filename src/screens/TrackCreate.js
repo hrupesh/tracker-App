@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, SafeAreaView } from "react-native";
-import Map from "../components/map";
+import Map from "../components/Map";
 
 export default function TrackCreate() {
   return (
