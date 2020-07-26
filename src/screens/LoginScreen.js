@@ -107,7 +107,7 @@ export default function LoginScreen({ navigation }) {
       style={styles.container}
       resizeMethod="resize"
       resizeMode="cover"
-      fadeDuration={0.5}
+      fadeDuration={0.1}
       source={{ uri: "https://picsum.photos/3000/3000" }}
     >
       <NavigationEvents
