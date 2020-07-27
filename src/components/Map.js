@@ -9,8 +9,8 @@ export default function Map() {
       initialRegion={{
         latitude: 19.98848,
         longitude: 73.7804288,
-        latitudeDelta: 0.1,
-        longitudeDelta: 0.1,
+        latitudeDelta: 0.001,
+        longitudeDelta: 0.001,
       }}
     >
       {/* <Polyline /> */}
