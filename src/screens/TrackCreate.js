@@ -1,11 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, SafeAreaView } from "react-native";
+import { StyleSheet, SafeAreaView } from "react-native";
+import { Text } from "react-native-elements";
 import Map from "../components/Map";
 
 export default function TrackCreate() {
   return (
     <SafeAreaView>
-      <Text>TrackCreate Screen</Text>
+      <Text h3 h3Style={{ textAlign: "center", margin: 10, fontWeight:"100"}}>
+        Create New Track
+      </Text>
       <Map />
     </SafeAreaView>
   );
