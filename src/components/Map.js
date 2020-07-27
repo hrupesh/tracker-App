@@ -6,8 +6,8 @@ export default function Map() {
   let points = [];
   for (let i = 0; i < 10; i++) {
     points.push({
-      latitude: 20.0380938 + i * 0.001,
-      longitude: 73.80659 + i * 0.001,
+      latitude: 20.0380938 + i * 0.0001,
+      longitude: 73.80659 + i * 0.0001,
     });
   }
 
