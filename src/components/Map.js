@@ -10,7 +10,6 @@ export default function Map() {
       longitude: 73.80659 + i * 0.0001,
     });
   }
-  asd
 
   return (
     <MapView
