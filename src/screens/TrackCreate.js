@@ -5,7 +5,7 @@ import Map from "../components/Map";
 
 export default function TrackCreate() {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Text h3 h3Style={styles.title}>
         Create New Track
       </Text>
@@ -21,4 +21,8 @@ const styles = StyleSheet.create({
     fontWeight: "100",
     letterSpacing: 2,
   },
+  container:{
+      flex: 1,
+      backgroundColor:'#512DA80F'
+  }
 });
