@@ -8,7 +8,7 @@ export default function loadingScreen() {
   useEffect(() => {
     setTimeout(() => {
       localLogin();
-    }, 1000);
+    }, 2000);
   }, []);
 
   return (
