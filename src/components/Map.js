@@ -1,20 +1,20 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import MapView, { Polyline } from "react-native-maps";
+import MapView, { Polyline, Marker } from "react-native-maps";
 
 export default function Map() {
   let points = [];
   for (let i = 0; i < 20; i++) {
-    if( i % 2 === 0){
+    if (i % 2 === 0) {
       points.push({
         latitude: 20.0380938 + i * 0.0001,
         longitude: 73.80659 + i * 0.0001,
       });
-    }else{
-        points.push({
-          latitude: 20.0380938 - i * 0.0001,
-          longitude: 73.80659 + i * 0.0001,
-        });
+    } else {
+      points.push({
+        latitude: 20.0380938 - i * 0.0001,
+        longitude: 73.80659 + i * 0.0001,
+      });
     }
   }
 
@@ -28,10 +28,16 @@ export default function Map() {
         longitudeDelta: 0.001,
       }}
     >
-      <Polyline
-        coordinates={points}
-        strokeColor="#212121"
-      />
+      <Polyline coordinates={points} strokeColor="#212121" />
+      {points.map((point) => (
+        <Marker
+          draggable
+          pinColor="green"
+          coordinate={point}
+          title={"Dynamic Marker"}
+          description={"Dynamic Marker Description"}
+        />
+      ))}
     </MapView>
   );
 }
