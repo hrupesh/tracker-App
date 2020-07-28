@@ -1,4 +1,4 @@
-import "../_mockLocation";
+// import "../_mockLocation";
 import React, { useEffect, useState } from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 import { Text } from "react-native-elements";
@@ -12,6 +12,8 @@ import {
 export default function TrackCreate() {
   const [error, setError] = useState(null);
 
+  const [cLoc, setCLoc] = useState([]);
+
   const startWatching = async () => {
     try {
       await requestPermissionsAsync();
@@ -23,6 +25,7 @@ export default function TrackCreate() {
         },
         (location) => {
           console.log(location);
+          setCLoc(location);
         }
       );
     } catch (err) {
@@ -39,7 +42,7 @@ export default function TrackCreate() {
       <Text h3 h3Style={styles.title}>
         Create New Track
       </Text>
-      <Map />
+      <Map cpos={cLoc} />
       {error ? <Text>Error : {error}</Text> : null}
     </SafeAreaView>
   );
