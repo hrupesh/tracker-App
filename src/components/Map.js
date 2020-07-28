@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import MapView, { Polyline, Marker } from "react-native-maps";
 import { FontAwesome5 } from "@expo/vector-icons";
 
-export default function Map({ cpos }) {
+export default function Map() {
   let points = [];
   for (let i = 0; i < 20; i++) {
     if (i % 2 === 0) {
@@ -19,13 +19,6 @@ export default function Map({ cpos }) {
     }
   }
 
-  console.log(cpos);
-  const latlong = {
-    latitude: cpos["coords"]["latitude"],
-    longitude: cpos["coords"]["longitude"],
-  };
-
-  console.log(latlong);
 
   return (
     <MapView
@@ -38,10 +31,6 @@ export default function Map({ cpos }) {
       }}
     >
       <Polyline coordinates={points} strokeColor="#212121" />
-      {points.map((point) => (
-        <Marker coordinate={point} title={"ABCD"} description={"abcd"} />
-      ))}
-      {/* <Marker coordinate={latlong} title="Current Location" /> */}
     </MapView>
   );
 }
