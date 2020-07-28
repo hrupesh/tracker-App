@@ -19,13 +19,13 @@ export default function Map({ cpos }) {
     }
   }
 
-  // console.log(cpos);
-  const latlong = [
-    {
-      latitude: cpos.coords.latitude,
-      longitude: cpos.coords.longitude,
-    },
-  ];
+  console.log(cpos);
+  const latlong = {
+    latitude: cpos["coords"]["latitude"],
+    longitude: cpos["coords"]["longitude"],
+  };
+
+  console.log(latlong);
 
   return (
     <MapView
@@ -38,7 +38,10 @@ export default function Map({ cpos }) {
       }}
     >
       <Polyline coordinates={points} strokeColor="#212121" />
-      <Marker coordinate={latlong} title="Current Location" />
+      {points.map((point) => (
+        <Marker coordinate={point} title={"ABCD"} description={"abcd"} />
+      ))}
+      {/* <Marker coordinate={latlong} title="Current Location" /> */}
     </MapView>
   );
 }
