@@ -16,3 +16,5 @@ const getLocation = (increment) => {
     },
   };
 };
+
+let counter = 0;
