@@ -12,20 +12,17 @@ import {
 export default function TrackCreate() {
   const [error, setError] = useState(null);
 
-  const [cLoc, setCLoc] = useState([]);
-
   const startWatching = async () => {
     try {
       await requestPermissionsAsync();
       await watchPositionAsync(
         {
           accuracy: Accuracy.BestForNavigation,
-          timeInterval: 500,
-          distanceInterval: 2,
+          timeInterval: 100,
+          distanceInterval: 10,
         },
         (location) => {
           console.log(location);
-          setCLoc(location);
         }
       );
     } catch (err) {
@@ -42,7 +39,7 @@ export default function TrackCreate() {
       <Text h3 h3Style={styles.title}>
         Create New Track
       </Text>
-      <Map cpos={cLoc} />
+      <Map />
       {error ? <Text>Error : {error}</Text> : null}
     </SafeAreaView>
   );
