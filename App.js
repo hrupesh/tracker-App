@@ -9,6 +9,7 @@ import AccountScreen from "./src/screens/AccountScreen";
 import TrackList from "./src/screens/TrackList";
 import TrackDetail from "./src/screens/TrackDetail";
 import { Provider as AuthProvider } from "./src/context/AuthContext";
+import { Provider as LocationProvider } from "./src/context/LocationContext";
 import { setNavigator } from "./src/navigationRef";
 import loadingScreen from "./src/screens/loadingScreen";
 
