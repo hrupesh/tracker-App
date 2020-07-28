@@ -26,7 +26,7 @@ export default function TrackCreate() {
         },
         (location) => {
           addLocation(location);
-          console.log(location);
+          // console.log(location);
         }
       );
     } catch (err) {

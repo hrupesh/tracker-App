@@ -4,19 +4,19 @@ import MapView, { Polyline, Marker } from "react-native-maps";
 
 export default function Map() {
   let points = [];
-  // for (let i = 0; i < 20; i++) {
-  //   // if (i % 2 === 0) {
-  //   //   points.push({
-  //   //     latitude: 20.0382773 + i * 0.0001,
-  //   //     longitude: 73.8064166 + i * 0.0001,
-  //   //   });
-  //   // } else {
-  //   //   points.push({
-  //   //     latitude: 20.0382773 - i * 0.0001,
-  //   //     longitude: 73.8064166 + i * 0.0001,
-  //   //   });
-  //   }
-  // }
+  for (let i = 0; i < 20; i++) {
+    if (i % 2 === 0) {
+      points.push({
+        latitude: 20.0382168 + i * 0.0001,
+        longitude: 73.8064859+ i * 0.0001,
+      });
+    } else {
+      points.push({
+        latitude: 20.0382168 - i * 0.0001,
+        longitude: 20.0382168 + i * 0.0001,
+      });
+    }
+  }
 
   const pos = {
     latitude: 20.0382168,
