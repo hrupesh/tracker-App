@@ -35,7 +35,6 @@ export default function Map() {
       ))} */}
     </MapView>
   );
-  
 }
 
 const styles = StyleSheet.create({
