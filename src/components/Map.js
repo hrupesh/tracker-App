@@ -17,8 +17,8 @@ export default function Map() {
       initialRegion={{
         latitude: 20.0381938,
         longitude: 73.80659,
-        latitudeDelta: 0.001,
-        longitudeDelta: 0.001,
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.01,
       }}
     >
       <Polyline coordinates={points} strokeColor="#212121"  />
