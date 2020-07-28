@@ -19,7 +19,6 @@ export default function Map() {
     }
   }
 
-
   return (
     <MapView
       style={styles.map}
@@ -30,9 +29,13 @@ export default function Map() {
         longitudeDelta: 0.001,
       }}
     >
-      <Polyline coordinates={points} strokeColor="#212121" />
+      <Polyline coordinates={points} strokeColor="#212121" strokeWidth={5} />
+      {/* {points.map((point) => (
+        <Marker coordinate={point} />
+      ))} */}
     </MapView>
   );
+  
 }
 
 const styles = StyleSheet.create({

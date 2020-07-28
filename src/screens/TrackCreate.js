@@ -39,7 +39,7 @@ export default function TrackCreate() {
       <Text h3 h3Style={styles.title}>
         Create New Track
       </Text>
-      <Map />
+      <Map  />
       {error ? <Text>Error : {error}</Text> : null}
     </SafeAreaView>
   );
