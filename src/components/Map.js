@@ -1,19 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import MapView, { Polyline, Marker } from "react-native-maps";
+import { Context as LocationContext } from "../context/LocationContext";
 
 export default function Map() {
+  const { state } = useContext(LocationContext);
+
+  console.log(state.currentLocation);
+
   let points = [];
   for (let i = 0; i < 20; i++) {
     if (i % 2 === 0) {
       points.push({
         latitude: 20.0382168 + i * 0.0001,
-        longitude: 73.8064859+ i * 0.0001,
+        longitude: 73.8064859 + i * 0.0001,
       });
     } else {
       points.push({
         latitude: 20.0382168 - i * 0.0001,
-        longitude: 20.0382168 + i * 0.0001,
+        longitude: 73.8064859 + i * 0.0001,
       });
     }
   }
@@ -33,14 +38,9 @@ export default function Map() {
         longitudeDelta: 0.001,
       }}
     >
-      <Polyline coordinates={points} strokeColor="#212121" strokeWidth={5} />
+      <Polyline coordinates={points} strokeColor="#512DF8" strokeWidth={5} />
       {/* {points.map((point) => ( */}
-      <Marker
-        coordinate={pos}
-        title="Location"
-        description="Desc"
-        style={{ height: 50, width: 50 }}
-      />
+      <Marker coordinate={pos} title="Hi!" />
       {/* ))} */}
     </MapView>
   );
