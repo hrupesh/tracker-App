@@ -17,7 +17,7 @@ export default function TrackCreate() {
       await requestPermissionsAsync();
       await watchPositionAsync(
         {
-          accuracy: 10,
+          accuracy: Accuracy.BestForNavigation,
           timeInterval: 500,
           distanceInterval: 2,
         },
