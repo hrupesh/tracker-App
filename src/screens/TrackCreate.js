@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 import { Text } from "react-native-elements";
 import Map from "../components/Map";
+import { requestPermissionsAsync } from "expo-location";
 
 export default function TrackCreate() {
   return (
@@ -21,8 +22,8 @@ const styles = StyleSheet.create({
     fontWeight: "100",
     letterSpacing: 2,
   },
-  container:{
-      flex: 1,
-      backgroundColor:'#512DA80F'
-  }
+  container: {
+    flex: 1,
+    backgroundColor: "#512DA80F",
+  },
 });
