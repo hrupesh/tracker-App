@@ -30,15 +30,6 @@ export default function Map() {
       }}
     >
       <Polyline coordinates={points} strokeColor="#212121" />
-      {points.map((point) => (
-        <Marker
-          draggable
-          image={{ uri: "https://picsum.photos/49/49" }}
-          coordinate={point}
-          title={"Dynamic Marker"}
-          description={"Dynamic Marker Description"}
-        />
-      ))}
     </MapView>
   );
 }
