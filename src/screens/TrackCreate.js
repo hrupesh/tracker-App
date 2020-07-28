@@ -1,5 +1,5 @@
 import "../_mockLocation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 import { Text } from "react-native-elements";
 import Map from "../components/Map";
@@ -13,6 +13,8 @@ import { Context as LocationContext } from "../context/LocationContext";
 export default function TrackCreate() {
   const [error, setError] = useState(null);
 
+  const { addLocation } = useContext(LocationContext);
+
   const startWatching = async () => {
     try {
       await requestPermissionsAsync();
@@ -23,6 +25,7 @@ export default function TrackCreate() {
           distanceInterval: 1,
         },
         (location) => {
+          addLocation(location);
           console.log(location);
         }
       );
