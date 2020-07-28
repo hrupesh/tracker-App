@@ -33,10 +33,7 @@ export default function Map() {
       {points.map((point) => (
         <Marker
           draggable
-          image={{
-            uri:
-              "https://i7.pngguru.com/preview/731/25/158/computer-icons-google-map-maker-marker-pen-cartodb-clip-art-map-marker.jpg",
-          }}
+          image={{ uri: "https://picsum.photos/49/49" }}
           coordinate={point}
           title={"Dynamic Marker"}
           description={"Dynamic Marker Description"}
