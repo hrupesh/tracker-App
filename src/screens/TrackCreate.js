@@ -1,4 +1,4 @@
-import "../_mockLocation";
+// import "../_mockLocation";
 import React, { useEffect, useState } from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 import { Text } from "react-native-elements";
@@ -17,7 +17,7 @@ export default function TrackCreate() {
       await requestPermissionsAsync();
       await watchPositionAsync(
         {
-          accuracy: Accuracy.BestForNavigation,
+          accuracy: 10,
           timeInterval: 500,
           distanceInterval: 2,
         },
