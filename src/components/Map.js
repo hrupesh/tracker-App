@@ -21,7 +21,7 @@ export default function Map() {
         longitudeDelta: 0.001,
       }}
     >
-      <Polyline coordinates={points} strokeColor="#512DF8" />
+      <Polyline coordinates={points} strokeColor="#212121"  />
     </MapView>
   );
 }
