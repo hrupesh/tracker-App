@@ -6,27 +6,27 @@ import { Context as LocationContext } from "../context/LocationContext";
 export default function Map() {
   const { state } = useContext(LocationContext);
 
-  console.log(state.currentLocation);
+  console.log(state);
 
-  let points = [];
-  for (let i = 0; i < 20; i++) {
-    if (i % 2 === 0) {
-      points.push({
-        latitude: 20.0382168 + i * 0.0001,
-        longitude: 73.8064859 + i * 0.0001,
-      });
-    } else {
-      points.push({
-        latitude: 20.0382168 - i * 0.0001,
-        longitude: 73.8064859 + i * 0.0001,
-      });
-    }
-  }
+  // let points = [];
+  // for (let i = 0; i < 20; i++) {
+  //   if (i % 2 === 0) {
+  //     points.push({
+  //       latitude: 20.0382168 + i * 0.0001,
+  //       longitude: 73.8064859 + i * 0.0001,
+  //     });
+  //   } else {
+  //     points.push({
+  //       latitude: 20.0382168 - i * 0.0001,
+  //       longitude: 73.8064859 + i * 0.0001,
+  //     });
+  //   }
+  // }
 
-  const pos = {
-    latitude: 20.0382168,
-    longitude: 73.8064859,
-  };
+  // const pos = {
+  //   latitude: 20.0382168,
+  //   longitude: 73.8064859,
+  // };
 
   return (
     <MapView
@@ -38,10 +38,10 @@ export default function Map() {
         longitudeDelta: 0.001,
       }}
     >
-      <Polyline coordinates={points} strokeColor="#512DF8" strokeWidth={5} />
-      {/* {points.map((point) => ( */}
-      <Marker coordinate={pos} title="Hi!" />
-      {/* ))} */}
+      {/* <Polyline coordinates={points} strokeColor="#512DF8" strokeWidth={5} />
+      {points.map((point) => (
+       <Marker coordinate={pos} title="Hi!" />
+        ))} */}
     </MapView>
   );
 }
