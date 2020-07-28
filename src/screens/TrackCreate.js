@@ -1,4 +1,4 @@
-// import "../_mockLocation";
+import "../_mockLocation";
 import React, { useEffect, useState } from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 import { Text } from "react-native-elements";
@@ -8,6 +8,7 @@ import {
   watchPositionAsync,
   Accuracy,
 } from "expo-location";
+import { Context as LocationContext } from "../context/LocationContext";
 
 export default function TrackCreate() {
   const [error, setError] = useState(null);
@@ -18,8 +19,8 @@ export default function TrackCreate() {
       await watchPositionAsync(
         {
           accuracy: Accuracy.BestForNavigation,
-          timeInterval: 100,
-          distanceInterval: 10,
+          timeInterval: 1000,
+          distanceInterval: 1,
         },
         (location) => {
           console.log(location);
@@ -39,7 +40,7 @@ export default function TrackCreate() {
       <Text h3 h3Style={styles.title}>
         Create New Track
       </Text>
-      <Map  />
+      <Map />
       {error ? <Text>Error : {error}</Text> : null}
     </SafeAreaView>
   );
