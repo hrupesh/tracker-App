@@ -3,7 +3,11 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 import { Text } from "react-native-elements";
 import Map from "../components/Map";
-import { requestPermissionsAsync } from "expo-location";
+import {
+  requestPermissionsAsync,
+  watchPositionAsync,
+  Accuracy,
+} from "expo-location";
 
 export default function TrackCreate() {
   const [error, setError] = useState(null);
@@ -11,6 +15,16 @@ export default function TrackCreate() {
   const startWatching = async () => {
     try {
       await requestPermissionsAsync();
+      await watchPositionAsync(
+        {
+          accuracy: Accuracy.BestForNavigation,
+          timeInterval: 500,
+          distanceInterval: 2,
+        },
+        (location) => {
+          console.log(location);
+        }
+      );
     } catch (err) {
       setError(err);
     }
