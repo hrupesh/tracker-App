@@ -8,7 +8,13 @@ export default function Map() {
 
   console.log(state);
 
-  // let points = [];
+  let points = [];
+
+  points.push({
+    latitude: state.currentLocation.coords.latitude,
+    longitude: state.currentLocation.coords.longitude,
+  });
+
   // for (let i = 0; i < 20; i++) {
   //   if (i % 2 === 0) {
   //     points.push({
@@ -38,8 +44,8 @@ export default function Map() {
         longitudeDelta: 0.001,
       }}
     >
-      {/* <Polyline coordinates={points} strokeColor="#512DF8" strokeWidth={5} />
-      {points.map((point) => (
+      <Polyline coordinates={points} strokeColor="#512DF8" strokeWidth={5} />
+      {/*  {points.map((point) => (
        <Marker coordinate={pos} title="Hi!" />
         ))} */}
     </MapView>
