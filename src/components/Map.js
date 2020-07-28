@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import MapView, { Polyline, Marker } from "react-native-maps";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 export default function Map() {
   let points = [];
@@ -32,7 +33,10 @@ export default function Map() {
       {points.map((point) => (
         <Marker
           draggable
-          pinColor="green"
+          image={{
+            uri:
+              "https://i7.pngguru.com/preview/731/25/158/computer-icons-google-map-maker-marker-pen-cartodb-clip-art-map-marker.jpg",
+          }}
           coordinate={point}
           title={"Dynamic Marker"}
           description={"Dynamic Marker Description"}
