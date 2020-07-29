@@ -14,16 +14,16 @@ export default function Map() {
     return <ActivityIndicator size="large" style={{ marginTop: "50%" }} />;
   }
 
-  let points = [];
+  // let points = [];
 
-  for (let i = 0; i < 10; i++) {
-    points.push({
-      latitude: 20.0382168 + i * 0.0001,
-      longitude: 73.8064859 + i * 0.0001,
-    });
-  }
+  // for (let i = 0; i < 10; i++) {
+  //   points.push({
+  //     latitude: 20.0382168 + i * 0.0001,
+  //     longitude: 73.8064859 + i * 0.0001,
+  //   });
+  // }
 
-  var dpoints = [];
+  // var dpoints = [];
 
   const mapStyle = [
     {
@@ -269,10 +269,11 @@ export default function Map() {
         longitudeDelta: 0.001,
       }}
     >
-      <Polyline coordinates={points} strokeColor="#fffe" strokeWidth={5} />
+      <Marker coordinate={{ ...currentLocation.coords }} title="Hi!" />
+      {/* <Polyline coordinates={points} strokeColor="#fffe" strokeWidth={5} />
       {points.map((point) => (
         <Marker key={point.latitude} coordinate={point} title="Hi!" />
-      ))}
+      ))} */}
     </MapView>
   );
 }
