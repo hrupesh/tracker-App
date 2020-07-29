@@ -9,34 +9,12 @@ import {
   Accuracy,
 } from "expo-location";
 import { Context as LocationContext } from "../context/LocationContext";
+import useLocation from "../hooks/useLocation";
 
 export default function TrackCreate() {
-  const [error, setError] = useState(null);
-
   const { addLocation } = useContext(LocationContext);
 
-  const startWatching = async () => {
-    try {
-      await requestPermissionsAsync();
-      await watchPositionAsync(
-        {
-          accuracy: Accuracy.BestForNavigation,
-          timeInterval: 100,
-          distanceInterval: 2,
-        },
-        (location) => {
-          addLocation(location);
-          // console.log(location);
-        }
-      );
-    } catch (err) {
-      setError(err);
-    }
-  };
-
-  useEffect(() => {
-    startWatching();
-  }, []);
+  useLocation(addLocation);
 
   return (
     <SafeAreaView style={styles.container}>

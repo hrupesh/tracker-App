@@ -5,7 +5,7 @@ import {
   watchPositionAsync,
 } from "expo-location";
 
-export default () => {
+export default (callback) => {
   const [error, setError] = useState(null);
 
   const startWatching = async () => {
@@ -17,10 +17,7 @@ export default () => {
           timeInterval: 100,
           distanceInterval: 2,
         },
-        (location) => {
-          addLocation(location);
-          // console.log(location);
-        }
+        callback
       );
     } catch (err) {
       setError(err);
@@ -30,4 +27,6 @@ export default () => {
   useEffect(() => {
     startWatching();
   }, []);
+
+  return [err];
 };
