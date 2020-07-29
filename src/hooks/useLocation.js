@@ -18,9 +18,9 @@ export default (shouldTrack, callback) => {
           timeInterval: 100,
           distanceInterval: 2,
         },
-        callback,
-        setSubcriber(sub)
+        callback
       );
+      setSubcriber(sub);
     } catch (err) {
       setError(err);
     }
@@ -31,6 +31,7 @@ export default (shouldTrack, callback) => {
       startWatching();
     } else {
       subcriber.remove();
+      setSubcriber(null);
     }
   }, [shouldTrack]);
 
