@@ -49,13 +49,12 @@ export default function TrackCreate() {
 
 const styles = StyleSheet.create({
   title: {
-    textAlign: "center",
     margin: 15,
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: "100",
-    letterSpacing: 5,
+    letterSpacing: 2,
     color: "white",
-    textShadowColor: "#512DF8",
+    textShadowColor: "black",
     textShadowRadius: 50,
     textShadowOffset: {
       height: 0,

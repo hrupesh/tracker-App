@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
-import MapView, { Polyline, Marker } from "react-native-maps";
+import MapView, { Polyline, Marker , Circle} from "react-native-maps";
 import { Context as LocationContext } from "../context/LocationContext";
 
 export default function Map() {
@@ -11,7 +11,7 @@ export default function Map() {
   // console.log(currentLocation);
 
   if (!currentLocation) {
-    return <ActivityIndicator size="large" style={{ marginTop: "50%" }} />;
+    return <ActivityIndicator size="large" style={{ marginTop: "25%" }} />;
   }
 
   // let points = [];
@@ -278,6 +278,12 @@ export default function Map() {
         draggable
         coordinate={{ ...currentLocation.coords }}
         title="Hi!"
+      />
+      <Circle  
+        center={currentLocation.coords}
+        radius={120}
+        strokeColor="rgba(158,158,255,1)"
+        fillColor="rgba(158,158,255,0.3)"
       />
       {/* <Polyline coordinates={points} strokeColor="#fffe" strokeWidth={5} />
       {points.map((point) => (
