@@ -1,6 +1,6 @@
 import * as Location from "expo-location";
 
-const tenMeters = 0.1;
+const tenMeters = 0.001;
 
 const getLocation = (increment) => {
   return {
