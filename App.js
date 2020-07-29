@@ -12,6 +12,7 @@ import { Provider as AuthProvider } from "./src/context/AuthContext";
 import { Provider as LocationProvider } from "./src/context/LocationContext";
 import { setNavigator } from "./src/navigationRef";
 import LoadingScreen from "./src/screens/LoadingScreen";
+import { StatusBar } from "react-native";
 
 const switchNavigator = createSwitchNavigator({
   loading: LoadingScreen,
@@ -35,6 +36,7 @@ export default () => {
   return (
     <LocationProvider>
       <AuthProvider>
+      <StatusBar backgroundColor="#512D88" barStyle="light-content" />
         <App
           ref={(navigator) => {
             setNavigator(navigator);
