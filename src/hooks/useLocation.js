@@ -28,5 +28,5 @@ export default (callback) => {
     startWatching();
   }, []);
 
-  return [err];
+  return [error];
 };

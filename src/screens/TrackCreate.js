@@ -14,7 +14,7 @@ import useLocation from "../hooks/useLocation";
 export default function TrackCreate() {
   const { addLocation } = useContext(LocationContext);
 
-  useLocation(addLocation);
+  const [error] = useLocation(addLocation);
 
   return (
     <SafeAreaView style={styles.container}>
