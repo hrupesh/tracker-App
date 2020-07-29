@@ -9,6 +9,7 @@ export default function Map() {
   } = useContext(LocationContext);
 
   // console.log(currentLocation);
+  console.log(currentLocation.coords["accuracy"]);
 
   if (!currentLocation) {
     return <ActivityIndicator size="large" style={{ marginTop: "25%" }} />;
@@ -281,7 +282,7 @@ export default function Map() {
       />
       <Circle
         center={currentLocation.coords}
-        radius={currentLocation.coords.accuracy}
+        radius={currentLocation.coords["accuracy"]}
         strokeColor="rgba(158,158,255,1)"
         fillColor="rgba(158,158,255,0.3)"
       />
@@ -296,6 +297,6 @@ export default function Map() {
 const styles = StyleSheet.create({
   map: {
     width: "100%",
-    height: "60%",
+    height: "75%",
   },
 });
