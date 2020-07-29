@@ -6,7 +6,7 @@ import { Context as LocationContext } from "../context/LocationContext";
 export default function Map() {
   const { state } = useContext(LocationContext);
 
-  // console.log(state);
+  console.log(state);
 
   let points = [];
 
@@ -16,6 +16,13 @@ export default function Map() {
       longitude: 73.8064859 + i * 0.0001,
     });
   }
+
+  var dpoints = [];
+
+  dpoints.push({
+    latitude: state.currentLocation.coords.latitude,
+    longitude: state.currentLocation.coords.longitude,
+  });
 
   const pos = {
     latitude: 20.0382168,
@@ -241,7 +248,7 @@ export default function Map() {
       elementType: "geometry",
       stylers: [
         {
-          color: "#0e1626",
+          color: "#0097A7",
         },
       ],
     },
@@ -267,8 +274,12 @@ export default function Map() {
         longitudeDelta: 0.001,
       }}
     >
-      <Polyline coordinates={points} strokeColor="#512DF8" strokeWidth={5} />
+      <Polyline coordinates={points} strokeColor="#fffe" strokeWidth={5} />
       {points.map((point) => (
+        <Marker key={point.latitude} coordinate={point} title="Hi!" />
+      ))}
+      <Polyline coordinates={dpoints} strokeColor="red" strokeWidth={5} />
+      {dpoints.map((point) => (
         <Marker key={point.latitude} coordinate={point} title="Hi!" />
       ))}
     </MapView>
