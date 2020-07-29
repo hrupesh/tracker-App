@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
 import MapView, { Polyline, Marker } from "react-native-maps";
 import { Context as LocationContext } from "../context/LocationContext";
 import LoadingScreen from "../screens/LoadingScreen";
@@ -12,7 +12,12 @@ export default function Map() {
   console.log(currentLocation);
 
   if (!currentLocation) {
-    return <LoadingScreen />;
+    return <AnimatedLoader
+    visible={true}
+    overlayColor="#0004"
+    animationStyle={{ height:200, width: 200 }}
+    speed={1.5}
+  />
   }
 
   let points = [];
