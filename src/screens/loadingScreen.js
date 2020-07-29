@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { StyleSheet, Text, View, Image, StatusBar } from "react-native";
 import { Context as AuthContext } from "../context/AuthContext";
 
-export default function loadingScreen() {
+export default function LoadingScreen() {
   const { localLogin } = useContext(AuthContext);
 
   useEffect(() => {

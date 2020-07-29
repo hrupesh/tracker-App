@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import MapView, { Polyline, Marker } from "react-native-maps";
 import { Context as LocationContext } from "../context/LocationContext";
-import loadingScreen from "../screens/loadingScreen";
+import LoadingScreen from "../screens/LoadingScreen";
 
 export default function Map() {
   const {
@@ -12,7 +12,7 @@ export default function Map() {
   console.log(currentLocation);
 
   if (!currentLocation) {
-    return <loadingScreen />;
+    return <LoadingScreen />;
   }
 
   let points = [];
