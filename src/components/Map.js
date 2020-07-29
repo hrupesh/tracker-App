@@ -10,11 +10,6 @@ export default function Map() {
 
   let points = [];
 
-  points.push({
-    latitude: state.currentLocation.coords.latitude,
-    longitude: state.currentLocation.coords.longitude,
-  });
-
   // for (let i = 0; i < 20; i++) {
   //   if (i % 2 === 0) {
   //     points.push({
