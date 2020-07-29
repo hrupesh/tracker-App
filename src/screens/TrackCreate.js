@@ -40,7 +40,7 @@ export default function TrackCreate() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text h3 h3Style={styles.title}>
+      <Text style={styles.title}>
         New Track
       </Text>
       <Map />
@@ -52,12 +52,13 @@ export default function TrackCreate() {
 const styles = StyleSheet.create({
   title: {
     textAlign: "center",
-    margin: 10,
+    margin: 15,
+    fontSize:24,
     fontWeight: "100",
     letterSpacing: 5,
     color:'white',
-    textShadowColor:'white',
-    textShadowRadius:150,
+    textShadowColor:'#512DF8',
+    textShadowRadius:50,
     textShadowOffset:{
       height:0,
       width:0
