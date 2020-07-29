@@ -1,5 +1,6 @@
 import "../_mockLocation";
 import React, { useEffect, useState, useContext } from "react";
+import { withNavigationFocus } from "react-navigation";
 import { StyleSheet, SafeAreaView } from "react-native";
 import { Text } from "react-native-elements";
 import Map from "../components/Map";
@@ -11,10 +12,12 @@ import {
 import { Context as LocationContext } from "../context/LocationContext";
 import useLocation from "../hooks/useLocation";
 
-export default function TrackCreate() {
+const TrackCreate = ({ isFocused }) => {
   const { addLocation } = useContext(LocationContext);
 
   const [error] = useLocation(addLocation);
+
+  console.log(isFocused);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -23,7 +26,7 @@ export default function TrackCreate() {
       {error ? <Text>Error : {error}</Text> : null}
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   title: {
@@ -44,3 +47,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#1d2c4dff",
   },
 });
+
+export default withNavigationFocus(TrackCreate);
