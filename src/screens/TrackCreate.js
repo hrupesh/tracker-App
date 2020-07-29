@@ -41,7 +41,7 @@ export default function TrackCreate() {
   return (
     <SafeAreaView style={styles.container}>
       <Text h3 h3Style={styles.title}>
-        Create New Track
+        New Track
       </Text>
       <Map />
       {error ? <Text>Error : {error}</Text> : null}
@@ -54,7 +54,14 @@ const styles = StyleSheet.create({
     textAlign: "center",
     margin: 10,
     fontWeight: "100",
-    letterSpacing: 2,
+    letterSpacing: 5,
+    color:'white',
+    textShadowColor:'white',
+    textShadowRadius:150,
+    textShadowOffset:{
+      height:0,
+      width:0
+    },
   },
   container: {
     flex: 1,
