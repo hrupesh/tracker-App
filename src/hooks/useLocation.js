@@ -25,8 +25,12 @@ export default (shouldTrack, callback) => {
   };
 
   useEffect(() => {
-    startWatching();
-  }, []);
+      if(shouldTrack){
+          startWatching();
+      }else{
+          
+      }
+  }, [shouldTrack]);
 
   return [error];
 };
