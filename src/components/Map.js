@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
-import MapView, { Polyline, Marker , Circle} from "react-native-maps";
+import MapView, { Polyline, Marker, Circle } from "react-native-maps";
 import { Context as LocationContext } from "../context/LocationContext";
 
 export default function Map() {
@@ -279,9 +279,9 @@ export default function Map() {
         coordinate={{ ...currentLocation.coords }}
         title="Hi!"
       />
-      <Circle  
+      <Circle
         center={currentLocation.coords}
-        radius={120}
+        radius={currentLocation.coords.accuracy}
         strokeColor="rgba(158,158,255,1)"
         fillColor="rgba(158,158,255,0.3)"
       />
