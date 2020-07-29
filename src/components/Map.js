@@ -2,11 +2,18 @@ import React, { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import MapView, { Polyline, Marker } from "react-native-maps";
 import { Context as LocationContext } from "../context/LocationContext";
+import loadingScreen from "../screens/loadingScreen";
 
 export default function Map() {
-  const { state } = useContext(LocationContext);
+  const {
+    state: { currentLocation },
+  } = useContext(LocationContext);
 
-  console.log(state);
+  console.log(currentLocation);
+
+  if (!currentLocation) {
+    return <loadingScreen />;
+  }
 
   let points = [];
 
@@ -18,16 +25,6 @@ export default function Map() {
   }
 
   var dpoints = [];
-
-  dpoints.push({
-    latitude: state.currentLocation.coords.latitude,
-    longitude: state.currentLocation.coords.longitude,
-  });
-
-  const pos = {
-    latitude: 20.0382168,
-    longitude: 73.8064859,
-  };
 
   const mapStyle = [
     {
@@ -276,10 +273,6 @@ export default function Map() {
     >
       <Polyline coordinates={points} strokeColor="#fffe" strokeWidth={5} />
       {points.map((point) => (
-        <Marker key={point.latitude} coordinate={point} title="Hi!" />
-      ))}
-      <Polyline coordinates={dpoints} strokeColor="red" strokeWidth={5} />
-      {dpoints.map((point) => (
         <Marker key={point.latitude} coordinate={point} title="Hi!" />
       ))}
     </MapView>
