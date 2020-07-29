@@ -270,8 +270,8 @@ export default function Map() {
       }}
       region={{
         ...currentLocation.coords,
-        latitudeDelta: 0.001,
-        longitudeDelta: 0.001,
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.01,
       }}
     >
       <Marker
@@ -290,6 +290,6 @@ export default function Map() {
 const styles = StyleSheet.create({
   map: {
     width: "100%",
-    height: 500,
+    height: "60%",
   },
 });

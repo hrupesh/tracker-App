@@ -40,8 +40,8 @@ export default function TrackCreate() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>New Track</Text>
       <Map />
+      <Text style={styles.title}>New Track</Text>
       {error ? <Text>Error : {error}</Text> : null}
     </SafeAreaView>
   );
