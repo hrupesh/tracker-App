@@ -1,4 +1,4 @@
-// import "../_mockLocation";
+import "../_mockLocation";
 import React, { useEffect, useState, useContext } from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 import { Text } from "react-native-elements";
@@ -21,8 +21,8 @@ export default function TrackCreate() {
       await watchPositionAsync(
         {
           accuracy: Accuracy.BestForNavigation,
-          timeInterval: 1000,
-          distanceInterval: 1,
+          timeInterval: 100,
+          distanceInterval: 2,
         },
         (location) => {
           addLocation(location);
@@ -40,9 +40,7 @@ export default function TrackCreate() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>
-        New Track
-      </Text>
+      <Text style={styles.title}>New Track</Text>
       <Map />
       {error ? <Text>Error : {error}</Text> : null}
     </SafeAreaView>
@@ -53,15 +51,15 @@ const styles = StyleSheet.create({
   title: {
     textAlign: "center",
     margin: 15,
-    fontSize:24,
+    fontSize: 24,
     fontWeight: "100",
     letterSpacing: 5,
-    color:'white',
-    textShadowColor:'#512DF8',
-    textShadowRadius:50,
-    textShadowOffset:{
-      height:0,
-      width:0
+    color: "white",
+    textShadowColor: "#512DF8",
+    textShadowRadius: 50,
+    textShadowOffset: {
+      height: 0,
+      width: 0,
     },
   },
   container: {

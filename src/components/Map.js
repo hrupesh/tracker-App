@@ -8,7 +8,7 @@ export default function Map() {
     state: { currentLocation },
   } = useContext(LocationContext);
 
-  console.log(currentLocation);
+  // console.log(currentLocation);
 
   if (!currentLocation) {
     return <ActivityIndicator size="large" style={{ marginTop: "50%" }} />;
@@ -269,7 +269,11 @@ export default function Map() {
         longitudeDelta: 0.001,
       }}
     >
-      <Marker coordinate={{ ...currentLocation.coords }} title="Hi!" />
+      <Marker
+        draggable
+        coordinate={{ ...currentLocation.coords }}
+        title="Hi!"
+      />
       {/* <Polyline coordinates={points} strokeColor="#fffe" strokeWidth={5} />
       {points.map((point) => (
         <Marker key={point.latitude} coordinate={point} title="Hi!" />
