@@ -269,11 +269,11 @@ export default function Map() {
         latitudeDelta: 0.001,
         longitudeDelta: 0.001,
       }}
-      region={{
-        ...currentLocation.coords,
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01,
-      }}
+      // region={{
+      //   ...currentLocation.coords,
+      //   latitudeDelta: 0.01,
+      //   longitudeDelta: 0.01,
+      // }}
     >
       <Marker
         draggable
