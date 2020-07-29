@@ -264,8 +264,7 @@ export default function Map() {
       customMapStyle={mapStyle}
       style={styles.map}
       initialRegion={{
-        latitude: 20.0382168,
-        longitude: 73.8064859,
+        ...currentLocation.coords,
         latitudeDelta: 0.001,
         longitudeDelta: 0.001,
       }}
