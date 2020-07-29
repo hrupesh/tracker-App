@@ -5,7 +5,7 @@ import {
   watchPositionAsync,
 } from "expo-location";
 
-export default (callback) => {
+export default (shouldTrack, callback) => {
   const [error, setError] = useState(null);
 
   const startWatching = async () => {

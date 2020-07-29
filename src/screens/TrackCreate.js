@@ -15,7 +15,7 @@ import useLocation from "../hooks/useLocation";
 const TrackCreate = ({ isFocused }) => {
   const { addLocation } = useContext(LocationContext);
 
-  const [error] = useLocation(addLocation);
+  const [error] = useLocation(isFocused, addLocation);
 
   console.log(isFocused);
 
