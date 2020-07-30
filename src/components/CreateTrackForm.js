@@ -25,18 +25,16 @@ export default function CreateTrackForm() {
         activeOpacity={0.6}
         // onPress={() => validateForm(email, password)}
       >
-        <Animated.View style={styles.btn}>
+        <Animatable.View
+          style={styles.btn}
+          animation="slideInDown"
+          iterationCount={2}
+          direction="alternate"
+
+        >
           <Text style={styles.btnText}>Record</Text>
-        </Animated.View>
+        </Animatable.View>
       </TouchableOpacity>
-      <Animatable.View
-        style={styles.card}
-        animation="slideInDown"
-        iterationCount={5}
-        direction="alternate"
-      >
-        <Text style={styles.whiteText}>slideInDown Animation</Text>
-      </Animatable.View>
     </View>
   );
 }
