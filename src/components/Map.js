@@ -11,7 +11,7 @@ export default function Map() {
   // console.log(currentLocation);
   // console.log(currentLocation.coords["accuracy"]);
 
-  if (!currentLocation || true) {
+  if (!currentLocation) {
     return (
       <ActivityIndicator
         // animating
