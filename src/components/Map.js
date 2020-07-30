@@ -11,8 +11,15 @@ export default function Map() {
   // console.log(currentLocation);
   // console.log(currentLocation.coords["accuracy"]);
 
-  if (!currentLocation) {
-    return <ActivityIndicator size="large" style={{ marginTop: "25%" }} />;
+  if (!currentLocation || true) {
+    return (
+      <ActivityIndicator
+        animating
+        color="#512DF88F"
+        size="large"
+        style={{ marginTop: "25%" }}
+      />
+    );
   }
 
   // let points = [];
@@ -282,7 +289,11 @@ export default function Map() {
       />
       <Circle
         center={currentLocation.coords}
-        radius={currentLocation.coords["accuracy"] ? currentLocation.coords["accuracy"] : 100 }
+        radius={
+          currentLocation.coords["accuracy"]
+            ? currentLocation.coords["accuracy"]
+            : 100
+        }
         strokeColor="rgba(158,158,255,1)"
         fillColor="rgba(158,158,255,0.3)"
       />
