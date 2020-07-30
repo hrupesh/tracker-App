@@ -10,7 +10,7 @@ export default function CreateTrackForm() {
         autoCompleteType="off"
         autoCorrect={false}
         style={styles.input}
-        placeholder="Enter Track Name Here...."
+        placeholder="Track Name"
         placeholderTextColor="#B2EBF2"
       />
     </View>
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 50,
-    fontSize: 20,
+    fontSize: 22,
     padding: 5,
     borderBottomColor: "#0097A7",
     borderBottomWidth: 1,
