@@ -5,7 +5,9 @@ import {
   View,
   TouchableOpacity,
   Animated,
+  Easing,
 } from "react-native";
+import * as Animatable from "react-native-animatable";
 import { TextInput } from "react-native-gesture-handler";
 
 export default function CreateTrackForm() {
@@ -27,6 +29,14 @@ export default function CreateTrackForm() {
           <Text style={styles.btnText}>Record</Text>
         </Animated.View>
       </TouchableOpacity>
+      <Animatable.View
+        style={styles.card}
+        animation="slideInDown"
+        iterationCount={5}
+        direction="alternate"
+      >
+        <Text style={styles.whiteText}>slideInDown Animation</Text>
+      </Animatable.View>
     </View>
   );
 }
@@ -41,7 +51,7 @@ const styles = StyleSheet.create({
     letterSpacing: 2,
     padding: 5,
     borderBottomColor: "#B2EBF2",
-    borderRadius:5,
+    borderRadius: 5,
     borderBottomWidth: 2,
     color: "#0097A7",
   },
