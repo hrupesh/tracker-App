@@ -12,7 +12,12 @@ import { TextInput } from "react-native-gesture-handler";
 
 export default function CreateTrackForm() {
   return (
-    <View style={styles.formContainer}>
+    <Animatable.View
+      animation="fadeInUp"
+      iterationCount={1}
+      direction="normal"
+      style={styles.formContainer}
+    >
       <TextInput
         autoCapitalize="none"
         autoCompleteType="off"
@@ -28,14 +33,14 @@ export default function CreateTrackForm() {
         <Animatable.View
           style={styles.btn}
           easing="ease"
-          animation="fadeInUpBig"
-          direction="alternate-reverse"
-
+          animation="pulse"
+          direction="normal"
+          iterationCount={"infinite"}
         >
           <Text style={styles.btnText}>Record</Text>
         </Animatable.View>
       </TouchableOpacity>
-    </View>
+    </Animatable.View>
   );
 }
 
