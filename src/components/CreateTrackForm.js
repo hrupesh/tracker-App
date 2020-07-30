@@ -23,10 +23,12 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 50,
-    fontSize: 22,
+    fontSize: 18,
+    letterSpacing:2,
     padding: 5,
     borderBottomColor: "#0097A7",
-    borderBottomWidth: 1,
+    borderBottomWidth: 2,
     color: "#0097A7",
+    
   },
 });
