@@ -15,9 +15,9 @@ export default function Map() {
     return (
       <ActivityIndicator
         // animating
-        color="#512DF88F"
-        size={250}
-        style={{ marginTop: "25%" }}
+        color="#00BCD4"
+        size={200}
+        style={{ height: "70%" }}
       />
     );
   }
