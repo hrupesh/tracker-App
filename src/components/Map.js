@@ -14,9 +14,9 @@ export default function Map() {
   if (!currentLocation || true) {
     return (
       <ActivityIndicator
-        animating
+        // animating
         color="#512DF88F"
-        size="large"
+        size={250}
         style={{ marginTop: "25%" }}
       />
     );
