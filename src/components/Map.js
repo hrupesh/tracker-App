@@ -1,5 +1,11 @@
 import React, { useContext } from "react";
-import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ActivityIndicator,
+  Platform,
+} from "react-native";
 import MapView, { Polyline, Marker, Circle } from "react-native-maps";
 import { Context as LocationContext } from "../context/LocationContext";
 
@@ -11,12 +17,14 @@ export default function Map() {
   // console.log(currentLocation);
   // console.log(currentLocation.coords["accuracy"]);
 
+  // console.log(Platform);
+
   if (!currentLocation) {
     return (
       <ActivityIndicator
         // animating
         color="#00BCD4"
-        size={200}
+        size={Platform.OS === "android" ? 200 : "large"}
         style={{ height: "70%" }}
       />
     );
