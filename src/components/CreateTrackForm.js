@@ -27,9 +27,9 @@ export default function CreateTrackForm() {
       >
         <Animatable.View
           style={styles.btn}
-          animation="slideInDown"
-          iterationCount={2}
-          direction="alternate"
+          easing="ease"
+          animation="fadeInUpBig"
+          direction="alternate-reverse"
 
         >
           <Text style={styles.btnText}>Record</Text>
