@@ -302,8 +302,9 @@ export default function Map() {
             ? currentLocation.coords["accuracy"]
             : 100
         }
-        strokeColor="rgba(158,158,255,1)"
-        fillColor="rgba(158,158,255,0.3)"
+        strokeWidth={20}
+        strokeColor="#00BCD44F"
+        fillColor="#B2EBF22F"
       />
       {/* <Polyline coordinates={points} strokeColor="#fffe" strokeWidth={5} />
       {points.map((point) => (
