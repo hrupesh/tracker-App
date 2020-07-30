@@ -10,6 +10,7 @@ import {
 import * as Animatable from "react-native-animatable";
 import { TextInput } from "react-native-gesture-handler";
 
+
 export default function CreateTrackForm() {
   return (
     <Animatable.View
