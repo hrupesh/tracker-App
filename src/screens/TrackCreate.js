@@ -6,6 +6,7 @@ import { Text } from "react-native-elements";
 import Map from "../components/Map";
 import { Context as LocationContext } from "../context/LocationContext";
 import useLocation from "../hooks/useLocation";
+import CreateTrackForm from "../components/CreateTrackForm";
 
 const TrackCreate = ({ isFocused }) => {
   const { addLocation } = useContext(LocationContext);
@@ -18,6 +19,7 @@ const TrackCreate = ({ isFocused }) => {
     <SafeAreaView style={styles.container}>
       <Map />
       <Text style={styles.title}>New Track</Text>
+      <CreateTrackForm />
       {error ? <Text>Error : {error}</Text> : null}
     </SafeAreaView>
   );
