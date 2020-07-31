@@ -7,14 +7,16 @@ const locationReducer = (state, action) => {
     case "start_recording":
       return { ...state, recording: true };
     case "stop_recording":
-      return { ...state, recording: false };
+      if (state.name.length > 3) {
+        return { ...state, recording: false };
+      } else {
+        alert("Track Name must be atleast 4 characters long 🙄");
+        return { ...state };
+      }
     case "add_Location":
       return { ...state, locations: [...state.location, action.payload] };
     case "change_name":
       return { ...state, name: action.payload };
-    case "invalid_name_error":
-      alert("Track Name must be atleast 4 characters long 🙄");
-      return { ...state };
     default:
       return state;
   }
@@ -27,11 +29,7 @@ const startRecording = (dispatch) => () => {
   dispatch({ type: "start_recording" });
 };
 const stopRecording = (dispatch) => () => {
-  if (name.length > 3) {
-    dispatch({ type: "stop_recording" });
-  } else {
-    dispatch({ type: "invalid_name_error" });
-  }
+  dispatch({ type: "stop_recording" });
 };
 const addLocation = (dispatch) => (location, recording) => {
   dispatch({ type: "add_current_location", payload: location });
