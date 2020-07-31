@@ -6,6 +6,8 @@ const locationReducer = (state, action) => {
       return { ...state, currentLocation: action.payload };
     case "start_recording":
       return { ...state, recording: true };
+    case "stop_recording":
+      return { ...state, recording: false };
     default:
       return state;
   }
