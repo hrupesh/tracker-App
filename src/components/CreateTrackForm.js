@@ -16,13 +16,13 @@ export default function CreateTrackForm() {
 
   const { state, changeName } = useContext(LocationContext);
 
-  const validateName = (name) => {
+  const validateName = async (name) => {
     if (name.length > 3) {
-      changeName(name);
-      console.log(state.name);
+      await changeName(name);
     } else {
       alert("Track Name must be minimum of 4 characters");
     }
+    console.log(state.name);
   };
 
   return (

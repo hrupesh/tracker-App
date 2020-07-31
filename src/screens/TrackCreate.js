@@ -9,9 +9,11 @@ import useLocation from "../hooks/useLocation";
 import CreateTrackForm from "../components/CreateTrackForm";
 
 const TrackCreate = ({ isFocused }) => {
-  const { addLocation } = useContext(LocationContext);
+  const { state, addLocation } = useContext(LocationContext);
 
-  const [error] = useLocation(isFocused, addLocation);
+  const [error] = useLocation(isFocused, (location) => {
+    addLocation(location, state.recording);
+  });
 
   // console.log(isFocused);
 
