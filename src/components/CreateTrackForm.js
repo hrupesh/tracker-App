@@ -10,11 +10,12 @@ import {
 import * as Animatable from "react-native-animatable";
 import { TextInput } from "react-native-gesture-handler";
 
+
 export default function CreateTrackForm() {
   return (
     <Animatable.View
-      animation="shake"
-      iterationCount={"infinite"}
+      animation="fadeInUp"
+      iterationCount={1}
       direction="normal"
       style={styles.formContainer}
     >
