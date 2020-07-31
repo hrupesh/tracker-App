@@ -19,7 +19,7 @@ export default function CreateTrackForm() {
   const validateName = (name) => {
     if (name.length > 3) {
       changeName(name);
-      console.log(state);
+      console.log(state.name);
     } else {
       alert("Track Name must be minimum of 4 characters");
     }
