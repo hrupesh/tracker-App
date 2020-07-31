@@ -14,11 +14,12 @@ import { Context as LocationContext } from "../context/LocationContext";
 export default function CreateTrackForm() {
   const [name, setName] = useState("");
 
-  const { changeName } = useContext(LocationContext);
+  const { state, changeName } = useContext(LocationContext);
 
   const validateName = (name) => {
     if (name.length > 3) {
       changeName(name);
+      console.log(state);
     } else {
       alert("Track Name must be minimum of 4 characters");
     }
