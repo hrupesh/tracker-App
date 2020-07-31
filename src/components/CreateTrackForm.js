@@ -14,16 +14,11 @@ import { Context as LocationContext } from "../context/LocationContext";
 export default function CreateTrackForm() {
   const [name, setName] = useState("");
 
-  const { state, changeName } = useContext(LocationContext);
+  const { state, startRecording, stopRecording, changeName } = useContext(
+    LocationContext
+  );
 
-  const validateName = async (name) => {
-    if (name.length > 3) {
-      await changeName(name);
-    } else {
-      alert("Track Name must be minimum of 4 characters");
-    }
-    console.log(state.name);
-  };
+  console.log(state);
 
   return (
     <Animatable.View
@@ -41,19 +36,33 @@ export default function CreateTrackForm() {
         placeholderTextColor="#B2EBF2"
         clearButtonMode="always"
         selectTextOnFocus
-        onChangeText={(text) => setName(text)}
+        onChangeText={changeName}
       />
-      <TouchableOpacity activeOpacity={0.6} onPress={() => validateName(name)}>
-        <Animatable.View
-          style={styles.btn}
-          easing="ease"
-          animation="pulse"
-          direction="normal"
-          iterationCount={"infinite"}
-        >
-          <Text style={styles.btnText}>Record</Text>
-        </Animatable.View>
-      </TouchableOpacity>
+      {!state.recording ? (
+        <TouchableOpacity activeOpacity={0.6} onPress={startRecording}>
+          <Animatable.View
+            style={styles.btn}
+            easing="ease"
+            animation="pulse"
+            direction="normal"
+            iterationCount={"infinite"}
+          >
+            <Text style={styles.btnText}>Record</Text>
+          </Animatable.View>
+        </TouchableOpacity>
+      ) : (
+        <TouchableOpacity activeOpacity={0.6} onPress={stopRecording}>
+          <Animatable.View
+            style={styles.btn}
+            easing="ease"
+            animation="shake"
+            direction="normal"
+            iterationCount={"infinite"}
+          >
+            <Text style={styles.btnText}> Stop Recording</Text>
+          </Animatable.View>
+        </TouchableOpacity>
+      )}
     </Animatable.View>
   );
 }
