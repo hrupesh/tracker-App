@@ -39,7 +39,6 @@ export default () => {
         <StatusBar
           backgroundColor="#1d2c4dff"
           animated={true}
-          barStyle="dark-content"
         />
         <App
           ref={(navigator) => {

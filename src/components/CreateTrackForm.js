@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import {
   StyleSheet,
   Text,
@@ -9,9 +9,21 @@ import {
 } from "react-native";
 import * as Animatable from "react-native-animatable";
 import { TextInput } from "react-native-gesture-handler";
-
+import { Context as LocationContext } from "../context/LocationContext";
 
 export default function CreateTrackForm() {
+  const [name, setName] = useState("");
+
+  const { changeName } = useContext(LocationContext);
+
+  const validateName = (name) => {
+    if (name.length > 3) {
+      alert("Valid!");
+    } else {
+      alert("Track Name must be of 4 characters");
+    }
+  };
+
   return (
     <Animatable.View
       animation="fadeInUp"
@@ -26,11 +38,11 @@ export default function CreateTrackForm() {
         style={styles.input}
         placeholder="Track Name"
         placeholderTextColor="#B2EBF2"
+        clearButtonMode="always"
+        selectTextOnFocus
+        onChangeText={(text) => setName(text)}
       />
-      <TouchableOpacity
-        activeOpacity={0.6}
-        // onPress={() => validateForm(email, password)}
-      >
+      <TouchableOpacity activeOpacity={0.6} onPress={() => validateName(name)}>
         <Animatable.View
           style={styles.btn}
           easing="ease"
