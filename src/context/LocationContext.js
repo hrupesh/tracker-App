@@ -24,7 +24,11 @@ const startRecording = (dispatch) => () => {
   dispatch({ type: "start_recording" });
 };
 const stopRecording = (dispatch) => () => {
-  dispatch({ type: "stop_recording" });
+  if (name.length > 3) {
+    dispatch({ type: "stop_recording" });
+  } else {
+    alert("Track must be minimum 4 character long 🙄");
+  }
 };
 const addLocation = (dispatch) => (location, recording) => {
   dispatch({ type: "add_current_location", payload: location });

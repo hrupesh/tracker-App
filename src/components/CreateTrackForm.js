@@ -53,9 +53,9 @@ export default function CreateTrackForm() {
       ) : (
         <TouchableOpacity activeOpacity={0.6} onPress={stopRecording}>
           <Animatable.View
-            style={styles.btn}
-            easing="ease"
-            animation="shake"
+            style={styles.btn2}
+            easing="linear"
+            animation="flash"
             direction="normal"
             iterationCount={"infinite"}
           >
@@ -87,6 +87,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#00BCD4",
     padding: 10,
     borderRadius: 50,
+    elevation: 10,
+    width: "75%",
+    alignSelf: "center",
+  },
+  btn2: {
+    marginTop: 30,
+    margin: 25,
+    backgroundColor: "#FF525F",
+    padding: 10,
+    borderRadius: 5,
     elevation: 10,
     width: "75%",
     alignSelf: "center",
