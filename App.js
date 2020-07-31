@@ -37,7 +37,7 @@ export default () => {
     <LocationProvider>
       <AuthProvider>
         <StatusBar
-          backgroundColor="#2700734F"
+          backgroundColor="#1d2c4dff"
           animated={true}
           barStyle="dark-content"
         />
