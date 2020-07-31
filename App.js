@@ -36,7 +36,7 @@ export default () => {
   return (
     <LocationProvider>
       <AuthProvider>
-      <StatusBar backgroundColor="#512D88" barStyle="light-content" />
+        <StatusBar backgroundColor="#0000" barStyle="dark-content" />
         <App
           ref={(navigator) => {
             setNavigator(navigator);
