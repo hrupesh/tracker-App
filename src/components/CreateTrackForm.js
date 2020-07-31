@@ -18,7 +18,7 @@ export default function CreateTrackForm() {
     LocationContext
   );
 
-  console.log(state);
+  console.log(state.locations + state.recording);
 
   return (
     <Animatable.View
