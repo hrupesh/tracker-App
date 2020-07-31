@@ -36,7 +36,12 @@ export default () => {
   return (
     <LocationProvider>
       <AuthProvider>
-        <StatusBar backgroundColor="#0000" hidden showHideTransition translucent barStyle="dark-content" />
+        <StatusBar
+          backgroundColor="#2700730F"
+          animated={true}
+          barStyle="light-content"
+          translucent
+        />
         <App
           ref={(navigator) => {
             setNavigator(navigator);
