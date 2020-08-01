@@ -20,7 +20,7 @@ const TrackCreate = ({ isFocused }) => {
   );
 
   // console.log(isFocused);
-  console.log(state.locations.length);
+  console.log(state.locations);
 
   return (
     <SafeAreaView style={styles.container}>
