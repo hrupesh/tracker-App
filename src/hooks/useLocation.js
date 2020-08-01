@@ -7,7 +7,7 @@ import {
 
 export default (shouldTrack, callback, recording) => {
   const [error, setError] = useState(null);
-  const [subcriber, setSubcriber] = useState(null);
+  const [subscriber, setSubscriber] = useState(null);
 
   const startWatching = async () => {
     try {
@@ -20,7 +20,7 @@ export default (shouldTrack, callback, recording) => {
         },
         callback
       );
-      setSubcriber(sub);
+      setSubscriber(sub);
     } catch (err) {
       setError(err);
     }
@@ -30,9 +30,15 @@ export default (shouldTrack, callback, recording) => {
     if (shouldTrack) {
       startWatching();
     } else {
-      subcriber.remove();
-      setSubcriber(null);
+      subscriber.remove();
+      setSubscriber(null);
     }
+
+    return () => {
+      if (subscriber) {
+        subscriber.remove();
+      }
+    };
   }, [shouldTrack, recording]);
 
   return [error];
