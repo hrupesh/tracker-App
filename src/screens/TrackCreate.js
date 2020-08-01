@@ -1,4 +1,4 @@
-import "../_mockLocation";
+// import "../_mockLocation";
 import React, { useContext, useCallback } from "react";
 import { withNavigationFocus } from "react-navigation";
 import { StyleSheet, SafeAreaView } from "react-native";
@@ -20,7 +20,7 @@ const TrackCreate = ({ isFocused }) => {
   );
 
   // console.log(isFocused);
-  console.log(state.locations);
+  console.log(state.locations.length);
 
   return (
     <SafeAreaView style={styles.container}>
