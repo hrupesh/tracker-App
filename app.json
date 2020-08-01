@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "tracker",
-    "slug": "tracker",
+    "name": "Tracker App",
+    "slug": "tracker-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,6 +22,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
+    "description": "A Location Tracking App",
+    "githubUrl": "https://github.com/hrupesh/tracker-App"
   }
 }
