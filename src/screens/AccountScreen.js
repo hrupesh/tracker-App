@@ -35,7 +35,6 @@ export default function AccountScreen() {
       source={{ url: "https://picsum.photos/3000/3500" }}
       style={styles.container}
     >
-      <StatusBar backgroundColor="#27008F" />
       <Text
         h1
         h1Style={{ color: "#fff", letterSpacing: 5, fontWeight: "100" }}
