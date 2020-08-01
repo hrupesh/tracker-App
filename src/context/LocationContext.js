@@ -14,7 +14,7 @@ const locationReducer = (state, action) => {
         return { ...state };
       }
     case "add_Location":
-      return { ...state, locations: [...state.location, action.payload] };
+      return { ...state, locations: [...state.locations, action.payload] };
     case "change_name":
       return { ...state, name: action.payload };
     default:
@@ -33,9 +33,8 @@ const stopRecording = (dispatch) => () => {
 };
 const addLocation = (dispatch) => (location, recording) => {
   dispatch({ type: "add_current_location", payload: location });
-  console.log(location);
+  // console.log(location);
   if (recording) {
-    console.log("Recoring ON : "+location);
     dispatch({ type: "add_Location", payload: location });
   }
 };
