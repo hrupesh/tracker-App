@@ -5,7 +5,7 @@ import {
   watchPositionAsync,
 } from "expo-location";
 
-export default (shouldTrack, callback, recording) => {
+export default (shouldTrack, callback) => {
   const [error, setError] = useState(null);
   const [subcriber, setSubcriber] = useState(null);
 
@@ -33,7 +33,7 @@ export default (shouldTrack, callback, recording) => {
       subcriber.remove();
       setSubcriber(null);
     }
-  }, [shouldTrack, recording]);
+  }, [shouldTrack]);
 
   return [error];
 };

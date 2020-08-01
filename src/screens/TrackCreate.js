@@ -15,8 +15,7 @@ const TrackCreate = ({ isFocused }) => {
     isFocused,
     (location) => {
       addLocation(location, state.recording);
-    },
-    state.recording
+    }
   );
 
   // console.log(isFocused);

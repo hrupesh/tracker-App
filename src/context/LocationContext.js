@@ -35,6 +35,7 @@ const addLocation = (dispatch) => (location, recording) => {
   dispatch({ type: "add_current_location", payload: location });
   if (recording) {
     dispatch({ type: "add_Location", payload: location });
+    console.log(location);
   }
 };
 
