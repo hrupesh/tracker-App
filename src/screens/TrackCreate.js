@@ -12,7 +12,7 @@ const TrackCreate = ({ isFocused }) => {
   const { state, addLocation } = useContext(LocationContext);
 
   const [error] = useLocation(
-    isFocused,
+    isFocused || state.recording,
     (location) => {
       addLocation(location, state.recording);
     },
