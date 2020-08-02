@@ -11,7 +11,7 @@ import { Context as LocationContext } from "../context/LocationContext";
 
 export default function Map() {
   const {
-    state: { currentLocation },
+    state: { currentLocation , locations},
   } = useContext(LocationContext);
 
   // console.log(currentLocation);
