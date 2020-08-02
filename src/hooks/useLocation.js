@@ -34,7 +34,6 @@ export default (shouldTrack, callback, recording) => {
       setSubscriber(null);
     }
 
-    
     return () => {
       if (subscriber) {
         subscriber.remove();
