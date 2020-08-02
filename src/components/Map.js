@@ -311,8 +311,8 @@ export default function Map() {
       />
       <Polyline
         coordinates={locations.map((loc) => loc.coords)}
-        strokeColor="#fffe"
-        strokeWidth={5}
+        strokeColor="#4CAF50"
+        strokeWidth={3}
       />
       {/* {points.map((point) => (
         <Marker key={point.latitude} coordinate={point} title="Hi!" />
