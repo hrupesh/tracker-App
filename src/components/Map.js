@@ -14,6 +14,8 @@ export default function Map() {
     state: { currentLocation, locations },
   } = useContext(LocationContext);
 
+  console.log(locations);
+
   // console.log(currentLocation);
   // console.log(currentLocation.coords["accuracy"]);
 
