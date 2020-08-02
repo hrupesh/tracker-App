@@ -311,8 +311,8 @@ export default function Map() {
       />
       <Polyline
         coordinates={locations.map((loc) => loc.coords)}
-        strokeColor="#00BCD46F"
-        strokeWidth={4}
+        strokeColor="#7955486F"
+        strokeWidth={6}
         focusable
         lineJoin="round"
         geodesic
