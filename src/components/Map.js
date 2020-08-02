@@ -11,7 +11,7 @@ import { Context as LocationContext } from "../context/LocationContext";
 
 export default function Map() {
   const {
-    state: { currentLocation , locations},
+    state: { currentLocation, locations },
   } = useContext(LocationContext);
 
   // console.log(currentLocation);
@@ -306,6 +306,7 @@ export default function Map() {
         strokeColor="#0288D12F"
         fillColor="#03A9F44F"
       />
+      <Polyline coordinates={locations.map((loc) => loc.coords)} />
       {/* <Polyline coordinates={points} strokeColor="#fffe" strokeWidth={5} />
       {points.map((point) => (
         <Marker key={point.latitude} coordinate={point} title="Hi!" />
