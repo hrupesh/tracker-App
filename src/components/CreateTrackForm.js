@@ -29,8 +29,6 @@ export default function CreateTrackForm() {
       direction="normal"
       style={styles.formContainer}
     >
-
-        
       <TextInput
         autoCapitalize="none"
         autoCompleteType="off"
