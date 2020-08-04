@@ -78,7 +78,7 @@ export default function CreateTrackForm() {
         value={state.name}
       />
       {state.locations.length > 1 && !state.recording ? (
-        <TouchableOpacity activeOpacity={0.6} onPress={stopRecording}>
+        <TouchableOpacity activeOpacity={0.6} onPress={saveTrack}>
           <Animatable.View
             style={styles.btn3}
             easing="linear"
