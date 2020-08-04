@@ -71,9 +71,9 @@ export default function CreateTrackForm() {
             <Animatable.View
               style={styles.btn2}
               easing="linear"
-              animation="slideIn"
+              animation="zoomInDown"
               direction="normal"
-              iterationCount={"infinite"}
+              iterationCount={1}
             >
               <Text style={styles.btnText}>Save</Text>
             </Animatable.View>

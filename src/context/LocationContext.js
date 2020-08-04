@@ -10,7 +10,7 @@ const locationReducer = (state, action) => {
       if (state.name.length > 2) {
         return { ...state, recording: false };
       } else {
-        alert("Track Name must be atleast 4 characters long 🙄");
+        alert("Track Name must be atleast 3 characters long 🙄");
         return { ...state };
       }
     case "add_Location":
