@@ -86,7 +86,7 @@ export default function CreateTrackForm() {
             direction="normal"
             iterationCount={1}
           >
-            <Text style={styles.btnText}>Save</Text>
+            <Text style={styles.btnText}>Save Track</Text>
           </Animatable.View>
         </TouchableOpacity>
       ) : null}
