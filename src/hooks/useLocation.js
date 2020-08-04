@@ -15,8 +15,8 @@ export default (shouldTrack, callback, recording) => {
       const sub = await watchPositionAsync(
         {
           accuracy: Accuracy.BestForNavigation,
-          timeInterval: 100,
-          distanceInterval: 2,
+          timeInterval: 1000,
+          distanceInterval: 10,
         },
         callback
       );
