@@ -65,6 +65,19 @@ export default function CreateTrackForm() {
           </Animatable.View>
         </TouchableOpacity>
       )}
+      {state.locations.length > 1 ? (
+        <TouchableOpacity activeOpacity={0.6} onPress={stopRecording}>
+          <Animatable.View
+            style={styles.btn2}
+            easing="linear"
+            animation="flash"
+            direction="normal"
+            iterationCount={"infinite"}
+          >
+            <Text style={styles.btnText}> Save Track</Text>
+          </Animatable.View>
+        </TouchableOpacity>
+      ) : null}
     </Animatable.View>
   );
 }
