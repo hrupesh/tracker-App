@@ -6,6 +6,7 @@ export default () => {
   const { createTrack } = useContext(TrackContext);
   const {
     state: { locations, name },
+    reset,
   } = useContext(LocationContext);
 
   const saveTrack = async () => {
