@@ -74,7 +74,7 @@ export default function CreateTrackForm() {
         onChangeText={changeName}
         value={state.name}
       />
-      {state.locations.length > 1 ? (
+      {state.locations.length > 4 ? (
         <TouchableOpacity activeOpacity={0.6} onPress={stopRecording}>
           <Animatable.View
             style={styles.btn3}
