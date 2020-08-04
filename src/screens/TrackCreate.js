@@ -25,7 +25,6 @@ const TrackCreate = ({ isFocused }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Map />
-      <Text style={styles.title}>New Track</Text>
       <CreateTrackForm />
       {error ? <Text>Error : {error}</Text> : null}
     </SafeAreaView>
@@ -33,19 +32,6 @@ const TrackCreate = ({ isFocused }) => {
 };
 
 const styles = StyleSheet.create({
-  title: {
-    margin: 15,
-    fontSize: 22,
-    fontWeight: "100",
-    letterSpacing: 2,
-    color: "white",
-    textShadowColor: "black",
-    textShadowRadius: 50,
-    textShadowOffset: {
-      height: 0,
-      width: 0,
-    },
-  },
   container: {
     flex: 1,
     backgroundColor: "#1d2c4dff",
