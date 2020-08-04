@@ -40,44 +40,46 @@ export default function CreateTrackForm() {
         selectTextOnFocus
         onChangeText={changeName}
       />
-      {!state.recording ? (
-        <TouchableOpacity activeOpacity={0.6} onPress={startRecording}>
-          <Animatable.View
-            style={styles.btn}
-            easing="ease"
-            animation="pulse"
-            direction="normal"
-            iterationCount={"infinite"}
-          >
-            <Text style={styles.btnText}>Record</Text>
-          </Animatable.View>
-        </TouchableOpacity>
-      ) : (
-        <TouchableOpacity activeOpacity={0.6} onPress={stopRecording}>
-          <Animatable.View
-            style={styles.btn2}
-            easing="linear"
-            animation="flash"
-            direction="normal"
-            iterationCount={"infinite"}
-          >
-            <Text style={styles.btnText}> Stop Recording</Text>
-          </Animatable.View>
-        </TouchableOpacity>
-      )}
-      {state.locations.length > 1 ? (
-        <TouchableOpacity activeOpacity={0.6} onPress={stopRecording}>
-          <Animatable.View
-            style={styles.btn2}
-            easing="linear"
-            animation="flash"
-            direction="normal"
-            iterationCount={"infinite"}
-          >
-            <Text style={styles.btnText}> Save Track</Text>
-          </Animatable.View>
-        </TouchableOpacity>
-      ) : null}
+      <View style={{ flexDirection: "row" }}>
+        {!state.recording ? (
+          <TouchableOpacity activeOpacity={0.6} onPress={startRecording}>
+            <Animatable.View
+              style={styles.btn}
+              easing="ease"
+              animation="pulse"
+              direction="normal"
+              iterationCount={"infinite"}
+            >
+              <Text style={styles.btnText}>Record</Text>
+            </Animatable.View>
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity activeOpacity={0.6} onPress={stopRecording}>
+            <Animatable.View
+              style={styles.btn2}
+              easing="linear"
+              animation="flash"
+              direction="normal"
+              iterationCount={"infinite"}
+            >
+              <Text style={styles.btnText}> Stop Recording</Text>
+            </Animatable.View>
+          </TouchableOpacity>
+        )}
+        {state.locations.length > 1 ? (
+          <TouchableOpacity activeOpacity={0.6} onPress={stopRecording}>
+            <Animatable.View
+              style={styles.btn2}
+              easing="linear"
+              animation="slideIn"
+              direction="normal"
+              iterationCount={"infinite"}
+            >
+              <Text style={styles.btnText}>Save</Text>
+            </Animatable.View>
+          </TouchableOpacity>
+        ) : null}
+      </View>
     </Animatable.View>
   );
 }
