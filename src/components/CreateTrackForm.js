@@ -128,11 +128,11 @@ const styles = StyleSheet.create({
   btn3: {
     marginTop: 30,
     margin: 25,
-    backgroundColor: "#009688",
+    backgroundColor: "#03A9F4",
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 50,
     elevation: 30,
-    width: "75%",
+    width: "90%",
     alignSelf: "center",
   },
   btnText: {
