@@ -72,13 +72,14 @@ export default function CreateTrackForm() {
         clearButtonMode="always"
         selectTextOnFocus
         onChangeText={changeName}
+        value={state.name}
       />
       {state.locations.length > 1 ? (
         <TouchableOpacity activeOpacity={0.6} onPress={stopRecording}>
           <Animatable.View
             style={styles.btn3}
             easing="linear"
-            animation="zoomInDown"
+            animation="lightSpeedIn"
             direction="normal"
             iterationCount={1}
           >
