@@ -14,7 +14,9 @@ export default () => {
     navigate("loading");
     await createTrack(name, locations);
     reset();
-    navigate("TrackList");
+    navigate("TrackList", {
+      message: "New Track Added ✅",
+    });
   };
 
   return [saveTrack];
