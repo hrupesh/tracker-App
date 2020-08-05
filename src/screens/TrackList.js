@@ -20,6 +20,7 @@ export default function TrackList({ navigation }) {
   const getTracks = async () => {
     await fetchTracks();
     setLoading(false);
+    console.log(state.tracks);
   };
 
   useEffect(() => {
@@ -40,16 +41,14 @@ export default function TrackList({ navigation }) {
 
   return (
     <View>
-      <AnimatedLoader
-        visible={!loading}
-        overlayColor="#000a"
-        // source={{
-        //   uri:
-        //     "https://assets10.lottiefiles.com/datafiles/qm9uaAEoe13l3eQ/data.json",
-        // }}
-        animationStyle={{ width: 500, height: 500 }}
-        speed={1.5}
-      />
+      {loading ? (
+        <AnimatedLoader
+          visible
+          overlayColor="#1d2c4daf"
+          animationStyle={{ width: 500, height: 500 }}
+          speed={1.5}
+        />
+      ) : null}
       <Text>TrackList Screen</Text>
       <Button
         title="Track Details"
