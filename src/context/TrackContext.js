@@ -19,6 +19,7 @@ const fetchTracks = (dispatch) => async () => {
     console.log("Error: " + err.message);
   }
 };
+
 const createTrack = (dispatch) => async (name, locations) => {
   try {
     //   console.log(name, locations.length);

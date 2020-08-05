@@ -1,5 +1,11 @@
-import React, { useEffect, useContext } from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import React, { useEffect, useContext, useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  ActivityIndicator,
+} from "react-native";
 import { showMessage, hideMessage } from "react-native-flash-message";
 import { Context as TrackContext } from "../context/TrackContext";
 
@@ -7,6 +13,13 @@ export default function TrackList({ navigation }) {
   const msg = navigation.getParam("message");
   // console.log(msg);
   const { state, fetchTracks } = useContext(TrackContext);
+
+  const [loading, setLoading] = useState(true);
+
+  const getTracks = async () => {
+    await fetchTracks();
+    setLoading(false);
+  };
 
   useEffect(() => {
     if (msg) {
@@ -21,14 +34,12 @@ export default function TrackList({ navigation }) {
         },
       });
     }
-
-    await fetchTracks();
-
-    console.log(state.tracks);
+    getTracks();
   }, [navigation]);
 
   return (
     <View>
+      {loading ? <ActivityIndicator size="large" /> : null}
       <Text>TrackList Screen</Text>
       <Button
         title="Track Details"
