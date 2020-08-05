@@ -15,6 +15,7 @@ import { setNavigator } from "./src/navigationRef";
 import LoadingScreen from "./src/screens/LoadingScreen";
 import { StatusBar } from "react-native";
 import FlashMessage from "react-native-flash-message";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const switchNavigator = createSwitchNavigator({
   loading: LoadingScreen,
@@ -25,7 +26,19 @@ const switchNavigator = createSwitchNavigator({
   mainFlow: createBottomTabNavigator(
     {
       trackListFlow: createStackNavigator({
-        TrackList: TrackList,
+        TrackList: {
+          screen: TrackList,
+          navigationOptions: {
+            title: "Tracks",
+            tabBarIcon: ({ focused }) => (
+              <MaterialCommunityIcons
+                name="go-kart-track"
+                size={24}
+                color="white"
+              />
+            ),
+          },
+        },
         TrackDetail: TrackDetail,
       }),
       TrackCreate: TrackCreate,
@@ -52,7 +65,7 @@ const switchNavigator = createSwitchNavigator({
         },
         style: {
           height: 70,
-          borderTopWidth:0
+          borderTopWidth: 0,
         },
         tabStyle: {
           padding: 10,
