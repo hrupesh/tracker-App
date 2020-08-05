@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
-
+import { showMessage, hideMessage } from "react-native-flash-message";
 
 export default function TrackList({ navigation }) {
   return (
@@ -10,6 +10,17 @@ export default function TrackList({ navigation }) {
         title="Track Details"
         color="dodgerblue"
         onPress={() => navigation.navigate("TrackDetail")}
+      />
+      <Button
+        onPress={() => {
+          /* HERE WE GONE SHOW OUR FIRST MESSAGE */
+          showMessage({
+            message: "Simple message",
+            type: "success",
+          });
+        }}
+        title="Request Details"
+        color="#841584"
       />
     </View>
   );

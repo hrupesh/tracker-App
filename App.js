@@ -45,7 +45,7 @@ export default () => {
               setNavigator(navigator);
             }}
           />
-          <FlashMessage position="top"  />
+          <FlashMessage position="bottom"  />
         </AuthProvider>
       </LocationProvider>
     </TrackProvider>
