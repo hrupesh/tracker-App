@@ -10,9 +10,13 @@ const trackReducer = (state, action) => {
 
 const fetchTracks = (dispatch) => () => {};
 const createTrack = (dispatch) => async (name, locations) => {
-  //   console.log(name, locations.length);
-  await trackerapi.post("/tracks", { name, locations });
-  alert("Track Added ✔");
+  try {
+    //   console.log(name, locations.length);
+    await trackerapi.post("/tracks", { name, locations });
+    //   alert("Track Added ✔");
+  } catch (err) {
+    alert("Error: " + err.message);
+  }
 };
 
 export const { Provider, Context } = createDataContext(
