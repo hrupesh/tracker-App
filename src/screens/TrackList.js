@@ -11,11 +11,11 @@ export default function TrackList({ navigation }) {
       showMessage({
         message: msg,
         type: "success",
-        icon: { icon: "success", position: "left"},
+        icon: { icon: "success", position: "left" },
         animationDuration: 500,
         floating: true,
         titleStyle: {
-          fontSize: 16,
+          letterSpacing: 1,
         },
       });
     }
