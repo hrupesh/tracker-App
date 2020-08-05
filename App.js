@@ -43,6 +43,11 @@ const switchNavigator = createSwitchNavigator({
         showLabel: true,
         activeTintColor: "#000000",
         inactiveTintColor: "#512DF8",
+        keyboardHidesTabBar: true,
+        labelStyle:{
+         fontSize:24,
+         fontWeight:"bold"
+        }
       },
     }
   ),
