@@ -17,12 +17,10 @@ export default function TrackList({ navigation }) {
   const { state, fetchTracks } = useContext(TrackContext);
 
   const [loading, setLoading] = useState(true);
-  const [tracks, setTracks] = useState([]);
 
   const getTracks = async () => {
     await fetchTracks();
     setLoading(false);
-    setTracks(state.tracks);
   };
 
   useEffect(() => {
@@ -57,14 +55,17 @@ export default function TrackList({ navigation }) {
         color="dodgerblue"
         onPress={() => navigation.navigate("TrackDetail")}
       />
-
-      <FlatList
-        data={tracks}
-        keyExtractor={(track) => track._id}
-        renderItem={(item) => {
-          return <Text>Item : {item._id}</Text>;
-        }}
-      />
+      {loading ? (
+        <Text>Loading....</Text>
+      ) : (
+        <FlatList
+          data={state.tracks}
+          keyExtractor={(track) => track._id}
+          renderItem={(item) => {
+            return <Text>Track : {item.name}</Text>;
+          }}
+        />
+      )}
     </View>
   );
 }
