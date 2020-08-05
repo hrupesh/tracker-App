@@ -6,6 +6,7 @@ import {
   Button,
   ActivityIndicator,
 } from "react-native";
+import AnimatedLoader from "react-native-animated-loader";
 import { showMessage, hideMessage } from "react-native-flash-message";
 import { Context as TrackContext } from "../context/TrackContext";
 
@@ -39,7 +40,16 @@ export default function TrackList({ navigation }) {
 
   return (
     <View>
-      {loading ? <ActivityIndicator size="large" /> : null}
+      <AnimatedLoader
+        visible={!loading}
+        overlayColor="#000a"
+        // source={{
+        //   uri:
+        //     "https://assets10.lottiefiles.com/datafiles/qm9uaAEoe13l3eQ/data.json",
+        // }}
+        animationStyle={{ width: 500, height: 500 }}
+        speed={1.5}
+      />
       <Text>TrackList Screen</Text>
       <Button
         title="Track Details"
