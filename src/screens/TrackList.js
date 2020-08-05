@@ -21,6 +21,8 @@ export default function TrackList({ navigation }) {
         },
       });
     }
+
+    fetchTracks();
   }, [navigation]);
 
   return (
