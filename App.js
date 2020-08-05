@@ -25,22 +25,31 @@ const switchNavigator = createSwitchNavigator({
   }),
   mainFlow: createBottomTabNavigator(
     {
-      trackListFlow: createStackNavigator({
-        TrackList: {
-          screen: TrackList,
+      trackListFlow: createStackNavigator(
+        {
+          TrackList: TrackList,
+          TrackDetail: TrackDetail,
+        },
+        {
           navigationOptions: {
             title: "Tracks",
-            tabBarIcon: ({ focused }) => (
-              <MaterialCommunityIcons
-                name="go-kart-track"
-                size={24}
-                color="white"
-              />
-            ),
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <MaterialCommunityIcons
+                  name="go-kart-track"
+                  size={24}
+                  color="white"
+                />
+              ) : (
+                <MaterialCommunityIcons
+                  name="go-kart-track"
+                  size={24}
+                  color="white"
+                />
+              ),
           },
-        },
-        TrackDetail: TrackDetail,
-      }),
+        }
+      ),
       TrackCreate: TrackCreate,
       Account: AccountScreen,
     },
@@ -54,8 +63,8 @@ const switchNavigator = createSwitchNavigator({
         },
         showIcon: true,
         showLabel: true,
-        activeBackgroundColor: "#1d2c4d",
-        inactiveBackgroundColor: "#1d2c4d",
+        activeBackgroundColor: "#212121",
+        inactiveBackgroundColor: "#212121",
         activeTintColor: "#512DF8",
         inactiveTintColor: "#fff",
         keyboardHidesTabBar: true,
