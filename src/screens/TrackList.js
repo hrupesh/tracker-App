@@ -40,7 +40,7 @@ export default function TrackList({ navigation }) {
   }, [navigation]);
 
   return (
-    <View>
+    <View style={styles.container}>
       {loading ? (
         <AnimatedLoader
           visible
@@ -62,4 +62,9 @@ export default function TrackList({ navigation }) {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#1d2c4d",
+  },
+});
