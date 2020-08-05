@@ -52,13 +52,10 @@ const switchNavigator = createSwitchNavigator({
         },
         style: {
           height: 70,
-          borderTopLeftRadius: 50,
-          borderTopRightRadius: 50,
         },
         tabStyle: {
           padding: 10,
           height: 70,
-          borderRadius: 25,
         },
       },
     }
