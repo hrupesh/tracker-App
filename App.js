@@ -73,15 +73,15 @@ const switchNavigator = createSwitchNavigator({
           margin: 15,
         },
         style: {
-          height: 90,
+          height: 70,
           backgroundColor: "#212121",
           borderTopWidth: 0,
           alignItems: "center",
           justifyContent: "center",
         },
         tabStyle: {
-          padding: 15,
-          height: 70,
+          padding: 5,
+          // height: 70,
           justifyContent: "center",
           alignItems: "center",
         },
