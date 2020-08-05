@@ -17,10 +17,12 @@ export default function TrackList({ navigation }) {
   const { state, fetchTracks } = useContext(TrackContext);
 
   const [loading, setLoading] = useState(true);
+  const [tracks, setTracks] = useState([]);
 
   const getTracks = async () => {
     await fetchTracks();
     setLoading(false);
+    setTracks(state.tracks);
   };
 
   useEffect(() => {
@@ -57,7 +59,7 @@ export default function TrackList({ navigation }) {
       />
 
       <FlatList
-        data={state.tracks}
+        data={tracks}
         keyExtractor={(track) => track._id}
         renderItem={(item) => {
           return <Text>Item : {item._id}</Text>;
