@@ -9,6 +9,7 @@ import {
 import AnimatedLoader from "react-native-animated-loader";
 import { showMessage, hideMessage } from "react-native-flash-message";
 import { Context as TrackContext } from "../context/TrackContext";
+import { FlatList } from "react-native-gesture-handler";
 
 export default function TrackList({ navigation }) {
   const msg = navigation.getParam("message");
@@ -20,7 +21,6 @@ export default function TrackList({ navigation }) {
   const getTracks = async () => {
     await fetchTracks();
     setLoading(false);
-    console.log(state.tracks);
   };
 
   useEffect(() => {
@@ -54,6 +54,14 @@ export default function TrackList({ navigation }) {
         title="Track Details"
         color="dodgerblue"
         onPress={() => navigation.navigate("TrackDetail")}
+      />
+
+      <FlatList
+        data={state.tracks}
+        keyExtractor={(track) => track._id}
+        renderItem={(item) => {
+          return <Text>Item : {item._id}</Text>;
+        }}
       />
     </View>
   );
