@@ -37,13 +37,12 @@ const switchNavigator = createSwitchNavigator({
       tabBarPosition: "bottom",
       tabBarOptions: {
         iconStyle: {
-          paddingTop: 0,
-          paddingBottom: 50,
+          padding: 5,
         },
         showIcon: true,
-        showLabel: false,
+        showLabel: true,
         activeTintColor: "#000000",
-        inactiveTintColor: "#ffffff",
+        inactiveTintColor: "#512DF8",
       },
     }
   ),
