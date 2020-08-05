@@ -74,11 +74,16 @@ const switchNavigator = createSwitchNavigator({
         },
         style: {
           height: 90,
+          backgroundColor: "#212121",
           borderTopWidth: 0,
+          alignItems: "center",
+          justifyContent: "center",
         },
         tabStyle: {
           padding: 15,
           height: 70,
+          justifyContent: "center",
+          alignItems: "center",
         },
       },
     }
