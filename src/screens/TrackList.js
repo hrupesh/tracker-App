@@ -49,19 +49,13 @@ export default function TrackList({ navigation }) {
           speed={1.5}
         />
       ) : null}
-      <Text>TrackList Screen</Text>
-      <Button
-        title="Track Details"
-        color="dodgerblue"
-        onPress={() => navigation.navigate("TrackDetail")}
-      />
       {loading ? (
         <Text>Loading....</Text>
       ) : (
         <FlatList
           data={state.tracks}
           keyExtractor={(track) => track._id}
-          renderItem={(item) => {
+          renderItem={({ item }) => {
             return <Text>Track : {item.name}</Text>;
           }}
         />
