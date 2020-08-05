@@ -11,7 +11,7 @@ export default () => {
   } = useContext(LocationContext);
 
   const saveTrack = async () => {
-    navigate("Loading");
+    navigate("loading");
     await createTrack(name, locations);
     reset();
     navigate("TrackList");
