@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Button } from "react-native";
 export default function TrackList({ navigation }) {
   return (
     <View>
+      
       <Text>TrackList Screen</Text>
       <Button
         title="Track Details"
