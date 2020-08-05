@@ -42,7 +42,7 @@ const switchNavigator = createSwitchNavigator({
         showIcon: true,
         showLabel: true,
         activeBackgroundColor: "#1d2c4d",
-        inactiveBackgroundColor: "#1d2c4d8f",
+        inactiveBackgroundColor: "#212121",
         activeTintColor: "#000000",
         inactiveTintColor: "#512DF8",
         keyboardHidesTabBar: true,
@@ -51,7 +51,7 @@ const switchNavigator = createSwitchNavigator({
           margin: 15,
         },
         style: {
-          backgroundColor: "512DF8",
+          elevation:10
         },
       },
     }
