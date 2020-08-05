@@ -1,10 +1,12 @@
 import React, { useEffect, useContext } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 import { showMessage, hideMessage } from "react-native-flash-message";
+import { Context as TrackContext } from "../context/TrackContext";
 
 export default function TrackList({ navigation }) {
   const msg = navigation.getParam("message");
   // console.log(msg);
+  const { fetchTracks } = useContext(TrackContext);
 
   useEffect(() => {
     if (msg) {

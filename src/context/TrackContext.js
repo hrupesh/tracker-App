@@ -8,7 +8,14 @@ const trackReducer = (state, action) => {
   }
 };
 
-const fetchTracks = (dispatch) => () => {};
+const fetchTracks = (dispatch) => async () => {
+  try {
+    const tracks = await trackerapi.get("/tracks");
+    console.log(tracks);
+  } catch (err) {
+    console.log("Error: " + err.message);
+  }
+};
 const createTrack = (dispatch) => async (name, locations) => {
   try {
     //   console.log(name, locations.length);
