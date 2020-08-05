@@ -22,14 +22,31 @@ const switchNavigator = createSwitchNavigator({
     Signup: SignupScreen,
     Login: LoginScreen,
   }),
-  mainFlow: createBottomTabNavigator({
-    trackListFlow: createStackNavigator({
-      TrackList: TrackList,
-      TrackDetail: TrackDetail,
-    }),
-    TrackCreate: TrackCreate,
-    Account: AccountScreen,
-  }),
+  mainFlow: createBottomTabNavigator(
+    {
+      trackListFlow: createStackNavigator({
+        TrackList: TrackList,
+        TrackDetail: TrackDetail,
+      }),
+      TrackCreate: TrackCreate,
+      Account: AccountScreen,
+    },
+    {
+      initialRouteName: "trackListFlow",
+      lazy: true,
+      tabBarPosition: "bottom",
+      tabBarOptions: {
+        iconStyle: {
+          paddingTop: 0,
+          paddingBottom: 50,
+        },
+        showIcon: true,
+        showLabel: false,
+        activeTintColor: "#000000",
+        inactiveTintColor: "#ffffff",
+      },
+    }
+  ),
 });
 
 const App = createAppContainer(switchNavigator);

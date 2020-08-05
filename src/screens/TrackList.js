@@ -49,9 +49,7 @@ export default function TrackList({ navigation }) {
           speed={1.5}
         />
       ) : null}
-      {loading ? (
-        <Text>Loading....</Text>
-      ) : (
+      {loading ? null : (
         <FlatList
           data={state.tracks}
           keyExtractor={(track) => track._id}
