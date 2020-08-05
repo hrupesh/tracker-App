@@ -22,7 +22,7 @@ export default function TrackList({ navigation }) {
       });
     }
 
-    fetchTracks();
+    await fetchTracks();
 
     console.log(state.tracks);
   }, [navigation]);
