@@ -52,6 +52,7 @@ const switchNavigator = createSwitchNavigator({
         },
         style: {
           height: 70,
+          borderTopWidth:0
         },
         tabStyle: {
           padding: 10,
