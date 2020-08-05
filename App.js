@@ -47,6 +47,9 @@ const switchNavigator = createSwitchNavigator({
         labelStyle:{
          fontSize:15,
          margin:15
+        },
+        style:{
+          backgroundColor:"512DF8"
         }
       },
     }
