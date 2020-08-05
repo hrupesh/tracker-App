@@ -51,7 +51,7 @@ const switchNavigator = createSwitchNavigator({
           margin: 15,
         },
         tabStyle: {
-          margin: 10,
+          padding:10
         },
       },
     }
