@@ -6,7 +6,7 @@ import { Context as TrackContext } from "../context/TrackContext";
 export default function TrackList({ navigation }) {
   const msg = navigation.getParam("message");
   // console.log(msg);
-  const { fetchTracks } = useContext(TrackContext);
+  const { state, fetchTracks } = useContext(TrackContext);
 
   useEffect(() => {
     if (msg) {
@@ -23,6 +23,8 @@ export default function TrackList({ navigation }) {
     }
 
     fetchTracks();
+
+    console.log(state.tracks);
   }, [navigation]);
 
   return (

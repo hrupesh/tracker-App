@@ -13,7 +13,7 @@ const trackReducer = (state, action) => {
 const fetchTracks = (dispatch) => async () => {
   try {
     const { data } = await trackerapi.get("/tracks");
-    console.log(data);
+    // console.log(data);
     dispatch({ type: "getTracks", payload: data });
   } catch (err) {
     console.log("Error: " + err.message);
