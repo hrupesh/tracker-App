@@ -14,6 +14,7 @@ import { Provider as TrackProvider } from "./src/context/TrackContext";
 import { setNavigator } from "./src/navigationRef";
 import LoadingScreen from "./src/screens/LoadingScreen";
 import { StatusBar } from "react-native";
+import FlashMessage from "react-native-flash-message";
 
 const switchNavigator = createSwitchNavigator({
   loading: LoadingScreen,
@@ -44,6 +45,7 @@ export default () => {
               setNavigator(navigator);
             }}
           />
+          <FlashMessage position="top" />
         </AuthProvider>
       </LocationProvider>
     </TrackProvider>
