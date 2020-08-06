@@ -84,6 +84,7 @@ const switchNavigator = createSwitchNavigator({
           borderRadius: 10,
           justifyContent: "center",
           alignItems: "center",
+          marginHorizontal: 15,
         },
       },
     }
