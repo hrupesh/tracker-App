@@ -63,9 +63,9 @@ const switchNavigator = createSwitchNavigator({
         },
         showIcon: true,
         showLabel: true,
-        activeBackgroundColor: "#212121",
+        activeBackgroundColor: "#1976D24F",
         inactiveBackgroundColor: "#212121",
-        activeTintColor: "#512DF8",
+        activeTintColor: "#000",
         inactiveTintColor: "#fff",
         keyboardHidesTabBar: true,
         labelStyle: {
