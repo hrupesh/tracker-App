@@ -38,7 +38,7 @@ const switchNavigator = createSwitchNavigator({
                 <MaterialCommunityIcons
                   name="go-kart-track"
                   size={24}
-                  color="white"
+                  color="#512DF8"
                 />
               ) : (
                 <MaterialCommunityIcons
@@ -59,7 +59,7 @@ const switchNavigator = createSwitchNavigator({
       tabBarPosition: "bottom",
       tabBarOptions: {
         iconStyle: {
-          padding: 5,
+          padding: 15,
         },
         showIcon: true,
         showLabel: true,
