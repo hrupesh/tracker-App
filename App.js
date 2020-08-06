@@ -37,13 +37,13 @@ const switchNavigator = createSwitchNavigator({
               focused ? (
                 <MaterialCommunityIcons
                   name="go-kart-track"
-                  size={24}
+                  size={30}
                   color="#1976D2"
                 />
               ) : (
                 <MaterialCommunityIcons
                   name="go-kart-track"
-                  size={24}
+                  size={30}
                   color="white"
                 />
               ),
@@ -65,12 +65,12 @@ const switchNavigator = createSwitchNavigator({
         showLabel: true,
         activeBackgroundColor: "#1976D24F",
         inactiveBackgroundColor: "#212121",
-        activeTintColor: "#000",
+        activeTintColor: "#1976D2",
         inactiveTintColor: "#fff",
         keyboardHidesTabBar: true,
         labelStyle: {
-          fontSize: 15,
-          marginHorizontal: 15,
+          fontSize: 16,
+          marginHorizontal: 5,
         },
         style: {
           height: 70,
