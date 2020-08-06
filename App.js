@@ -78,10 +78,11 @@ const switchNavigator = createSwitchNavigator({
           borderTopWidth: 0,
           alignItems: "center",
           justifyContent: "center",
+          borderRadius: 10,
         },
         tabStyle: {
           padding: 5,
-          // height: 70,
+          borderRadius: 10,
           justifyContent: "center",
           alignItems: "center",
         },
