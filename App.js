@@ -38,7 +38,7 @@ const switchNavigator = createSwitchNavigator({
                 <MaterialCommunityIcons
                   name="go-kart-track"
                   size={24}
-                  color="#512DF8"
+                  color="#1976D2"
                 />
               ) : (
                 <MaterialCommunityIcons
