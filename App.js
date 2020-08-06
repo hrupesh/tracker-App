@@ -81,10 +81,8 @@ const switchNavigator = createSwitchNavigator({
         },
         tabStyle: {
           padding: 5,
-          borderRadius: 10,
           justifyContent: "center",
           alignItems: "center",
-          marginHorizontal: 15,
         },
       },
     }
