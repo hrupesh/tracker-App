@@ -15,7 +15,13 @@ import { setNavigator } from "./src/navigationRef";
 import LoadingScreen from "./src/screens/LoadingScreen";
 import { StatusBar } from "react-native";
 import FlashMessage from "react-native-flash-message";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import {
+  MaterialCommunityIcons,
+  Ionicons,
+  MaterialIcons,
+  FontAwesome,
+  Entypo,
+} from "@expo/vector-icons";
 
 const switchNavigator = createSwitchNavigator({
   loading: LoadingScreen,
@@ -35,23 +41,49 @@ const switchNavigator = createSwitchNavigator({
             title: "Tracks",
             tabBarIcon: ({ focused }) =>
               focused ? (
-                <MaterialCommunityIcons
-                  name="go-kart-track"
-                  size={40}
-                  color="#1976D2"
-                />
+                <Entypo name="list" size={32} color="#fff" />
               ) : (
                 <MaterialCommunityIcons
                   name="go-kart-track"
-                  size={40}
-                  color="white"
+                  size={32}
+                  color="dodgerblue"
                 />
               ),
           },
         }
       ),
-      TrackCreate: TrackCreate,
-      Account: AccountScreen,
+      TrackCreate: {
+        screen: TrackCreate,
+        navigationOptions: {
+          title: "Create",
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <MaterialIcons name="track-changes" size={32} color="#fff" />
+            ) : (
+              <Ionicons
+                name="ios-add-circle-outline"
+                size={32}
+                color="dodgerblue"
+              />
+            ),
+        },
+      },
+      Account: {
+        screen: AccountScreen,
+        navigationOptions: {
+          title: "Account",
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <FontAwesome name="user" size={32} color="#fff" />
+            ) : (
+              <MaterialIcons
+                name="account-circle"
+                size={32}
+                color="dodgerblue"
+              />
+            ),
+        },
+      },
     },
     {
       initialRouteName: "trackListFlow",
@@ -65,7 +97,7 @@ const switchNavigator = createSwitchNavigator({
         },
         showIcon: true,
         showLabel: false,
-        activeBackgroundColor: "#1d2c4d",
+        activeBackgroundColor: "#fff1",
         inactiveBackgroundColor: "#212121",
         activeTintColor: "#1976D2",
         inactiveTintColor: "#fff",
@@ -75,9 +107,10 @@ const switchNavigator = createSwitchNavigator({
           marginHorizontal: 5,
         },
         style: {
-          height: 70,
+          // height: 70,
           backgroundColor: "#212121",
           borderTopWidth: 0,
+          // borderTopColor: "#fff1",
           alignItems: "center",
           justifyContent: "center",
         },
