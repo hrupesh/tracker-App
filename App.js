@@ -59,7 +59,7 @@ const switchNavigator = createSwitchNavigator({
       tabBarPosition: "bottom",
       tabBarOptions: {
         iconStyle: {
-          padding: 15,
+          // padding: 15,
         },
         showIcon: true,
         showLabel: true,
