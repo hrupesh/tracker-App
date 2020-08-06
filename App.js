@@ -60,10 +60,12 @@ const switchNavigator = createSwitchNavigator({
       tabBarOptions: {
         iconStyle: {
           // padding: 15,
+          justifyContent: "center",
+          alignContent: "center",
         },
         showIcon: true,
         showLabel: false,
-        activeBackgroundColor: "#1976D24F",
+        activeBackgroundColor: "#1d2c4d",
         inactiveBackgroundColor: "#212121",
         activeTintColor: "#1976D2",
         inactiveTintColor: "#fff",
