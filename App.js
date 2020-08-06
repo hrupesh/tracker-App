@@ -70,7 +70,7 @@ const switchNavigator = createSwitchNavigator({
         keyboardHidesTabBar: true,
         labelStyle: {
           fontSize: 15,
-          margin: 15,
+          marginHorizontal: 15,
         },
         style: {
           height: 70,
