@@ -11,9 +11,7 @@ export default function TrackItem({ track }) {
           Distance: {track.locations.length} Metres
         </Text>
       </View>
-      <Text style={styles.length}>
-        <FontAwesome5 name="map-marked-alt" size={40} color="#212121" />
-      </Text>
+      <FontAwesome5 name="map-marked-alt" size={50} color="#0004" />
     </View>
   );
 }

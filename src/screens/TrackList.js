@@ -53,6 +53,8 @@ export default function TrackList({ navigation }) {
       ) : null}
       {loading ? null : (
         <FlatList
+          // refreshControl={true}
+          refreshing={true}
           data={state.tracks}
           keyExtractor={(track) => track._id}
           renderItem={({ item }) => {
