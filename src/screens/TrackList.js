@@ -55,7 +55,7 @@ export default function TrackList({ navigation }) {
           data={state.tracks}
           keyExtractor={(track) => track._id}
           renderItem={({ item }) => {
-            return <TrackItem />;
+            return <TrackItem track={item} />;
           }}
         />
       )}
