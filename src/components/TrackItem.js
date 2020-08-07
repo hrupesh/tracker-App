@@ -16,7 +16,6 @@ export default function TrackItem({ track }) {
   );
 }
 
-
 const styles = StyleSheet.create({
   trackCard: {
     margin: 15,
