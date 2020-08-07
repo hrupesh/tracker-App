@@ -35,10 +35,10 @@ const styles = StyleSheet.create({
     fontFamily: "monospace",
     fontWeight: "bold",
     textShadowOffset: {
-      height: 1,
+      height: 2,
       width: 0,
     },
-    textShadowRadius: 1,
-    textShadowColor: "red",
+    textShadowRadius: 4,
+    textShadowColor: "#000",
   },
 });
