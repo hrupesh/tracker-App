@@ -50,6 +50,7 @@ const switchNavigator = createSwitchNavigator({
                 />
               ),
           },
+          headerMode: "none",
         }
       ),
       TrackCreate: {
@@ -60,11 +61,7 @@ const switchNavigator = createSwitchNavigator({
             focused ? (
               <MaterialIcons name="track-changes" size={32} color="#fff" />
             ) : (
-              <Ionicons
-                name="ios-add-circle-outline"
-                size={32}
-                color="#aaa"
-              />
+              <Ionicons name="ios-add-circle-outline" size={32} color="#aaa" />
             ),
         },
       },
@@ -76,11 +73,7 @@ const switchNavigator = createSwitchNavigator({
             focused ? (
               <FontAwesome name="user" size={32} color="#fff" />
             ) : (
-              <MaterialIcons
-                name="account-circle"
-                size={32}
-                color="#aaa"
-              />
+              <MaterialIcons name="account-circle" size={32} color="#aaa" />
             ),
         },
       },
