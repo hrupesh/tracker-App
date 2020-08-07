@@ -7,7 +7,9 @@ export default function TrackItem({ track }) {
     <View style={styles.trackCard}>
       <View style={{ padding: 5 }}>
         <Text style={styles.name}>{track.name}</Text>
-        <Text style={styles.length}>{track.locations.length}</Text>
+        <Text style={styles.length}>
+          Distance: {track.locations.length} Metres
+        </Text>
       </View>
       <Text style={styles.length}>
         <FontAwesome5 name="map-marked-alt" size={40} color="#212121" />
@@ -48,26 +50,13 @@ const styles = StyleSheet.create({
     textShadowRadius: 6,
     textShadowColor: "#000",
     // height: "120%",
-    justifyContent: "center",
-    alignSelf: "center",
-    alignItems: "center",
   },
   length: {
     paddingVertical: 5,
-    color: "white",
-    fontSize: 20,
+    color: "#eee",
+    fontSize: 16,
     letterSpacing: 1,
     fontFamily: "monospace",
-    fontWeight: "bold",
-    textShadowOffset: {
-      height: 0,
-      width: 0,
-    },
-    textShadowRadius: 6,
-    textShadowColor: "#000",
-    // height: "120%",
-    justifyContent: "center",
-    alignSelf: "center",
-    alignItems: "center",
+    alignItems: "baseline",
   },
 });
