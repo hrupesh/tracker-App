@@ -46,7 +46,7 @@ const switchNavigator = createSwitchNavigator({
                 <MaterialCommunityIcons
                   name="go-kart-track"
                   size={32}
-                  color="dodgerblue"
+                  color="#aaa"
                 />
               ),
           },
@@ -63,7 +63,7 @@ const switchNavigator = createSwitchNavigator({
               <Ionicons
                 name="ios-add-circle-outline"
                 size={32}
-                color="dodgerblue"
+                color="#aaa"
               />
             ),
         },
@@ -79,7 +79,7 @@ const switchNavigator = createSwitchNavigator({
               <MaterialIcons
                 name="account-circle"
                 size={32}
-                color="dodgerblue"
+                color="#aaa"
               />
             ),
         },
