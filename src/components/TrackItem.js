@@ -1,13 +1,16 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 export default function TrackItem({ track }) {
   return (
     <View style={styles.trackCard}>
-      <Text style={styles.name}> {track.name} </Text>
+      <View style={{ padding: 5 }}>
+        <Text style={styles.name}>{track.name}</Text>
+        <Text style={styles.length}>{track.locations.length}</Text>
+      </View>
       <Text style={styles.length}>
-        <Ionicons name="md-speedometer" size={50} color="white" />
+        <FontAwesome5 name="map-marked-alt" size={40} color="#212121" />
       </Text>
     </View>
   );
@@ -34,29 +37,37 @@ const styles = StyleSheet.create({
   },
   name: {
     color: "white",
-    fontSize: 18,
+    fontSize: 20,
     letterSpacing: 1,
     fontFamily: "monospace",
     fontWeight: "bold",
     textShadowOffset: {
-      height: 2,
+      height: 0,
       width: 0,
     },
-    textShadowRadius: 4,
+    textShadowRadius: 6,
     textShadowColor: "#000",
-    height: "120%",
+    // height: "120%",
+    justifyContent: "center",
+    alignSelf: "center",
+    alignItems: "center",
   },
   length: {
-    // backgroundColor: "#388E3C",
-    borderRadius: 50,
-    padding: 10,
-    fontWeight: "bold",
-    fontSize: 16,
-    paddingVertical: 18,
+    paddingVertical: 5,
     color: "white",
-    // elevation: 10,
-    height: 60,
+    fontSize: 20,
+    letterSpacing: 1,
+    fontFamily: "monospace",
+    fontWeight: "bold",
+    textShadowOffset: {
+      height: 0,
+      width: 0,
+    },
+    textShadowRadius: 6,
+    textShadowColor: "#000",
+    // height: "120%",
     justifyContent: "center",
+    alignSelf: "center",
     alignItems: "center",
   },
 });
