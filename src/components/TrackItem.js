@@ -40,5 +40,6 @@ const styles = StyleSheet.create({
     },
     textShadowRadius: 4,
     textShadowColor: "#000",
+    height:'120%'
   },
 });
