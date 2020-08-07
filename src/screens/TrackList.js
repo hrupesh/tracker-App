@@ -10,6 +10,7 @@ import AnimatedLoader from "react-native-animated-loader";
 import { showMessage, hideMessage } from "react-native-flash-message";
 import { Context as TrackContext } from "../context/TrackContext";
 import { FlatList } from "react-native-gesture-handler";
+import TrackItem from "../components/TrackItem";
 
 export default function TrackList({ navigation }) {
   const msg = navigation.getParam("message");
@@ -54,7 +55,7 @@ export default function TrackList({ navigation }) {
           data={state.tracks}
           keyExtractor={(track) => track._id}
           renderItem={({ item }) => {
-            return <Text>Track : {item.name}</Text>;
+            return <TrackItem />;
           }}
         />
       )}
