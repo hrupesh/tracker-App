@@ -42,6 +42,7 @@ export default function TrackList({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.heading}> Your Tracks </Text>
       {loading ? (
         <AnimatedLoader
           visible
@@ -67,5 +68,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#1d2c4d",
+  },
+  heading: {
+    color: "white",
+    fontSize: 28,
+    letterSpacing: 1,
+    fontFamily: "monospace",
+    fontWeight: "bold",
+    textShadowOffset: {
+      height: 0,
+      width: 0,
+    },
+    marginVertical: 10,
+    textShadowRadius: 6,
+    textShadowColor: "blue",
+    textAlign: "center",
+    // height: "120%",
   },
 });
