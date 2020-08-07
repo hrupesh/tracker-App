@@ -1,11 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function TrackItem({ track }) {
   return (
     <View style={styles.trackCard}>
       <Text style={styles.name}> {track.name} </Text>
-      <Text style={styles.length}> {track.locations.length} Mt. </Text>
+      <Text style={styles.length}>
+        <Ionicons name="md-speedometer" size={50} color="white" />
+      </Text>
     </View>
   );
 }
@@ -27,6 +30,7 @@ const styles = StyleSheet.create({
     },
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
   },
   name: {
     color: "white",
@@ -40,12 +44,19 @@ const styles = StyleSheet.create({
     },
     textShadowRadius: 4,
     textShadowColor: "#000",
-    height:'120%'
+    height: "120%",
   },
-  length:{
-      backgroundColor:'red',
-      borderRadius:50,
-    padding:10,
-    
-  }
+  length: {
+    // backgroundColor: "#388E3C",
+    borderRadius: 50,
+    padding: 10,
+    fontWeight: "bold",
+    fontSize: 16,
+    paddingVertical: 18,
+    color: "white",
+    // elevation: 10,
+    height: 60,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
