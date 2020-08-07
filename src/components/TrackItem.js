@@ -5,7 +5,7 @@ export default function TrackItem({ track }) {
   return (
     <View style={styles.trackCard}>
       <Text style={styles.name}> {track.name} </Text>
-      <Text style={styles.length}> {track.locations.length} Meters </Text>
+      <Text style={styles.length}> {track.locations.length} Mt. </Text>
     </View>
   );
 }
@@ -42,4 +42,10 @@ const styles = StyleSheet.create({
     textShadowColor: "#000",
     height:'120%'
   },
+  length:{
+      backgroundColor:'red',
+      borderRadius:50,
+    padding:10,
+    
+  }
 });
