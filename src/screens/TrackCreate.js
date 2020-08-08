@@ -19,6 +19,7 @@ const TrackCreate = ({ isFocused }) => {
     state.recording
   );
 
+  
   // console.log(isFocused);
   console.log(state.locations.length);
 
