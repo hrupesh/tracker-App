@@ -8,15 +8,17 @@ import {
 
 export default function TrackItem({ track }) {
   return (
-    <View style={styles.trackCard}>
-      <View style={{ padding: 5 }}>
-        <Text style={styles.name}>{track.name}</Text>
-        <Text style={styles.length}>
-          Distance: {track.locations.length} Metres
-        </Text>
+    <TouchableNativeFeedback>
+      <View style={styles.trackCard}>
+        <View style={{ padding: 5 }}>
+          <Text style={styles.name}>{track.name}</Text>
+          <Text style={styles.length}>
+            Distance: {track.locations.length} Metres
+          </Text>
+        </View>
+        <FontAwesome5 name="map-marked-alt" size={50} color="#0004" />
       </View>
-      <FontAwesome5 name="map-marked-alt" size={50} color="#0004" />
-    </View>
+    </TouchableNativeFeedback>
   );
 }
 

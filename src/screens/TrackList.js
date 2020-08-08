@@ -48,7 +48,7 @@ export default function TrackList({ navigation }) {
           visible
           overlayColor="#1d2c4daf"
           animationStyle={{ width: 500, height: 500 }}
-          speed={1.5}
+          speed={1}
         />
       ) : null}
       {loading ? null : (
