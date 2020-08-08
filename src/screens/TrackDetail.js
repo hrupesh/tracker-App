@@ -295,6 +295,8 @@ const styles = StyleSheet.create({
   },
   distance: {
     position: "absolute",
+    bottom: 0,
+    right: 0,
     color: "white",
     fontWeight: "bold",
     fontSize: 16,
