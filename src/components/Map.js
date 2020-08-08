@@ -295,7 +295,7 @@ export default function Map() {
       <Marker
         draggable
         coordinate={{ ...currentLocation.coords }}
-        title="Hi!"
+        title="You are here"
       />
       {/* <Polyline coordinates={locations.map((loc) => loc.coords)} /> */}
       <Circle
@@ -313,11 +313,6 @@ export default function Map() {
         coordinates={locations.map((loc) => loc.coords)}
         strokeColor="#FF52524F"
         strokeWidth={6}
-        focusable
-        lineJoin="round"
-        geodesic
-        tappable
-        onPress={(pos) => console.log(pos)}
       />
       {/* {points.map((point) => (
         <Marker key={point.latitude} coordinate={point} title="Hi!" />
