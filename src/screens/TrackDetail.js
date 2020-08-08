@@ -259,7 +259,7 @@ export default function TrackDetail({ navigation }) {
           strokeWidth={6}
         />
       </MapView>
-      <Text>Track Name: {track.name}</Text>
+      <Text style={styles.name}> Name: {track.name}</Text>
     </SafeAreaView>
   );
 }
@@ -272,5 +272,19 @@ const styles = StyleSheet.create({
   map: {
     width: "100%",
     height: "85%",
+  },
+  name: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 22,
+    fontFamily: "monospace",
+    overflow: "scroll",
+    textAlign: "center",
+    textShadowColor: "red",
+    textShadowRadius: 2,
+    textShadowOffset: {
+      height: 1,
+      width: 1,
+    },
   },
 });
