@@ -1,10 +1,11 @@
 import React from "react";
 import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
-import Map from "../components/Map";
 import MapView, { Polyline } from "react-native-maps";
 
 export default function TrackDetail({ navigation }) {
   const track = navigation.getParam("track");
+
+  // console.log(navigation);
 
   // console.log(track);
 
