@@ -293,4 +293,19 @@ const styles = StyleSheet.create({
     },
     margin: 5,
   },
+  distance: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 22,
+    fontFamily: "monospace",
+    overflow: "scroll",
+    textAlign: "center",
+    textShadowColor: "#448AFF",
+    textShadowRadius: 6,
+    textShadowOffset: {
+      height: 0,
+      width: 0,
+    },
+    margin: 5,
+  },
 });
