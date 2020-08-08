@@ -253,6 +253,7 @@ export default function TrackDetail({ navigation }) {
           latitudeDelta: 0.01,
           longitudeDelta: 0.01,
         }}
+        followsUserLocation={true}
       >
         <Polyline
           coordinates={track.locations.map((t) => t.coords)}
@@ -261,6 +262,9 @@ export default function TrackDetail({ navigation }) {
         />
       </MapView>
       <Text style={styles.name}> Name: {track.name}</Text>
+      <Text style={styles.distance}>
+        This track is approximately {track.locations.length} meters long.
+      </Text>
     </SafeAreaView>
   );
 }
