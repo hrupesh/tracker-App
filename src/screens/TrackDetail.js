@@ -255,7 +255,7 @@ export default function TrackDetail({ navigation }) {
       >
         <Polyline
           coordinates={track.locations.map((t) => t.coords)}
-          strokeColor="#FF52524F"
+          strokeColor="#448AFFAF"
           strokeWidth={6}
         />
       </MapView>
@@ -271,6 +271,6 @@ const styles = StyleSheet.create({
   },
   map: {
     width: "100%",
-    height: "65%",
+    height: "85%",
   },
 });
