@@ -1,6 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Platform } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
+import {
+  TouchableNativeFeedback,
+  TouchableOpacity,
+} from "react-native-gesture-handler";
 
 export default function TrackItem({ track }) {
   return (
