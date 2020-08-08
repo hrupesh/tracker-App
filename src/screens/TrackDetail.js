@@ -263,7 +263,7 @@ export default function TrackDetail({ navigation }) {
       </MapView>
       <Text style={styles.name}> Name: {track.name}</Text>
       <Text style={styles.distance}>
-        This track is approximately {track.locations.length} meters long.
+        Approximately {track.locations.length} meters long.
       </Text>
     </SafeAreaView>
   );
@@ -284,7 +284,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontFamily: "monospace",
     overflow: "scroll",
-    textAlign: "center",
     textShadowColor: "#448AFF",
     textShadowRadius: 6,
     textShadowOffset: {
@@ -296,10 +295,9 @@ const styles = StyleSheet.create({
   distance: {
     color: "white",
     fontWeight: "bold",
-    fontSize: 22,
-    fontFamily: "monospace",
+    fontSize: 16,
+    letterSpacing: 1,
     overflow: "scroll",
-    textAlign: "center",
     textShadowColor: "#448AFF",
     textShadowRadius: 6,
     textShadowOffset: {
