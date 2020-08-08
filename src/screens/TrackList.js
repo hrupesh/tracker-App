@@ -11,6 +11,7 @@ import { showMessage, hideMessage } from "react-native-flash-message";
 import { Context as TrackContext } from "../context/TrackContext";
 import { FlatList } from "react-native-gesture-handler";
 import TrackItem from "../components/TrackItem";
+import { navigate } from "../navigationRef";
 
 export default function TrackList({ navigation }) {
   const msg = navigation.getParam("message");
@@ -58,7 +59,7 @@ export default function TrackList({ navigation }) {
           data={state.tracks}
           keyExtractor={(track) => track._id}
           renderItem={({ item }) => {
-            return <TrackItem track={item} />;
+            return <TrackItem navigation={navigation} track={item} />;
           }}
         />
       )}

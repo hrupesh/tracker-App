@@ -3,9 +3,14 @@ import { StyleSheet, Text, View, Platform } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function TrackItem({ track }) {
+export default function TrackItem({ track, navigation }) {
   return (
-    <TouchableOpacity activeOpacity={0.75}>
+    <TouchableOpacity
+      activeOpacity={0.75}
+      onPress={() => {
+        navigation.navigate("TrackDetail");
+      }}
+    >
       <View style={styles.trackCard}>
         <View style={{ padding: 5 }}>
           <Text style={styles.name}>{track.name}</Text>
