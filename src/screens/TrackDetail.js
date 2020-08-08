@@ -276,9 +276,10 @@ const styles = StyleSheet.create({
   },
   map: {
     width: "100%",
-    height: "85%",
+    height: "100%",
   },
   name: {
+    position: "absolute",
     color: "white",
     fontWeight: "bold",
     fontSize: 22,
@@ -290,9 +291,10 @@ const styles = StyleSheet.create({
       height: 0,
       width: 0,
     },
-    margin: 5,
+    marginVertical: 5,
   },
   distance: {
+    position: "absolute",
     color: "white",
     fontWeight: "bold",
     fontSize: 16,
