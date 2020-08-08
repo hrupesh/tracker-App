@@ -1,16 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
 
 export default function TrackDetail({ navigation }) {
   return (
-    <View>
+    <SafeAreaView>
       <Text>TrackDetail Screen</Text>
-      <Button
-        title="Track  List"
-        color="dodgerblue"
-        onPress={() => navigation.navigate("TrackList")}
-      />
-    </View>
+    </SafeAreaView>
   );
 }
 
