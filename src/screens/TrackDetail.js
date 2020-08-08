@@ -280,11 +280,12 @@ const styles = StyleSheet.create({
     fontFamily: "monospace",
     overflow: "scroll",
     textAlign: "center",
-    textShadowColor: "red",
-    textShadowRadius: 2,
+    textShadowColor: "#448AFF",
+    textShadowRadius: 6,
     textShadowOffset: {
-      height: 1,
-      width: 1,
+      height: 0,
+      width: 0,
     },
+    margin: 5,
   },
 });
