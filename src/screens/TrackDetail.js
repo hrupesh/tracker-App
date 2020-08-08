@@ -261,10 +261,8 @@ export default function TrackDetail({ navigation }) {
           strokeWidth={6}
         />
       </MapView>
-      <Text style={styles.name}> Name: {track.name}</Text>
-      <Text style={styles.distance}>
-        Approximately {track.locations.length} meters long.
-      </Text>
+      <Text style={styles.name}> {track.name}</Text>
+      <Text style={styles.distance}>{track.locations.length} Meters</Text>
     </SafeAreaView>
   );
 }
@@ -283,6 +281,8 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
     fontSize: 22,
+    width: "100%",
+    textAlign: "center",
     fontFamily: "monospace",
     overflow: "scroll",
     textShadowColor: "#448AFF",
@@ -291,23 +291,25 @@ const styles = StyleSheet.create({
       height: 0,
       width: 0,
     },
-    marginVertical: 5,
+    marginVertical: 15,
   },
   distance: {
     position: "absolute",
     bottom: 0,
     right: 0,
     color: "white",
-    fontWeight: "bold",
-    fontSize: 16,
-    letterSpacing: 1,
+    fontWeight: "100",
+    fontFamily: "monospace",
+    fontSize: 15,
+    letterSpacing: 0,
     overflow: "scroll",
-    textShadowColor: "#448AFF",
+    textShadowColor: "#000",
     textShadowRadius: 6,
     textShadowOffset: {
-      height: 0,
-      width: 0,
+      height: 1,
+      width: 1,
     },
-    margin: 5,
+    marginBottom: 7,
+    marginRight: 10,
   },
 });
