@@ -8,7 +8,9 @@ export default function TrackItem({ track, navigation }) {
     <TouchableOpacity
       activeOpacity={0.75}
       onPress={() => {
-        navigation.navigate("TrackDetail");
+        navigation.navigate("TrackDetail", {
+          track: track,
+        });
       }}
     >
       <View style={styles.trackCard}>
