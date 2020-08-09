@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
 import MapView, { Polyline } from "react-native-maps";
-import { Ionicons } from "@expo/vector-icons";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import * as Animatable from "react-native-reanimated";
 
 export default function TrackDetail({ navigation }) {
   const track = navigation.getParam("track");
@@ -271,6 +271,14 @@ export default function TrackDetail({ navigation }) {
         onPress={() => navigation.goBack()}
       />
       <Text style={styles.name}>{track.name}</Text>
+      <Animatable.View>
+        <MaterialCommunityIcons
+          name="delete-circle-outline"
+          size={24}
+          color="black"
+          style={styles.icon}
+        />
+      </Animatable.View>
       <Text style={styles.distance}>{track.locations.length} Meters</Text>
     </SafeAreaView>
   );
@@ -302,8 +310,8 @@ const styles = StyleSheet.create({
       width: 0,
     },
     // marginVertical: 15,
-    paddingVertical:15,
-    backgroundColor:'#1d2c4d8f'
+    paddingVertical: 15,
+    backgroundColor: "#1d2c4d8f",
   },
   icon: {
     position: "absolute",
@@ -318,7 +326,7 @@ const styles = StyleSheet.create({
       height: 0,
       width: 0,
     },
-    marginTop:15,
+    marginTop: 15,
     // paddingVertical: 15,
     // backgroundColor: "#1d2c4d4f",
     paddingHorizontal: 5,
