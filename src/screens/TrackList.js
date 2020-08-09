@@ -61,9 +61,9 @@ export default function TrackList({ navigation }) {
         <View style={{ justifyContent: "center", alignItems: "center" }}>
           <Image
             source={require("../../assets/sponge.gif")}
-            style={{ width: "100%", height: 400 }}
+            style={{ width: "100%", height: 400, marginTop: 50 }}
           />
-          <Text style={styles.heading}>
+          <Text style={styles.oops}>
             Oops! looks like you have not created any tracks yet. Why don't you
             create one.
           </Text>
@@ -102,6 +102,22 @@ const styles = StyleSheet.create({
     marginVertical: 15,
     textShadowRadius: 10,
     textShadowColor: "dodgerblue",
+    textAlign: "center",
+    // height: "120%",
+  },
+  oops: {
+    color: "#FFC107",
+    fontSize: 18,
+    letterSpacing: 2,
+    fontFamily: "monospace",
+    fontWeight: "bold",
+    textShadowOffset: {
+      height: 1,
+      width: 0,
+    },
+    marginVertical: 15,
+    textShadowRadius: 6,
+    textShadowColor: "red",
     textAlign: "center",
     // height: "120%",
   },
