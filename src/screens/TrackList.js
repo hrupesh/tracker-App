@@ -13,6 +13,7 @@ import { Context as TrackContext } from "../context/TrackContext";
 import { FlatList } from "react-native-gesture-handler";
 import TrackItem from "../components/TrackItem";
 import { navigate } from "../navigationRef";
+import { AntDesign } from "@expo/vector-icons";
 
 export default function TrackList({ navigation }) {
   const msg = navigation.getParam("message");
@@ -67,6 +68,12 @@ export default function TrackList({ navigation }) {
             Oops! looks like you have not created any tracks yet. Why don't you
             create one.
           </Text>
+          <AntDesign
+            style={styles.downicon}
+            name="arrowdown"
+            size={24}
+            color="black"
+          />
         </View>
       ) : null}
       {loading ? null : (
@@ -120,5 +127,10 @@ const styles = StyleSheet.create({
     textShadowColor: "red",
     textAlign: "center",
     // height: "120%",
+  },
+  downicon: {
+    color: "white",
+    fontSize: 40,
+    fontWeight: "bold",
   },
 });
