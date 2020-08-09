@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
 import MapView, { Polyline } from "react-native-maps";
+import { AntDesign } from '@expo/vector-icons';
 
 export default function TrackDetail({ navigation }) {
   const track = navigation.getParam("track");
@@ -261,6 +262,7 @@ export default function TrackDetail({ navigation }) {
           strokeWidth={6}
         />
       </MapView>
+      <AntDesign style={style.name} name="back" size={24} color="black" />
       <Text style={styles.name}> {track.name}</Text>
       <Text style={styles.distance}>{track.locations.length} Meters</Text>
     </SafeAreaView>
