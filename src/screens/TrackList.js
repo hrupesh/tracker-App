@@ -79,10 +79,10 @@ export default function TrackList({ navigation }) {
             create one.
           </Text>
           <Animatable.View
-            animation="rubberBand"
+            animation="fadeOutUp"
             iterationCount="infinite"
-            duration={1000}
             direction="alternate"
+            easing="ease-in-out-back"
           >
             <AntDesign
               style={styles.downicon}
