@@ -1,8 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
 import MapView, { Polyline } from "react-native-maps";
-import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
-import * as Animatable from "react-native-reanimated";
+import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import * as Animatable from "react-native-animatable";
+import {
+  TouchableOpacity,
+  TouchableNativeFeedback,
+} from "react-native-gesture-handler";
 
 export default function TrackDetail({ navigation }) {
   const track = navigation.getParam("track");
@@ -271,13 +275,14 @@ export default function TrackDetail({ navigation }) {
         onPress={() => navigation.goBack()}
       />
       <Text style={styles.name}>{track.name}</Text>
-      <Animatable.View>
-        <MaterialCommunityIcons
-          name="delete-circle-outline"
+      <Animatable.View animation="slideInRight" iterationCount={1}>
+        <MaterialIcons
+          name="delete-sweep"
           size={24}
           color="black"
-          style={styles.icon}
+          style={styles.deleteicon}
         />
+        {/* Todo : Add alert to confirm delete and make call to delete API endpoint */}
       </Animatable.View>
       <Text style={styles.distance}>{track.locations.length} Meters</Text>
     </SafeAreaView>
@@ -322,6 +327,25 @@ const styles = StyleSheet.create({
     fontSize: 40,
     textShadowColor: "#000",
     textShadowRadius: 6,
+    textShadowOffset: {
+      height: 0,
+      width: 0,
+    },
+    marginTop: 15,
+    // paddingVertical: 15,
+    // backgroundColor: "#1d2c4d4f",
+    paddingHorizontal: 5,
+    borderRadius: 50,
+  },
+  deleteicon: {
+    position: "absolute",
+    bottom: 50,
+    right: 15,
+    color: "tomato",
+    zIndex: 10,
+    fontSize: 60,
+    textShadowColor: "red",
+    textShadowRadius: 10,
     textShadowOffset: {
       height: 0,
       width: 0,
