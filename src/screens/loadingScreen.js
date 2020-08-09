@@ -21,10 +21,7 @@ export default function LoadingScreen() {
       />
       <Image
         style={styles.loader}
-        source={{
-          uri:
-            "https://cdn.dribbble.com/users/1162077/screenshots/4382009/animated-pattern.gif",
-        }}
+        source={require("../../assets/loading.gif")}
         resizeMode="cover"
       />
     </View>
