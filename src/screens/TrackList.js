@@ -14,6 +14,7 @@ import { FlatList } from "react-native-gesture-handler";
 import TrackItem from "../components/TrackItem";
 import { navigate } from "../navigationRef";
 import { AntDesign } from "@expo/vector-icons";
+import * as Animatable from "react-native-animatable";
 
 export default function TrackList({ navigation }) {
   const msg = navigation.getParam("message");
@@ -59,10 +60,16 @@ export default function TrackList({ navigation }) {
         />
       ) : null}
       {state.tracks.length < 1 && !loading ? (
-        <View style={{ justifyContent: "center", alignItems: "center" }}>
+        <View
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+          }}
+        >
           <Image
             source={require("../../assets/sponge.gif")}
-            style={{ width: "100%", height: 400, marginTop: 50 }}
+            style={{ width: "100%", height: 400 }}
           />
           <Text style={styles.oops}>
             Oops! looks like you have not created any tracks yet. Why don't you
@@ -130,7 +137,8 @@ const styles = StyleSheet.create({
   },
   downicon: {
     color: "white",
-    fontSize: 40,
+    fontSize: 50,
+    marginTop: 40,
     fontWeight: "bold",
   },
 });
