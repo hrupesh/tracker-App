@@ -60,12 +60,15 @@ export default function TrackList({ navigation }) {
         />
       ) : null}
       {state.tracks.length < 1 && !loading ? (
-        <View
+        <Animatable.View
           style={{
             justifyContent: "center",
             alignItems: "center",
             height: "100%",
           }}
+          animation="fadeInDown"
+          iterationCount={1}
+          duration={1500}
         >
           <Image
             source={require("../../assets/sponge.gif")}
@@ -75,13 +78,20 @@ export default function TrackList({ navigation }) {
             Oops! looks like you have not created any tracks yet. Why don't you
             create one.
           </Text>
-          <AntDesign
-            style={styles.downicon}
-            name="arrowdown"
-            size={24}
-            color="black"
-          />
-        </View>
+          <Animatable.View
+            animation="rubberBand"
+            iterationCount="infinite"
+            duration={1000}
+            direction="alternate"
+          >
+            <AntDesign
+              style={styles.downicon}
+              name="arrowdown"
+              size={24}
+              color="black"
+            />
+          </Animatable.View>
+        </Animatable.View>
       ) : null}
       {loading ? null : (
         <FlatList
@@ -136,9 +146,16 @@ const styles = StyleSheet.create({
     // height: "120%",
   },
   downicon: {
-    color: "white",
+    color: "tomato",
     fontSize: 50,
+    fontWeight: "bold",
     marginTop: 40,
     fontWeight: "bold",
+    textShadowColor: "red",
+    textShadowOffset: {
+      height: 0,
+      width: 0,
+    },
+    textShadowRadius: 6,
   },
 });
