@@ -20,6 +20,8 @@ export default function TrackList({ navigation }) {
 
   const [loading, setLoading] = useState(true);
 
+  const revtracks = Array.prototype.reverse(state.tracks);
+
   const getTracks = async () => {
     await fetchTracks();
     setLoading(false);
@@ -36,6 +38,7 @@ export default function TrackList({ navigation }) {
         titleStyle: {
           letterSpacing: 1,
         },
+        duration: 4000,
       });
     }
     getTracks();
@@ -56,7 +59,7 @@ export default function TrackList({ navigation }) {
         <FlatList
           // refreshControl={true}
           refreshing={true}
-          data={state.tracks}
+          data={revtracks}
           keyExtractor={(track) => track._id}
           renderItem={({ item }) => {
             return <TrackItem navigation={navigation} track={item} />;
