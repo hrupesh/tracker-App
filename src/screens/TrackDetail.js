@@ -295,6 +295,18 @@ const styles = StyleSheet.create({
     },
     marginVertical: 15,
   },
+  icon: {
+    position: "absolute",
+    color: "white",
+    fontSize: 22,
+    textShadowColor: "#448AFF",
+    textShadowRadius: 6,
+    textShadowOffset: {
+      height: 0,
+      width: 0,
+    },
+    marginVertical: 15,
+  },
   distance: {
     position: "absolute",
     bottom: 0,
