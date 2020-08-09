@@ -263,12 +263,13 @@ export default function TrackDetail({ navigation }) {
           strokeWidth={6}
         />
       </MapView>
-        <Ionicons
-          style={styles.icon}
-          name="ios-arrow-round-back"
-          size={24}
-          color="black"
-        />
+      <Ionicons
+        style={styles.icon}
+        name="ios-arrow-round-back"
+        size={24}
+        color="black"
+        onPress={() => navigation.goBack()}
+      />
       <Text style={styles.name}>{track.name}</Text>
       <Text style={styles.distance}>{track.locations.length} Meters</Text>
     </SafeAreaView>
@@ -300,12 +301,14 @@ const styles = StyleSheet.create({
       height: 0,
       width: 0,
     },
-    marginVertical: 15,
+    // marginVertical: 15,
+    paddingVertical:15,
+    backgroundColor:'#1d2c4d8f'
   },
   icon: {
     position: "absolute",
     // top: 2,
-    left: 25,
+    left: 15,
     color: "white",
     zIndex: 9,
     fontSize: 40,
@@ -315,10 +318,11 @@ const styles = StyleSheet.create({
       height: 0,
       width: 0,
     },
-    marginVertical: 15,
-    backgroundColor:'red',
-    paddingHorizontal:10,
-    
+    marginTop:15,
+    // paddingVertical: 15,
+    // backgroundColor: "#1d2c4d4f",
+    paddingHorizontal: 5,
+    borderRadius: 50,
   },
   distance: {
     position: "absolute",
