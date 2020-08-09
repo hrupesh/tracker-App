@@ -282,7 +282,7 @@ export default function TrackDetail({ navigation }) {
           color="black"
           style={styles.deleteicon}
         />
-        {/* Todo : Add alert to confirm delete and make call to delete API endpoint */}
+        {/* Todo : Add alert to confirm delete and make call to delete API endpoint  // /@!#@@$ snap: anishu71 @#!$#$/  */}
       </Animatable.View>
       <Text style={styles.distance}>{track.locations.length} Meters</Text>
     </SafeAreaView>
