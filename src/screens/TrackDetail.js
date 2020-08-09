@@ -262,7 +262,7 @@ export default function TrackDetail({ navigation }) {
           strokeWidth={6}
         />
       </MapView>
-      <AntDesign style={styles.name} name="back" size={24} color="black" />
+      <AntDesign style={styles.icon} name="back" size={24} color="black" />
       <Text style={styles.name}> {track.name}</Text>
       <Text style={styles.distance}>{track.locations.length} Meters</Text>
     </SafeAreaView>
