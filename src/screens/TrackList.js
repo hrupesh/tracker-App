@@ -58,7 +58,7 @@ export default function TrackList({ navigation }) {
         />
       ) : null}
       {state.tracks.length < 1 && !loading ? (
-        <View>
+        <View style={{ flex: 1, justifyContent: "center" }}>
           <Image
             source={require("../../assets/sponge.gif")}
             style={{ width: "100%", height: 400 }}
