@@ -1,7 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
 import MapView, { Polyline } from "react-native-maps";
-import { AntDesign } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function TrackDetail({ navigation }) {
   const track = navigation.getParam("track");
@@ -262,8 +263,13 @@ export default function TrackDetail({ navigation }) {
           strokeWidth={6}
         />
       </MapView>
-      <AntDesign style={styles.icon} name="back" size={24} color="black" />
-      <Text style={styles.name}> {track.name}</Text>
+        <Ionicons
+          style={styles.icon}
+          name="ios-arrow-round-back"
+          size={24}
+          color="black"
+        />
+      <Text style={styles.name}>{track.name}</Text>
       <Text style={styles.distance}>{track.locations.length} Meters</Text>
     </SafeAreaView>
   );
@@ -285,9 +291,10 @@ const styles = StyleSheet.create({
     fontSize: 22,
     width: "100%",
     textAlign: "center",
+    letterSpacing: 2,
     fontFamily: "monospace",
     overflow: "scroll",
-    textShadowColor: "#448AFF",
+    textShadowColor: "#000",
     textShadowRadius: 6,
     textShadowOffset: {
       height: 0,
@@ -297,15 +304,21 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: "absolute",
+    // top: 2,
+    left: 25,
     color: "white",
-    fontSize: 22,
-    textShadowColor: "#448AFF",
+    zIndex: 9,
+    fontSize: 40,
+    textShadowColor: "#000",
     textShadowRadius: 6,
     textShadowOffset: {
       height: 0,
       width: 0,
     },
     marginVertical: 15,
+    backgroundColor:'red',
+    paddingHorizontal:10,
+    
   },
   distance: {
     position: "absolute",
