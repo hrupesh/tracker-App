@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   StyleSheet,
   Text,
@@ -9,22 +9,38 @@ import {
 } from "react-native";
 import MapView, { Polyline } from "react-native-maps";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import { Context as TrackContext } from "../context/TrackContext";
 import * as Animatable from "react-native-animatable";
-import {
-  TouchableOpacity,
-  TouchableNativeFeedback,
-} from "react-native-gesture-handler";
 
 export default function TrackDetail({ navigation }) {
+  const { delTrack } = useContext(TrackContext);
   const track = navigation.getParam("track");
 
   // console.log(navigation);
 
   // console.log(track);
 
+  const deleteTrack = (track) => {};
+
   const confirmDelete = () => {
-    Alert.alert("Are you sure?", "Deletion is irreverisble 🤯 ");
-    console.log("Deleting.....");
+    Alert.alert(
+      "Are you sure?",
+      "Deletion is irreverisble 💀 ",
+      [
+        {
+          text: "Nope",
+          // onPress: () => console.log("Cancel Pressed"),
+          style: "cancel",
+        },
+        {
+          text: "Yes, Delete",
+          onPress: () => console.log("OK Pressed"),
+          style: "destructive",
+        },
+      ],
+      { cancelable: false }
+    );
+    // console.log("Deleting.....");
   };
 
   const mapStyle = [
@@ -287,16 +303,16 @@ export default function TrackDetail({ navigation }) {
         onPress={() => navigation.goBack()}
       />
       <Text style={styles.name}>{track.name}</Text>
-      <Animatable.View animation="slideInRight" iterationCount={1}>
-        <MaterialIcons
-          name="delete-sweep"
-          size={24}
-          color="black"
-          style={styles.deleteicon}
-          onPress={() => navigation.goBack()}
-        />
-        {/* Todo : Add alert to confirm delete and make call to delete API endpoint   */}
-      </Animatable.View>
+      {/* <Animatable.View animation="slideInRight" iterationCount={1}> */}
+      <MaterialIcons
+        name="delete-sweep"
+        size={24}
+        color="black"
+        style={styles.deleteicon}
+        onPress={() => confirmDelete()}
+      />
+      {/* Todo : Add alert to confirm delete and make call to delete API endpoint   */}
+      {/* </Animatable.View> */}
       <Text style={styles.distance}>{track.locations.length} Meters</Text>
     </SafeAreaView>
   );
