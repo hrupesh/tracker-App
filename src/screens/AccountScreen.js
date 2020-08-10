@@ -32,7 +32,7 @@ export default function AccountScreen() {
     <ImageBackground
       resizeMethod="resize"
       resizeMode="cover"
-      source={{ url: "https://picsum.photos/3000/3500" }}
+      source={{ uri: "https://picsum.photos/3000/3500" }}
       style={styles.container}
     >
       <Text
@@ -40,7 +40,14 @@ export default function AccountScreen() {
         h1Style={{ color: "#fff", letterSpacing: 5, fontWeight: "100" }}
         style={styles.text}
       >
-        Really! 👀
+        Hey
+      </Text>
+      <Text
+        h2
+        h2Style={{ color: "#fff", letterSpacing: 5, fontWeight: "100" }}
+        style={styles.text}
+      >
+        I am Rupesh Chaudhari
       </Text>
       <Image
         source={{
@@ -76,18 +83,24 @@ export default function AccountScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#f7f7f7",
+    backgroundColor: "#1d2c4d",
     flex: 1,
     padding: 25,
     justifyContent: "space-between",
     alignItems: "center",
   },
   text: {
-    backgroundColor: "#0004",
+    backgroundColor: "#0006",
     width: "120%",
     textAlign: "center",
     padding: 25,
     borderRadius: 4,
+    textShadowColor:"red",
+    textShadowOffset:{
+      height:0,
+      width:0
+    },
+    textShadowRadius:10
   },
   btn: {
     marginTop: 30,
