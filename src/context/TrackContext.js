@@ -1,5 +1,6 @@
 import createDataContext from "./createDataContext";
 import trackerapi from "../api/trackapi";
+import { navigate } from "../navigationRef";
 
 const trackReducer = (state, action) => {
   switch (action.type) {
@@ -33,9 +34,10 @@ const createTrack = (dispatch) => async (name, locations) => {
 const delTrack = (dispatch) => async (track) => {
   try {
     // to call delete endpoint
-    console.log(track);
-    // await trackerapi.post("/delete", { id: track._id });
-    alert("Track Deleted!");
+    // console.log(track._id);
+    navigate("loading");
+    await trackerapi.post("/delete", { id: track._id });
+    // alert("Track Deleted!");
   } catch (err) {
     alert("Error: " + err.message);
   }
