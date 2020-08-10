@@ -23,7 +23,8 @@ export default function TrackDetail({ navigation }) {
   // console.log(track);
 
   const confirmDelete = () => {
-    Alert.prompt("Are you sure?", "Deletion is irreverisble 🤯 ");
+    Alert.alert("Are you sure?", "Deletion is irreverisble 🤯 ");
+    console.log("Deleting.....");
   };
 
   const mapStyle = [
@@ -292,6 +293,7 @@ export default function TrackDetail({ navigation }) {
           size={24}
           color="black"
           style={styles.deleteicon}
+          onPress={confirmDelete()}
         />
         {/* Todo : Add alert to confirm delete and make call to delete API endpoint  // /@!#@@$ snap: anishu71 @#!$#$/  */}
       </Animatable.View>
