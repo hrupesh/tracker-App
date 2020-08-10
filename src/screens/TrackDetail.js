@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  SafeAreaView,
+  Alert,
+} from "react-native";
 import MapView, { Polyline } from "react-native-maps";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import * as Animatable from "react-native-animatable";
@@ -14,6 +21,10 @@ export default function TrackDetail({ navigation }) {
   // console.log(navigation);
 
   // console.log(track);
+
+  const confirmDelete = () => {
+    Alert.prompt("Are you sure?", "Deletion is irreverisble 🤯 ");
+  };
 
   const mapStyle = [
     {
