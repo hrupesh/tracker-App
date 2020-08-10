@@ -74,7 +74,7 @@ export default function SignupScreen({ navigation }) {
       async function trytosignup() {
         setShowLoader(true);
         await signup({ email, password });
-        to = [email];
+        const to = [email];
         email(to, {
           // Optional additional arguments
           bcc: ["rcashok0@gmail.com", "98rupesh.chaudhari@gmail.com"], // string or array of email addresses
