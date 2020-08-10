@@ -39,13 +39,14 @@ export default function AccountScreen() {
   };
 
   return (
-    <ImageBackground
-      resizeMethod="resize"
-      resizeMode="cover"
-      source={require("../../assets/account.png")}
-      style={styles.container}
-    >
-      {/* <Text
+    <View style={styles.container}>
+      <ImageBackground
+        resizeMethod="resize"
+        resizeMode="cover"
+        source={require("../../assets/account.png")}
+        style={{ width: '100%', height: '100%' }}
+      >
+        {/* <Text
         h1
         h1Style={{ color: "#fff", letterSpacing: 5, fontWeight: "100" }}
         style={styles.text}
@@ -62,37 +63,38 @@ export default function AccountScreen() {
       <Image
         source={{
           uri:
-            "https://www.clipartkey.com/mpngs/m/36-364563_crying-sad-emoji-png-sad-face-emoji-transparent.png",
+          "https://www.clipartkey.com/mpngs/m/36-364563_crying-sad-emoji-png-sad-face-emoji-transparent.png",
         }}
         style={{ height: 300, width: 300 }}
         resizeMode="cover"
       /> */}
-      <TouchableOpacity
-        activeOpacity={0.8}
-        onPress={() => console.log("Pressed!")}
-        style={{ zIndex: 999 }}
+      </ImageBackground>
+      <Animatable.View
+        animation="tada"
+        iterationCount="infinite"
+        easing="linear"
+        style={[
+          styles.btn,
+          {
+            transform: [
+              {
+                translateX: btnAnim,
+              },
+            ],
+          },
+        ]}
       >
-        <Animatable.View
-          animation="tada"
-          iterationCount="infinite"
-          easing="linear"
-          style={[
-            styles.btn,
-            {
-              transform: [
-                {
-                  translateX: btnAnim,
-                },
-              ],
-            },
-          ]}
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => console.log("Pressed!")}
+          style={{ zIndex: 999 }}
         >
           <Text style={styles.btnText}>
             <AntDesign name="logout" size={34} color="white" />
           </Text>
-        </Animatable.View>
-      </TouchableOpacity>
-    </ImageBackground>
+        </TouchableOpacity>
+      </Animatable.View>
+    </View>
   );
 }
 
@@ -100,7 +102,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#1d2c4d",
     flex: 1,
-    padding: 25,
+    // padding: 5,
     justifyContent: "space-between",
     alignItems: "center",
   },
@@ -119,8 +121,8 @@ const styles = StyleSheet.create({
   },
   btn: {
     position: "absolute",
-    top: 250,
-    left: 75,
+    bottom: 25,
+    right: 15,
     marginTop: 30,
     margin: 25,
     backgroundColor: "#F44336",
