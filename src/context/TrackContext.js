@@ -33,7 +33,8 @@ const createTrack = (dispatch) => async (name, locations) => {
 const delTrack = (dispatch) => async (track) => {
   try {
     // to call delete endpoint
-    await trackerapi.post("/delete", { id: track._id });
+    console.log(track);
+    // await trackerapi.post("/delete", { id: track._id });
     alert("Track Deleted!");
   } catch (err) {
     alert("Error: " + err.message);
