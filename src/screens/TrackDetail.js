@@ -24,6 +24,7 @@ export default function TrackDetail({ navigation }) {
     await delTrack(navigation.getParam("track"));
     navigation.navigate("TrackList", {
       message: "Track Deleted",
+      type: "danger",
     });
   };
 

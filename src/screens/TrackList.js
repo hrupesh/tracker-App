@@ -18,6 +18,7 @@ import * as Animatable from "react-native-animatable";
 
 export default function TrackList({ navigation }) {
   const msg = navigation.getParam("message");
+  const msgtype = navigation.getParam("type");
   // console.log(msg);
   const { state, fetchTracks } = useContext(TrackContext);
 
@@ -35,7 +36,7 @@ export default function TrackList({ navigation }) {
     if (msg) {
       showMessage({
         message: msg,
-        type: "success",
+        type: msgtype ? "danger" : "success",
         icon: { icon: "success", position: "left" },
         animationDuration: 500,
         floating: true,
@@ -43,20 +44,6 @@ export default function TrackList({ navigation }) {
           letterSpacing: 1,
         },
         duration: 4000,
-      });
-    }
-    if (msg === "Track Deleted") {
-      showMessage({
-        message: msg,
-        type: "danger",
-        icon: { icon: "danger", position: "left" },
-        animationDuration: 500,
-        floating: true,
-        titleStyle: {
-          letterSpacing: 1,
-        },
-        duration: 4000,
-        position: "bottom",
       });
     }
     getTracks();
