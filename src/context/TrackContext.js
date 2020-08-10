@@ -37,9 +37,8 @@ const delTrack = (dispatch) => async (track) => {
     // console.log(track._id);
     navigate("loading");
     await trackerapi.post("/delete", { id: track._id });
-    // alert("Track Deleted!");
   } catch (err) {
-    alert("Error: " + err.message);
+    console.log("Error: " + err.message);
   }
 };
 

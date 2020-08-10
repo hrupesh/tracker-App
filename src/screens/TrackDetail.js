@@ -26,6 +26,7 @@ export default function TrackDetail({ navigation }) {
       message: "Track Deleted",
       type: "danger",
     });
+    // alert(" ❌ Track Deleted! ❌ ");
   };
 
   const confirmDelete = () => {
