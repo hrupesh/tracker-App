@@ -7,6 +7,7 @@ import {
   Animated,
   TouchableOpacity,
   Image,
+  Dimensions,
 } from "react-native";
 import { Button, Text } from "react-native-elements";
 import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
@@ -64,7 +65,7 @@ export default function AccountScreen() {
         style={styles.btnContainer}
       >
         <Animatable.View
-          animation="wobble"
+          animation="tada"
           iterationCount="infinite"
           easing="linear"
           style={[
@@ -79,7 +80,7 @@ export default function AccountScreen() {
           ]}
         >
           <Text style={styles.btnText}>
-            <AntDesign name="logout" size={24} color="black" />
+            <AntDesign name="logout" size={40} color="white" />
           </Text>
         </Animatable.View>
       </TouchableOpacity>
@@ -109,14 +110,17 @@ const styles = StyleSheet.create({
     textShadowRadius: 10,
   },
   btn: {
+    position: "absolute",
+    top: 0,
+    left: 75,
     marginTop: 30,
     margin: 25,
-    backgroundColor: "#03A9F4",
+    backgroundColor: "#1976D2",
     padding: 15,
     // borderRadius: 25,
     elevation: 10,
     // width: 300,
-    alignSelf: "center",
+    // alignSelf: "stretch",
     borderRadius: 50,
   },
   btnText: {
