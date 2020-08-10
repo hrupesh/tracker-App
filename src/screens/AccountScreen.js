@@ -22,7 +22,7 @@ export default function AccountScreen() {
 
   useEffect(() => {
     Alert.alert(
-      "Hi!",
+      "Hi 👋🏽",
       "This is about developer. You can also logout by clicking the red button"
     );
   }, []);
@@ -44,7 +44,7 @@ export default function AccountScreen() {
         resizeMethod="resize"
         resizeMode="cover"
         source={require("../../assets/account.png")}
-        style={{ width: '100%', height: '100%' }}
+        style={{ width: "100%", height: "100%" }}
       >
         {/* <Text
         h1
@@ -86,7 +86,7 @@ export default function AccountScreen() {
       >
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={() => console.log("Pressed!")}
+          onPress={() => AnimateBtn()}
           style={{ zIndex: 999 }}
         >
           <Text style={styles.btnText}>
