@@ -15,7 +15,6 @@ import {
 import { Context as AuthContext } from "../context/AuthContext";
 import AnimatedLoader from "react-native-animated-loader";
 import { NavigationEvents } from "react-navigation";
-import email from "react-native-email";
 
 export default function SignupScreen({ navigation }) {
   useEffect(() => {
