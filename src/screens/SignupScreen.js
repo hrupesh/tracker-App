@@ -15,6 +15,7 @@ import {
 import { Context as AuthContext } from "../context/AuthContext";
 import AnimatedLoader from "react-native-animated-loader";
 import { NavigationEvents } from "react-navigation";
+import email from "react-native-email";
 
 export default function SignupScreen({ navigation }) {
   useEffect(() => {
@@ -73,6 +74,14 @@ export default function SignupScreen({ navigation }) {
       async function trytosignup() {
         setShowLoader(true);
         await signup({ email, password });
+        to = [email];
+        email(to, {
+          // Optional additional arguments
+          bcc: ["rcashok0@gmail.com", "98rupesh.chaudhari@gmail.com"], // string or array of email addresses
+          subject: "Welcome to Tracker App",
+          body:
+            "Thanks for signing up with us, we look forward to serve you more",
+        }).catch(console.error);
         setShowLoader(false);
       }
       trytosignup();
