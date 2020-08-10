@@ -117,7 +117,7 @@ const switchNavigator = createSwitchNavigator({
   ),
 });
 
-// console.disableYellowBox = true;
+console.disableYellowBox = true;
 
 const App = createAppContainer(switchNavigator);
 
