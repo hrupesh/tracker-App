@@ -293,9 +293,9 @@ export default function TrackDetail({ navigation }) {
           size={24}
           color="black"
           style={styles.deleteicon}
-          onPress={confirmDelete()}
+          onPress={() => navigation.goBack()}
         />
-        {/* Todo : Add alert to confirm delete and make call to delete API endpoint  // /@!#@@$ snap: anishu71 @#!$#$/  */}
+        {/* Todo : Add alert to confirm delete and make call to delete API endpoint   */}
       </Animatable.View>
       <Text style={styles.distance}>{track.locations.length} Meters</Text>
     </SafeAreaView>
