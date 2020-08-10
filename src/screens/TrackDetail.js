@@ -320,7 +320,9 @@ export default function TrackDetail({ navigation }) {
       />
       {/* Todo : Add alert to confirm delete and make call to delete API endpoint   */}
       {/* </Animatable.View> */}
-      <Text style={styles.distance}>{track.locations.length} Meters</Text>
+      <Text style={styles.distance}>
+        Approx. {track.locations.length} Meters
+      </Text>
     </SafeAreaView>
   );
 }
