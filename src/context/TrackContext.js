@@ -30,6 +30,14 @@ const createTrack = (dispatch) => async (name, locations) => {
   }
 };
 
+const delTrack = (dispatch) => async (track) => {
+  try {
+    await trackerapi.delete("/track", { track });
+  } catch (err) {
+    alert("Error: " + err.message);
+  }
+};
+
 export const { Provider, Context } = createDataContext(
   trackReducer,
   { fetchTracks, createTrack },
