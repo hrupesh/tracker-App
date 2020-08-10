@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Image,
   Dimensions,
+  Alert,
 } from "react-native";
 import { Button, Text } from "react-native-elements";
 import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
@@ -18,6 +19,13 @@ export default function AccountScreen() {
   const btnAnim = useRef(new Animated.Value(0)).current;
 
   const { logout } = useContext(AuthContext);
+
+  useEffect(() => {
+    Alert.alert(
+      "Hi!",
+      "This is about developer. You can also logout by clicking the red button"
+    );
+  }, []);
 
   const AnimateBtn = () => {
     // alert("Fading IN");
@@ -61,8 +69,8 @@ export default function AccountScreen() {
       /> */}
       <TouchableOpacity
         activeOpacity={0.8}
-        onPress={() => AnimateBtn()}
-        style={styles.btnContainer}
+        onPress={() => console.log("Pressed!")}
+        style={{ zIndex: 999 }}
       >
         <Animatable.View
           animation="tada"
@@ -80,7 +88,7 @@ export default function AccountScreen() {
           ]}
         >
           <Text style={styles.btnText}>
-            <AntDesign name="logout" size={40} color="white" />
+            <AntDesign name="logout" size={34} color="white" />
           </Text>
         </Animatable.View>
       </TouchableOpacity>
@@ -111,11 +119,11 @@ const styles = StyleSheet.create({
   },
   btn: {
     position: "absolute",
-    top: 0,
+    top: 250,
     left: 75,
     marginTop: 30,
     margin: 25,
-    backgroundColor: "#1976D2",
+    backgroundColor: "#F44336",
     padding: 15,
     // borderRadius: 25,
     elevation: 10,
