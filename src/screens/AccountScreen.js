@@ -9,8 +9,9 @@ import {
   Image,
 } from "react-native";
 import { Button, Text } from "react-native-elements";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 import { Context as AuthContext } from "../context/AuthContext";
+import * as Animatable from "react-native-animatable";
 
 export default function AccountScreen() {
   const btnAnim = useRef(new Animated.Value(0)).current;
@@ -32,10 +33,10 @@ export default function AccountScreen() {
     <ImageBackground
       resizeMethod="resize"
       resizeMode="cover"
-      source={{ uri: "https://picsum.photos/3000/3500" }}
+      source={require("../../assets/account.png")}
       style={styles.container}
     >
-      <Text
+      {/* <Text
         h1
         h1Style={{ color: "#fff", letterSpacing: 5, fontWeight: "100" }}
         style={styles.text}
@@ -56,13 +57,16 @@ export default function AccountScreen() {
         }}
         style={{ height: 300, width: 300 }}
         resizeMode="cover"
-      />
+      /> */}
       <TouchableOpacity
         activeOpacity={0.8}
         onPress={() => AnimateBtn()}
         style={styles.btnContainer}
       >
-        <Animated.View
+        <Animatable.View
+          animation="wobble"
+          iterationCount="infinite"
+          easing="linear"
           style={[
             styles.btn,
             {
@@ -74,8 +78,10 @@ export default function AccountScreen() {
             },
           ]}
         >
-          <Text style={styles.btnText}>Logout</Text>
-        </Animated.View>
+          <Text style={styles.btnText}>
+            <AntDesign name="logout" size={24} color="black" />
+          </Text>
+        </Animatable.View>
       </TouchableOpacity>
     </ImageBackground>
   );
@@ -95,22 +101,23 @@ const styles = StyleSheet.create({
     textAlign: "center",
     padding: 25,
     borderRadius: 4,
-    textShadowColor:"red",
-    textShadowOffset:{
-      height:0,
-      width:0
+    textShadowColor: "red",
+    textShadowOffset: {
+      height: 0,
+      width: 0,
     },
-    textShadowRadius:10
+    textShadowRadius: 10,
   },
   btn: {
     marginTop: 30,
     margin: 25,
-    backgroundColor: "#512DF8",
+    backgroundColor: "#03A9F4",
     padding: 15,
     // borderRadius: 25,
     elevation: 10,
-    width: 300,
+    // width: 300,
     alignSelf: "center",
+    borderRadius: 50,
   },
   btnText: {
     textAlign: "center",
