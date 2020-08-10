@@ -18,10 +18,10 @@ export default function TrackDetail({ navigation }) {
 
   // console.log(navigation);
 
-  // console.log(track);
+  console.log(track);
 
-  const deleteTrack = (track) => {
-    delTrack(track);
+  const deleteTrack = async (track) => {
+    await delTrack(navigation.getParam("track"));
     navigation.navigate("TrackList", {
       message: "Track Deleted",
     });

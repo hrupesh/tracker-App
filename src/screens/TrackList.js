@@ -45,6 +45,20 @@ export default function TrackList({ navigation }) {
         duration: 4000,
       });
     }
+    if (msg === "Track Deleted") {
+      showMessage({
+        message: msg,
+        type: "danger",
+        icon: { icon: "danger", position: "left" },
+        animationDuration: 500,
+        floating: true,
+        titleStyle: {
+          letterSpacing: 1,
+        },
+        duration: 4000,
+        position: "bottom",
+      });
+    }
     getTracks();
   }, [navigation]);
 
