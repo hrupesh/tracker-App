@@ -13,7 +13,7 @@ import { Provider as LocationProvider } from "./src/context/LocationContext";
 import { Provider as TrackProvider } from "./src/context/TrackContext";
 import { setNavigator } from "./src/navigationRef";
 import LoadingScreen from "./src/screens/LoadingScreen";
-import { StatusBar } from "react-native";
+import { StatusBar, LogBox } from "react-native";
 import FlashMessage from "react-native-flash-message";
 import {
   MaterialCommunityIcons,
@@ -116,6 +116,8 @@ const switchNavigator = createSwitchNavigator({
     }
   ),
 });
+
+console.disableYellowBox = true;
 
 const App = createAppContainer(switchNavigator);
 
