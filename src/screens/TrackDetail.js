@@ -20,7 +20,12 @@ export default function TrackDetail({ navigation }) {
 
   // console.log(track);
 
-  const deleteTrack = (track) => {};
+  const deleteTrack = (track) => {
+    delTrack(track);
+    navigation.navigate("TrackList", {
+      message: "Track Deleted",
+    });
+  };
 
   const confirmDelete = () => {
     Alert.alert(
@@ -28,13 +33,13 @@ export default function TrackDetail({ navigation }) {
       "Deletion is irreverisble 💀 ",
       [
         {
-          text: "Nope",
+          text: "No!",
           // onPress: () => console.log("Cancel Pressed"),
           style: "cancel",
         },
         {
           text: "Yes, Delete",
-          onPress: () => console.log("OK Pressed"),
+          onPress: () => deleteTrack(),
           style: "destructive",
         },
       ],
