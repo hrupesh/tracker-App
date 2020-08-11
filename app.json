@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/tracker-logo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/tracker-logo.png",
       "resizeMode": "cover",
       "backgroundColor": "#1d2c4d"
     },
