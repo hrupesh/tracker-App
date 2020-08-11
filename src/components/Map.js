@@ -8,7 +8,8 @@ import {
 } from "react-native";
 import MapView, { Polyline, Marker, Circle } from "react-native-maps";
 import { Context as LocationContext } from "../context/LocationContext";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Fontisto } from "@expo/vector-icons";
+import * as Animatable from "react-native-animatable";
 
 export default function Map() {
   const {
@@ -300,12 +301,15 @@ export default function Map() {
         coordinate={{ ...currentLocation.coords }}
         title="You are here"
       >
-        <MaterialCommunityIcons
-          name="map-marker-radius"
-          size={70}
-          style={{ marginTop: 50 }}
-          color="tomato"
-        />
+        <Animatable.View
+          animation="zoomIn"
+          iterationCount="infinite"
+          easing="linear"
+          direction="alternate"
+          useNativeDriver={true}
+        >
+          <Fontisto name="map-marker-alt" size={50} color="tomato" />
+        </Animatable.View>
       </Marker>
       {/* <Polyline coordinates={locations.map((loc) => loc.coords)} /> */}
       <Circle

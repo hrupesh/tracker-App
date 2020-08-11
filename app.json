@@ -4,7 +4,7 @@
     "slug": "tracker-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/tracker-logo.png",
+    "icon": "./assets/tracker-logo-icon.png",
     "splash": {
       "image": "./assets/tracker-logo.png",
       "resizeMode": "contain",
