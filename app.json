@@ -13,9 +13,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -25,7 +23,12 @@
     "description": "A Location Tracking App",
     "githubUrl": "https://github.com/hrupesh/tracker-App",
     "android": {
-      "package": "com.hrupesh.tracker"
+      "package": "com.hrupesh.tracker",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBAwQT2bwtFh-67O7uGivwpXUYicBaUz9I"
+        }
+      }
     }
   }
 }
