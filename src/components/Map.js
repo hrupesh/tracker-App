@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import MapView, { Polyline, Marker, Circle } from "react-native-maps";
 import { Context as LocationContext } from "../context/LocationContext";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function Map() {
   const {
@@ -298,7 +299,14 @@ export default function Map() {
         draggable
         coordinate={{ ...currentLocation.coords }}
         title="You are here"
-      />
+      >
+        <MaterialCommunityIcons
+          name="map-marker-radius"
+          size={70}
+          style={{ marginTop: 50 }}
+          color="tomato"
+        />
+      </Marker>
       {/* <Polyline coordinates={locations.map((loc) => loc.coords)} /> */}
       <Circle
         center={currentLocation.coords}
