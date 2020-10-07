@@ -20,6 +20,7 @@ export default (shouldTrack, callback, recording) => {
         },
         callback
       );
+      console.log('Watching location every second');
       setSubscriber(sub);
     } catch (err) {
       setError(err);
